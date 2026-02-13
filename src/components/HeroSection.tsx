@@ -1,15 +1,20 @@
 import boxerImg from "@/assets/boxer-hero.png";
 import glovesImg from "@/assets/boxing-gloves.png";
+import headguardImg from "@/assets/headguard.png";
+import uniformImg from "@/assets/martial-arts-uniform.png";
+import shinGuardsImg from "@/assets/shin-guards.png";
+import mmaGlovesImg from "@/assets/mma-gloves.png";
+import trainingRopeImg from "@/assets/training-rope.png";
 
 const floatingProducts = [
-  { style: "top-[8%] left-[5%] w-20 md:w-28 opacity-[0.12]", anim: "animate-float-1" },
-  { style: "top-[15%] right-[8%] w-16 md:w-24 opacity-[0.10]", anim: "animate-float-2" },
-  { style: "bottom-[20%] left-[10%] w-14 md:w-20 opacity-[0.08]", anim: "animate-float-3" },
-  { style: "bottom-[12%] right-[5%] w-18 md:w-26 opacity-[0.11]", anim: "animate-float-4" },
-  { style: "top-[45%] left-[2%] w-12 md:w-16 opacity-[0.07]", anim: "animate-float-5" },
-  { style: "top-[35%] right-[3%] w-14 md:w-20 opacity-[0.09]", anim: "animate-float-6" },
-  { style: "bottom-[35%] left-[25%] w-10 md:w-14 opacity-[0.06] hidden lg:block", anim: "animate-float-2" },
-  { style: "top-[10%] left-[40%] w-12 md:w-16 opacity-[0.07] hidden lg:block", anim: "animate-float-4" },
+  { src: glovesImg, alt: "Boxing gloves", style: "top-[8%] left-[5%] w-20 md:w-28 opacity-[0.18]", anim: "animate-float-1" },
+  { src: headguardImg, alt: "Head guard", style: "top-[15%] right-[8%] w-16 md:w-24 opacity-[0.16]", anim: "animate-float-2" },
+  { src: uniformImg, alt: "Martial arts uniform", style: "bottom-[20%] left-[10%] w-14 md:w-20 opacity-[0.14]", anim: "animate-float-3" },
+  { src: shinGuardsImg, alt: "Shin guards", style: "bottom-[12%] right-[5%] w-18 md:w-26 opacity-[0.17]", anim: "animate-float-4" },
+  { src: mmaGlovesImg, alt: "MMA gloves", style: "top-[45%] left-[2%] w-12 md:w-16 opacity-[0.13]", anim: "animate-float-5" },
+  { src: trainingRopeImg, alt: "Training rope", style: "top-[35%] right-[3%] w-14 md:w-20 opacity-[0.15]", anim: "animate-float-6" },
+  { src: glovesImg, alt: "Boxing gloves", style: "bottom-[35%] left-[25%] w-10 md:w-14 opacity-[0.10] hidden lg:block", anim: "animate-float-2" },
+  { src: headguardImg, alt: "Head guard", style: "top-[10%] left-[40%] w-12 md:w-16 opacity-[0.12] hidden lg:block", anim: "animate-float-4" },
 ];
 
 const HeroSection = () => {
@@ -19,17 +24,17 @@ const HeroSection = () => {
       {floatingProducts.map((item, i) => (
         <img
           key={i}
-          src={glovesImg}
+          src={item.src}
           alt=""
           className={`absolute pointer-events-none select-none z-0 ${item.style} ${item.anim}`}
           aria-hidden="true"
         />
       ))}
 
-      {/* Large ARBITER text behind boxer — solid red fill matching reference */}
+      {/* Large EIKYO text behind boxer — solid red fill */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-[1]">
         <h1 className="font-heading font-black text-[20vw] lg:text-[16vw] leading-none text-primary tracking-tighter whitespace-nowrap">
-          ARBITER
+          EIKYO
         </h1>
       </div>
 
@@ -78,7 +83,7 @@ const HeroSection = () => {
                 <img src={glovesImg} alt="Boxing gloves" className="w-full h-full object-cover" />
               </div>
               <div className="w-12 h-12 rounded-lg bg-secondary overflow-hidden">
-                <img src={glovesImg} alt="Product" className="w-full h-full object-cover" />
+                <img src={shinGuardsImg} alt="Shin guards" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
@@ -97,7 +102,7 @@ const HeroSection = () => {
               </defs>
               <text className="fill-foreground font-heading text-[16px] font-bold uppercase tracking-[0.3em]">
                 <textPath href="#circlePath">
-                  • ARBITER INTERNATIONAL • SIALKOT PAKISTAN •
+                  • EIKYO INTERNATIONAL • SIALKOT PAKISTAN •
                 </textPath>
               </text>
             </svg>
