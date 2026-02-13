@@ -1,11 +1,33 @@
 import boxerImg from "@/assets/boxer-hero.png";
 import glovesImg from "@/assets/boxing-gloves.png";
 
+const floatingProducts = [
+  { style: "top-[8%] left-[5%] w-20 md:w-28 opacity-[0.12]", anim: "animate-float-1" },
+  { style: "top-[15%] right-[8%] w-16 md:w-24 opacity-[0.10]", anim: "animate-float-2" },
+  { style: "bottom-[20%] left-[10%] w-14 md:w-20 opacity-[0.08]", anim: "animate-float-3" },
+  { style: "bottom-[12%] right-[5%] w-18 md:w-26 opacity-[0.11]", anim: "animate-float-4" },
+  { style: "top-[45%] left-[2%] w-12 md:w-16 opacity-[0.07]", anim: "animate-float-5" },
+  { style: "top-[35%] right-[3%] w-14 md:w-20 opacity-[0.09]", anim: "animate-float-6" },
+  { style: "bottom-[35%] left-[25%] w-10 md:w-14 opacity-[0.06] hidden lg:block", anim: "animate-float-2" },
+  { style: "top-[10%] left-[40%] w-12 md:w-16 opacity-[0.07] hidden lg:block", anim: "animate-float-4" },
+];
+
 const HeroSection = () => {
   return (
     <section className="relative w-full min-h-[80vh] lg:min-h-[90vh] overflow-hidden bg-background flex items-center">
+      {/* Animated floating background product images */}
+      {floatingProducts.map((item, i) => (
+        <img
+          key={i}
+          src={glovesImg}
+          alt=""
+          className={`absolute pointer-events-none select-none z-0 ${item.style} ${item.anim}`}
+          aria-hidden="true"
+        />
+      ))}
+
       {/* Large ARBITER text behind boxer */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0">
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-[1]">
         <h1 className="font-heading font-black text-[18vw] lg:text-[14vw] leading-none text-stroke-red tracking-tighter whitespace-nowrap">
           ARBITER
         </h1>
@@ -86,19 +108,6 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Floating gloves - left */}
-      <img
-        src={glovesImg}
-        alt=""
-        className="hidden lg:block absolute left-0 bottom-8 w-32 opacity-40 -rotate-12 pointer-events-none z-0"
-      />
-
-      {/* Floating gloves - right */}
-      <img
-        src={glovesImg}
-        alt=""
-        className="hidden lg:block absolute right-4 top-12 w-24 opacity-30 rotate-12 pointer-events-none z-0"
-      />
     </section>
   );
 };
