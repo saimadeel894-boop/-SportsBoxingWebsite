@@ -2,9 +2,9 @@ import boxerImg from "@/assets/boxer-hero.png";
 
 const AboutSection = () => {
   return (
-    <section className="py-16 md:py-24 bg-secondary">
+    <section id="about" className="py-20 md:py-28 bg-secondary">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Image side */}
           <div className="relative">
             <div className="aspect-[4/5] rounded-lg overflow-hidden bg-muted">
@@ -29,15 +29,32 @@ const AboutSection = () => {
               Eikyo International
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Based in Sialkot, Pakistan — the global hub of sports manufacturing — Eikyo International 
-              has been crafting premium combat sports equipment for over three decades. Our commitment 
+              Based in Sialkot, Pakistan — the global hub of sports manufacturing — Eikyo International
+              has been crafting premium combat sports equipment for over three decades. Our commitment
               to quality, innovation, and athlete safety has made us the choice of champions worldwide.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              From professional boxing gloves to martial arts uniforms, every product is manufactured 
-              with precision and tested to meet international standards. We serve athletes, gyms, and 
-              distributors across 50+ countries.
+              From professional boxing gloves to martial arts uniforms, every product is manufactured
+              with precision and tested to meet international standards.
             </p>
+            <ul className="space-y-3 mb-8 text-sm text-muted-foreground">
+              <li className="flex items-center gap-3">
+                <span className="w-2 h-2 rounded-full bg-primary shrink-0" />
+                OEM & ODM manufacturing capabilities
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="w-2 h-2 rounded-full bg-primary shrink-0" />
+                ISO certified production facility
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="w-2 h-2 rounded-full bg-primary shrink-0" />
+                Custom branding and packaging solutions
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="w-2 h-2 rounded-full bg-primary shrink-0" />
+                Worldwide shipping to 50+ countries
+              </li>
+            </ul>
             <div className="grid grid-cols-3 gap-6 mb-8">
               <div>
                 <p className="font-heading font-black text-2xl md:text-3xl text-primary">5K+</p>

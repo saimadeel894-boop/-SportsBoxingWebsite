@@ -1,21 +1,34 @@
 import { Search, ChevronDown, Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import logoImg from "@/assets/eikyo-logo.jpg";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const navLinks = [
     { label: "HOME", href: "#" },
-    { label: "ABOUT US", href: "#" },
-    { label: "PRODUCTS", href: "#", dropdown: true },
+    { label: "ABOUT US", href: "#about" },
+    { label: "PRODUCTS", href: "#products", dropdown: true },
     { label: "CATALOGUE", href: "#" },
-    { label: "CONTACT US", href: "#" },
+    { label: "CONTACT US", href: "#contact" },
     { label: "OUR UNIQUE WORK", href: "#", dropdown: true },
   ];
 
   return (
-    <nav className="w-full bg-background border-b border-border sticky top-0 z-50">
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-background/95 backdrop-blur-sm shadow-md border-b border-border"
+          : "bg-transparent"
+      }`}
+    >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 lg:px-8">
         {/* Logo */}
         <a href="#" className="flex items-center">
@@ -45,6 +58,12 @@ const Navbar = () => {
           <span className="font-heading text-sm font-semibold tracking-wider text-foreground cursor-pointer hover:text-primary transition-colors">
             EN
           </span>
+          <a
+            href="#contact"
+            className="font-heading font-bold text-xs uppercase tracking-wider bg-primary text-primary-foreground px-5 py-2.5 hover:bg-primary/90 transition-colors"
+          >
+            Get Quote
+          </a>
         </div>
 
         {/* Mobile toggle */}
@@ -64,6 +83,7 @@ const Navbar = () => {
               <li key={link.label}>
                 <a
                   href={link.href}
+                  onClick={() => setMobileOpen(false)}
                   className="font-heading text-sm font-semibold tracking-wider text-foreground hover:text-primary transition-colors flex items-center gap-1"
                 >
                   {link.label}
@@ -75,6 +95,12 @@ const Navbar = () => {
           <div className="flex items-center gap-4 mt-4 pt-3 border-t border-border">
             <Search size={18} className="text-foreground" />
             <span className="font-heading text-sm font-semibold tracking-wider text-foreground">EN</span>
+            <a
+              href="#contact"
+              className="font-heading font-bold text-xs uppercase tracking-wider bg-primary text-primary-foreground px-5 py-2.5 hover:bg-primary/90 transition-colors ml-auto"
+            >
+              Get Quote
+            </a>
           </div>
         </div>
       )}
