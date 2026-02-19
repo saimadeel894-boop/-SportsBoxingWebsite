@@ -1,79 +1,64 @@
 import boxerImg from "@/assets/boxer-hero.png";
+import glovesImg from "@/assets/boxing-gloves.png";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-20 md:py-28 bg-secondary">
+    <section id="about" className="py-20 md:py-28 bg-background">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Image side */}
+        {/* Section header */}
+        <div className="text-center mb-16">
+          <p className="font-heading text-sm font-semibold text-primary uppercase tracking-[0.2em] mb-2">
+            About Us
+          </p>
+          <h2 className="font-heading font-black text-3xl md:text-4xl lg:text-5xl text-foreground uppercase">
+            About Us
+          </h2>
+        </div>
+
+        {/* Two-column layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+          {/* Left — Image with floating product */}
           <div className="relative">
-            <div className="aspect-[4/5] rounded-lg overflow-hidden bg-muted">
+            <div className="aspect-[4/5] rounded-lg overflow-hidden bg-secondary">
               <img
                 src={boxerImg}
                 alt="Eikyo International athlete"
                 className="w-full h-full object-cover object-top"
               />
             </div>
-            <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground p-6 rounded-lg shadow-xl hidden md:block">
-              <p className="font-heading font-black text-4xl">30+</p>
-              <p className="font-heading text-sm uppercase tracking-wider">Years of Excellence</p>
-            </div>
+            {/* Floating product accent */}
+            <img
+              src={glovesImg}
+              alt=""
+              aria-hidden="true"
+              className="absolute -top-6 -right-6 w-24 md:w-28 hidden md:block drop-shadow-lg"
+            />
           </div>
 
-          {/* Text side */}
-          <div>
-            <p className="font-heading text-sm font-semibold text-primary uppercase tracking-[0.2em] mb-2">
-              About Us
+          {/* Right — Text content */}
+          <div className="flex flex-col justify-center">
+            <h3 className="font-heading font-bold text-lg text-primary uppercase tracking-wider mb-4">
+              Boxing
+            </h3>
+            <p className="text-muted-foreground leading-relaxed mb-6 text-sm md:text-base">
+              Eikyo International® is based in Sialkot, Pakistan and powered by global expertise. 
+              We develop boxing, martial arts, MMA, and sports gear where enduring quality meets modern performance.
             </p>
-            <h2 className="font-heading font-black text-3xl md:text-4xl lg:text-5xl text-foreground uppercase mb-6">
-              Eikyo International
-            </h2>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              Based in Sialkot, Pakistan — the global hub of sports manufacturing — Eikyo International
-              has been crafting premium combat sports equipment for over three decades. Our commitment
-              to quality, innovation, and athlete safety has made us the choice of champions worldwide.
+            <p className="text-muted-foreground leading-relaxed mb-8 text-sm md:text-base">
+              At Eikyo International®, we bring together global expertise and innovation to redefine 
+              excellence in combat sports equipment. Our mission is simple yet powerful — to create boxing, 
+              martial arts, MMA, and sports gear that blends enduring quality with modern performance.
             </p>
-            <p className="text-muted-foreground leading-relaxed mb-8">
-              From professional boxing gloves to martial arts uniforms, every product is manufactured
-              with precision and tested to meet international standards.
+            <p className="text-muted-foreground leading-relaxed mb-8 text-sm md:text-base">
+              Driven by passion and precision, every Eikyo International® product is designed to empower 
+              athletes at every level — from amateurs to professionals — ensuring maximum comfort, durability, 
+              and confidence in every movement.
             </p>
-            <ul className="space-y-3 mb-8 text-sm text-muted-foreground">
-              <li className="flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full bg-primary shrink-0" />
-                OEM & ODM manufacturing capabilities
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full bg-primary shrink-0" />
-                ISO certified production facility
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full bg-primary shrink-0" />
-                Custom branding and packaging solutions
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full bg-primary shrink-0" />
-                Worldwide shipping to 50+ countries
-              </li>
-            </ul>
-            <div className="grid grid-cols-3 gap-6 mb-8">
-              <div>
-                <p className="font-heading font-black text-2xl md:text-3xl text-primary">5K+</p>
-                <p className="font-heading text-xs uppercase tracking-wider text-muted-foreground">Customers</p>
-              </div>
-              <div>
-                <p className="font-heading font-black text-2xl md:text-3xl text-primary">50+</p>
-                <p className="font-heading text-xs uppercase tracking-wider text-muted-foreground">Countries</p>
-              </div>
-              <div>
-                <p className="font-heading font-black text-2xl md:text-3xl text-primary">500+</p>
-                <p className="font-heading text-xs uppercase tracking-wider text-muted-foreground">Products</p>
-              </div>
-            </div>
             <a
               href="#"
-              className="inline-block font-heading font-bold text-sm uppercase tracking-wider bg-primary text-primary-foreground px-8 py-3 hover:bg-primary/90 transition-colors"
+              className="inline-block self-start font-heading font-bold text-sm uppercase tracking-wider bg-primary text-primary-foreground px-8 py-3 hover:bg-primary/90 transition-colors"
             >
-              Learn More
+              Know About Us
             </a>
           </div>
         </div>

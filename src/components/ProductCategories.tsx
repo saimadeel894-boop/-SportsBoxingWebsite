@@ -1,51 +1,87 @@
-import categoryBoxing from "@/assets/category-boxing.png";
-import categoryMma from "@/assets/category-mma.png";
-import categoryMartialArts from "@/assets/category-martial-arts.png";
-import categoryTraining from "@/assets/category-training.png";
+import glovesImg from "@/assets/boxing-gloves.png";
+import headguardImg from "@/assets/headguard.png";
+import shinGuardsImg from "@/assets/shin-guards.png";
+import mmaGlovesImg from "@/assets/mma-gloves.png";
 
-const categories = [
-  { name: "Boxing", desc: "Gloves, bags, pads & protective gear", image: categoryBoxing },
-  { name: "MMA", desc: "Fight shorts, gloves & shin guards", image: categoryMma },
-  { name: "Martial Arts", desc: "Uniforms, belts & training equipment", image: categoryMartialArts },
-  { name: "Training Gear", desc: "Ropes, wraps & fitness accessories", image: categoryTraining },
+const products = [
+  { name: "Boxing Glove", code: "AB-858", image: glovesImg, featured: true },
+  { name: "Head Guard", code: "AS-02-101", image: headguardImg, featured: false },
+  { name: "Shin Guard", code: "AS-01-4401", image: shinGuardsImg, featured: false },
+  { name: "MMA Gloves", code: "AS-07-201", image: mmaGlovesImg, featured: false },
 ];
 
 const ProductCategories = () => {
   return (
-    <section id="products" className="py-20 md:py-28 bg-background">
+    <section id="products" className="py-20 md:py-28 bg-secondary">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
+        {/* Section header */}
         <div className="text-center mb-14">
           <p className="font-heading text-sm font-semibold text-primary uppercase tracking-[0.2em] mb-2">
             Our Collections
           </p>
           <h2 className="font-heading font-black text-3xl md:text-4xl lg:text-5xl text-foreground uppercase">
-            Product Categories
+            Our Product
           </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto mt-4 leading-relaxed">
+            Discover our most trusted and high-performance gear — handpicked to represent the best in quality and innovation.
+          </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {categories.map((cat) => (
-            <a
-              key={cat.name}
-              href="#"
-              className="group relative overflow-hidden rounded-lg aspect-[3/4]"
-            >
+
+        {/* Product grid — featured large item + smaller items */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Left column — 2 stacked small products */}
+          <div className="flex flex-col gap-6">
+            {products.filter(p => !p.featured).slice(0, 2).map((p) => (
+              <a key={p.name} href="#" className="group bg-background rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+                <div className="aspect-square overflow-hidden">
+                  <img src={p.image} alt={p.name} className="w-full h-full object-contain p-6 transition-transform duration-500 group-hover:scale-105" />
+                </div>
+                <div className="p-4 text-center">
+                  <h3 className="font-heading font-bold text-sm text-foreground uppercase tracking-wider">{p.name}</h3>
+                  <p className="text-xs text-muted-foreground mt-1">{p.code}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+
+          {/* Center — featured large product */}
+          <a href="#" className="group bg-background rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow lg:row-span-1">
+            <div className="aspect-[3/4] lg:aspect-auto lg:h-full overflow-hidden">
               <img
-                src={cat.image}
-                alt={cat.name}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                src={products[0].image}
+                alt={products[0].name}
+                className="w-full h-full object-contain p-8 transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-foreground/20 to-transparent group-hover:from-foreground/80 transition-all duration-300" />
-              <div className="absolute inset-0 flex flex-col justify-end p-6">
-                <h3 className="font-heading font-bold text-xl md:text-2xl text-background uppercase tracking-wider">
-                  {cat.name}
-                </h3>
-                <p className="text-background/70 text-sm mt-1 mb-2">{cat.desc}</p>
-                <span className="font-heading text-sm text-primary uppercase tracking-wider font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  View Products →
-                </span>
-              </div>
-            </a>
-          ))}
+            </div>
+            <div className="p-4 text-center">
+              <h3 className="font-heading font-bold text-lg text-foreground uppercase tracking-wider">{products[0].name}</h3>
+              <p className="text-sm text-muted-foreground mt-1">{products[0].code}</p>
+            </div>
+          </a>
+
+          {/* Right column — 2 stacked small products */}
+          <div className="flex flex-col gap-6">
+            {products.filter(p => !p.featured).slice(1, 3).map((p) => (
+              <a key={p.name} href="#" className="group bg-background rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+                <div className="aspect-square overflow-hidden">
+                  <img src={p.image} alt={p.name} className="w-full h-full object-contain p-6 transition-transform duration-500 group-hover:scale-105" />
+                </div>
+                <div className="p-4 text-center">
+                  <h3 className="font-heading font-bold text-sm text-foreground uppercase tracking-wider">{p.name}</h3>
+                  <p className="text-xs text-muted-foreground mt-1">{p.code}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Description text below products */}
+        <div className="mt-16 max-w-4xl mx-auto text-center">
+          <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
+            Thanks to our exceptional quality and competitive prices, we have the privilege of creating 
+            significant value for our customers. Athletes and sports professionals promote our products, 
+            driving perfection.
+          </p>
         </div>
       </div>
     </section>
