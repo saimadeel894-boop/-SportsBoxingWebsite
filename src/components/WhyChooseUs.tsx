@@ -1,29 +1,29 @@
-import { Shield, Award, Globe, Zap } from "lucide-react";
+import { Palette, Shield, Users, Headphones } from "lucide-react";
 
 const features = [
   {
+    icon: Palette,
+    title: "Unlimited Customization",
+    description:
+      "We offer endless possibilities for colors, logos, and designs—crafted to match your gym's identity and fighting style.",
+  },
+  {
     icon: Shield,
-    title: "Premium Quality",
+    title: "High-Quality Materials",
     description:
-      "Every product is crafted with the finest materials and tested to meet international safety standards.",
+      "Our fightwear is crafted using premium fabrics engineered for performance, comfort, and long-lasting durability.",
   },
   {
-    icon: Award,
-    title: "30+ Years Experience",
+    icon: Users,
+    title: "Team Spirit",
     description:
-      "Three decades of expertise in manufacturing world-class combat sports equipment.",
+      "We help showcase your gym or team's identity through bold, standout designs that unite fighters and coaches alike.",
   },
   {
-    icon: Globe,
-    title: "Global Reach",
+    icon: Headphones,
+    title: "Customer Support",
     description:
-      "Trusted by athletes, gyms, and distributors in over 50 countries worldwide.",
-  },
-  {
-    icon: Zap,
-    title: "Custom Manufacturing",
-    description:
-      "Full OEM and ODM capabilities with custom branding, colors, and specifications.",
+      "Our dedicated team supports you at every stage—from design consultation to final delivery.",
   },
 ];
 
@@ -32,11 +32,8 @@ const WhyChooseUs = () => {
     <section className="py-20 md:py-28 bg-background">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="text-center mb-14">
-          <p className="font-heading text-sm font-semibold text-primary uppercase tracking-[0.2em] mb-2">
-            Why Eikyo
-          </p>
           <h2 className="font-heading font-black text-3xl md:text-4xl lg:text-5xl text-foreground uppercase">
-            Why Choose Us
+            Why Us
           </h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">

@@ -3,10 +3,11 @@ import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ProductCategories from "@/components/ProductCategories";
 import CategoriesSection from "@/components/CategoriesSection";
-import WhyChooseUs from "@/components/WhyChooseUs";
+import OurWork from "@/components/OurWork";
+import Partners from "@/components/Partners";
 import HowWeWork from "@/components/HowWeWork";
 import ContactForm from "@/components/ContactForm";
-import CTASection from "@/components/CTASection";
+import WhyChooseUs from "@/components/WhyChooseUs";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -17,10 +18,11 @@ const Index = () => {
       <AboutSection />
       <ProductCategories />
       <CategoriesSection />
+      <OurWork />
+      <Partners />
       <HowWeWork />
       <ContactForm />
       <WhyChooseUs />
-      <CTASection />
       <Footer />
     </div>
   );
