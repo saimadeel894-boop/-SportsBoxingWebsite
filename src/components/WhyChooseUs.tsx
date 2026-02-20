@@ -36,7 +36,7 @@ const WhyChooseUs = () => {
             Why Us
           </h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((f) => (
             <div
               key={f.title}
@@ -45,7 +45,7 @@ const WhyChooseUs = () => {
               <div className="w-14 h-14 mx-auto mb-5 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
                 <f.icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
               </div>
-              <h3 className="font-heading font-bold text-lg text-foreground uppercase tracking-wider mb-3">
+              <h3 className="font-heading font-bold text-base text-foreground uppercase tracking-wider mb-3">
                 {f.title}
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">

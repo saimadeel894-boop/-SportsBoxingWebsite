@@ -5,7 +5,7 @@ import mmaGlovesImg from "@/assets/mma-gloves.png";
 
 const OurWork = () => {
   return (
-    <section className="py-20 md:py-28 bg-secondary/50">
+    <section className="py-20 md:py-28 bg-secondary/30">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="text-center mb-14">
           <h2 className="font-heading font-black text-3xl md:text-4xl lg:text-5xl text-foreground uppercase">
