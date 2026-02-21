@@ -33,23 +33,23 @@ const CategoriesSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
           <div className="relative">
             <div className="grid grid-cols-2 gap-4">
-              <img src={glovesImg} alt="Boxing gloves" className="w-full object-contain bg-secondary rounded-lg p-4" />
-              <img src={headguardImg} alt="Headguard" className="w-full object-contain bg-secondary rounded-lg p-4" />
+              <img src={glovesImg} alt="Boxing gloves" className="w-full object-contain bg-secondary rounded-lg p-6" />
+              <img src={headguardImg} alt="Headguard" className="w-full object-contain bg-secondary rounded-lg p-6" />
             </div>
           </div>
           <div>
-            <div className="w-8 h-1 bg-primary mb-4" />
-            <h3 className="font-heading font-black text-2xl md:text-3xl text-foreground uppercase mb-5">
+            <div className="w-10 h-1 bg-primary mb-5" />
+            <h3 className="font-heading font-black text-2xl md:text-3xl lg:text-4xl text-foreground uppercase mb-6">
               Boxing
             </h3>
-            <p className="text-muted-foreground leading-relaxed mb-6 text-sm md:text-base">
-              Our boxing gear is crafted to support every fighter, from training sessions to championship rounds. 
-              With durable materials, ergonomic design, and unmatched comfort, we make equipment that helps you 
+            <p className="text-muted-foreground leading-relaxed mb-8 text-sm md:text-base">
+              Our boxing gear is crafted to support every fighter, from training sessions to championship rounds.
+              With durable materials, ergonomic design, and unmatched comfort, we make equipment that helps you
               focus on your performance and unleash your true power in the ring.
             </p>
             <a
               href="#"
-              className="inline-block font-heading font-bold text-sm uppercase tracking-wider bg-primary text-primary-foreground px-8 py-3 hover:bg-primary/90 transition-colors"
+              className="inline-block font-heading font-bold text-sm uppercase tracking-wider bg-primary text-primary-foreground px-8 py-3.5 hover:bg-primary/90 transition-colors"
             >
               Explore More
             </a>
@@ -60,23 +60,23 @@ const CategoriesSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
           <div className="lg:order-2">
             <div className="grid grid-cols-2 gap-4">
-              <img src={mmaGlovesImg} alt="MMA gloves" className="w-full object-contain bg-secondary rounded-lg p-4" />
+              <img src={mmaGlovesImg} alt="MMA gloves" className="w-full object-contain bg-secondary rounded-lg p-6" />
               <img src={categoryMartialArts} alt="Martial Arts" className="w-full object-cover bg-secondary rounded-lg" />
             </div>
           </div>
           <div className="lg:order-1">
-            <div className="w-8 h-1 bg-primary mb-4" />
-            <h3 className="font-heading font-black text-2xl md:text-3xl text-foreground uppercase mb-5">
+            <div className="w-10 h-1 bg-primary mb-5" />
+            <h3 className="font-heading font-black text-2xl md:text-3xl lg:text-4xl text-foreground uppercase mb-6">
               Martial Arts
             </h3>
-            <p className="text-muted-foreground leading-relaxed mb-6 text-sm md:text-base">
-              Martial arts is the art of balance — between body, mind, and spirit. Our martial arts equipment 
-              is designed to provide the protection, flexibility, and durability that practitioners need for 
-              training and competition. Built with respect for tradition and a focus on performance.
+            <p className="text-muted-foreground leading-relaxed mb-8 text-sm md:text-base">
+              Martial arts is the art of balance — between body, mind, and spirit. Our martial arts equipment
+              is designed to provide the protection, flexibility, and durability that practitioners need for
+              training and competition. Built with respect for tradition and a focus on performance, our gear supports every move with precision.
             </p>
             <a
               href="#"
-              className="inline-block font-heading font-bold text-sm uppercase tracking-wider bg-primary text-primary-foreground px-8 py-3 hover:bg-primary/90 transition-colors"
+              className="inline-block font-heading font-bold text-sm uppercase tracking-wider bg-primary text-primary-foreground px-8 py-3.5 hover:bg-primary/90 transition-colors"
             >
               Explore More
             </a>
@@ -91,18 +91,18 @@ const CategoriesSection = () => {
             </div>
           </div>
           <div>
-            <div className="w-8 h-1 bg-primary mb-4" />
-            <h3 className="font-heading font-black text-2xl md:text-3xl text-foreground uppercase mb-5">
+            <div className="w-10 h-1 bg-primary mb-5" />
+            <h3 className="font-heading font-black text-2xl md:text-3xl lg:text-4xl text-foreground uppercase mb-6">
               Our Catalogue
             </h3>
-            <p className="text-muted-foreground leading-relaxed mb-6 text-sm md:text-base">
-              Step into the ring with confidence and power. Our Martial Arts & Boxing Collection is built 
-              for champions — combining precision craftsmanship, durable materials, and ergonomic designs 
+            <p className="text-muted-foreground leading-relaxed mb-8 text-sm md:text-base">
+              Step into the ring with confidence and power. Our Martial Arts & Boxing Collection is built
+              for champions — combining precision craftsmanship, durable materials, and ergonomic designs
               to deliver unmatched performance and protection.
             </p>
             <a
               href="#"
-              className="inline-block font-heading font-bold text-sm uppercase tracking-wider bg-primary text-primary-foreground px-8 py-3 hover:bg-primary/90 transition-colors"
+              className="inline-block font-heading font-bold text-sm uppercase tracking-wider bg-primary text-primary-foreground px-8 py-3.5 hover:bg-primary/90 transition-colors"
             >
               Explore More
             </a>

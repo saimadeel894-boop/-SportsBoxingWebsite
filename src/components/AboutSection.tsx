@@ -5,10 +5,10 @@ const AboutSection = () => {
   return (
     <section id="about" className="py-20 md:py-28 bg-background">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        {/* Top row: Logo + About Us heading + year/boxing label */}
+        {/* Top row: Logo + About Us heading + decorative gloves */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-16">
-          {/* Left: Logo */}
-          <div className="lg:col-span-4 flex justify-center">
+          {/* Left: Logo + year */}
+          <div className="lg:col-span-4 flex flex-col items-center gap-4">
             <img
               src={logoImg}
               alt="Eikyo International"
@@ -16,7 +16,7 @@ const AboutSection = () => {
             />
           </div>
 
-          {/* Center: About Us heading */}
+          {/* Center: About Us heading + Boxing subtitle */}
           <div className="lg:col-span-4 text-center">
             <h2 className="font-heading font-black text-4xl md:text-5xl lg:text-6xl text-foreground uppercase">
               About Us
@@ -40,12 +40,12 @@ const AboutSection = () => {
         {/* Description text */}
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <p className="text-muted-foreground leading-relaxed text-base md:text-lg">
-            Eikyo International® is based in Sialkot, Pakistan and powered by global expertise. 
+            Eikyo International® is based in Sialkot, Pakistan and powered by global expertise.
             It develops boxing, martial arts, MMA, and sports gear where enduring quality meets modern performance.
           </p>
           <p className="text-muted-foreground leading-relaxed text-base md:text-lg">
-            Driven by passion and precision, every Eikyo International® product is designed to empower athletes 
-            at every level — from amateurs to professionals — ensuring maximum comfort, durability, and confidence 
+            Driven by passion and precision, every Eikyo International® product is designed to empower athletes
+            at every level — from amateurs to professionals — ensuring maximum comfort, durability, and confidence
             in every movement.
           </p>
         </div>

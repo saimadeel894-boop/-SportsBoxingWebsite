@@ -45,8 +45,8 @@ const HowWeWork = () => {
             How We Work
           </h2>
           <p className="text-muted-foreground max-w-3xl mx-auto mt-4 leading-relaxed text-sm md:text-base">
-            At Eikyo International, we craft premium custom fightwear for martial artists and boxers who value 
-            performance, durability, and identity. From concept to delivery, we manage the entire process.
+            At Eikyo International, we craft premium custom fightwear for martial artists and boxers who value
+            performance, durability, and identity. From concept to delivery, we manage the entire process — making it seamless, reliable, and stress-free.
           </p>
         </div>
 

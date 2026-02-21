@@ -14,12 +14,12 @@ const Partners = () => {
         </div>
 
         {/* Scrolling marquee row */}
-        <div className="relative">
-          <div className="flex items-center gap-8 md:gap-12 animate-marquee">
+        <div className="relative overflow-hidden">
+          <div className="flex items-center gap-8 md:gap-12 animate-marquee whitespace-nowrap">
             {[...partnerLogos, ...partnerLogos, ...partnerLogos].map((name, i) => (
               <div
                 key={i}
-                className="flex-shrink-0 flex items-center justify-center w-32 h-20 md:w-40 md:h-24 bg-secondary rounded-md"
+                className="flex-shrink-0 flex items-center justify-center w-36 h-24 md:w-44 md:h-28 bg-secondary rounded-md"
               >
                 <span className="font-heading font-bold text-xs md:text-sm text-muted-foreground uppercase tracking-wider text-center px-2">
                   {name}

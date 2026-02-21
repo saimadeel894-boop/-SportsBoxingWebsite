@@ -12,7 +12,7 @@ const ContactForm = () => {
               Get in touch with us
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              We're here to assist you. Whether you're a distributor, gym owner, or brand looking for 
+              We're here to assist you. Whether you're a distributor, gym owner, or brand looking for
               premium sports equipment, Eikyo International is your trusted manufacturing partner.
             </p>
           </div>
@@ -22,26 +22,26 @@ const ContactForm = () => {
             <input
               type="text"
               placeholder="Your Name"
-              className="w-full px-4 py-3 bg-secondary border border-border rounded-md text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full px-4 py-3.5 bg-secondary border border-border rounded-md text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary"
             />
             <input
               type="email"
               placeholder="Email Address"
-              className="w-full px-4 py-3 bg-secondary border border-border rounded-md text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full px-4 py-3.5 bg-secondary border border-border rounded-md text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary"
             />
             <input
               type="tel"
               placeholder="Phone Number"
-              className="w-full px-4 py-3 bg-secondary border border-border rounded-md text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full px-4 py-3.5 bg-secondary border border-border rounded-md text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary"
             />
             <textarea
               placeholder="Message"
               rows={4}
-              className="w-full px-4 py-3 bg-secondary border border-border rounded-md text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary resize-none"
+              className="w-full px-4 py-3.5 bg-secondary border border-border rounded-md text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary resize-none"
             />
             <button
               type="submit"
-              className="font-heading font-bold text-sm uppercase tracking-wider bg-primary text-primary-foreground px-8 py-3 hover:bg-primary/90 transition-colors w-full sm:w-auto"
+              className="font-heading font-bold text-sm uppercase tracking-wider bg-primary text-primary-foreground px-8 py-3.5 hover:bg-primary/90 transition-colors w-full sm:w-auto"
             >
               Leave us a Message
             </button>

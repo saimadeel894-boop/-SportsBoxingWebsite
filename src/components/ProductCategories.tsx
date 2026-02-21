@@ -18,8 +18,8 @@ const ProductCategories = () => {
           </p>
         </div>
 
-        {/* Product grid — reference: 2 small left, 1 large center, 1 small right */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
+        {/* Product grid — 2 small left, 1 large center, 1 small right */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {/* Left column — 2 stacked */}
           <div className="flex flex-col gap-4">
             <a href="#" className="group bg-background p-5 text-center hover:shadow-lg transition-shadow">
@@ -39,7 +39,7 @@ const ProductCategories = () => {
           </div>
 
           {/* Center — featured large product spanning 2 columns */}
-          <a href="#" className="group bg-background p-8 text-center hover:shadow-lg transition-shadow lg:col-span-2 flex flex-col items-center justify-center">
+          <a href="#" className="group bg-background p-8 text-center hover:shadow-lg transition-shadow col-span-2 flex flex-col items-center justify-center">
             <div className="flex-1 flex items-center justify-center w-full">
               <img
                 src={glovesImg}
@@ -51,7 +51,7 @@ const ProductCategories = () => {
             <p className="text-sm text-muted-foreground mt-1">AB-858</p>
           </a>
 
-          {/* Right column — 1 product + empty space */}
+          {/* Right column — 1 product */}
           <div className="flex flex-col gap-4">
             <a href="#" className="group bg-background p-5 text-center hover:shadow-lg transition-shadow">
               <div className="aspect-square flex items-center justify-center">
@@ -66,15 +66,16 @@ const ProductCategories = () => {
 
         {/* Description text below products */}
         <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-          <div>
+          <div className="space-y-4">
             <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
-              Thanks to our exceptional quality and competitive prices, we have the privilege of creating 
-              significant value for our customers. Athletes and sports professionals promote our products, 
+              Thanks to our exceptional quality and competitive prices, we have the privilege of creating
+              significant value for our customers. Athletes and sports professionals promote our products,
               driving perfection.
             </p>
-            <p className="text-muted-foreground leading-relaxed text-sm md:text-base mt-4">
-              The business strategy of Eikyo International is simple: produce a high-quality product quickly 
+            <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
+              The business strategy of Eikyo International is simple: produce a high-quality product quickly
               and efficiently with meticulous attention to detail, while providing exceptional customer service.
+              We deliver worldwide, proving that technological advancements in business have made the world a much smaller place.
             </p>
           </div>
           <div className="flex justify-center">
@@ -92,13 +93,13 @@ const ProductCategories = () => {
         {/* Second paragraph block */}
         <div className="mt-12 max-w-4xl mx-auto space-y-4">
           <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
-            Eikyo International is an emerging brand, and our products are incredibly popular in the online market 
-            and sports stores around the world. We take pride in the high quality of our products and the great 
-            value they offer to customers.
+            Eikyo International is an emerging brand, and our products are incredibly popular in the online market
+            and sports stores around the world. We take pride in the high quality of our products and the great
+            value they offer to customers. We elevate sports to a higher level, as our products are endorsed by professional athletes and trainers.
           </p>
           <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
-            With the capacity to produce thousands of personalized sportswear items per month, we continuously 
-            invest in the latest technology and, more importantly, in the people who work for us.
+            With the capacity to produce thousands of personalized sportswear items per month, we continuously
+            invest in the latest technology and, more importantly, in the people who work for us. They ensure a product and service that our customers can rely on.
           </p>
         </div>
       </div>
