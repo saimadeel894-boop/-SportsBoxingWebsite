@@ -9,24 +9,24 @@ import logoImg from "@/assets/eikyo-logo.jpg";
 const HeroSection = () => {
   return (
     <section className="relative w-full h-[100vh] overflow-hidden bg-background">
-      {/* === LAYER 1: Giant brand text — vertically centered === */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-[1]">
-        <h1
-          className="font-heading font-black leading-[0.85] text-primary tracking-[-0.04em] whitespace-nowrap"
-          style={{ fontSize: "clamp(120px, 18vw, 340px)", opacity: 0.95 }}
-        >
-          EIKYO
-        </h1>
-      </div>
-
-      {/* === LAYER 2: Center fighter — overlaps text === */}
-      <div className="absolute inset-0 flex items-end justify-center z-[2] pointer-events-none">
+      {/* === LAYER 1: Center fighter — behind text === */}
+      <div className="absolute inset-0 flex items-end justify-center z-[1] pointer-events-none">
         <img
           src={boxerImg}
           alt="Professional fighter in fighting stance"
           className="h-[82vh] md:h-[88vh] lg:h-[92vh] max-w-[500px] md:max-w-[560px] lg:max-w-[620px] object-contain object-bottom"
           style={{ mixBlendMode: "multiply" }}
         />
+      </div>
+
+      {/* === LAYER 2: Giant brand text — overlaps fighter === */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-[2]">
+        <h1
+          className="font-heading font-black leading-[0.85] text-primary tracking-[-0.04em] whitespace-nowrap"
+          style={{ fontSize: "clamp(140px, 20vw, 380px)", opacity: 0.9, mixBlendMode: "multiply" }}
+        >
+          EIKYO
+        </h1>
       </div>
 
       {/* === Floating products === */}
