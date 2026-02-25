@@ -15,6 +15,7 @@ const HeroSection = () => {
           src={boxerImg}
           alt="Professional fighter in fighting stance"
           className="h-[60vh] md:h-[88vh] lg:h-[92vh] max-w-[280px] md:max-w-[560px] lg:max-w-[620px] object-contain object-bottom"
+          style={{ mixBlendMode: "multiply" }}
         />
       </div>
 
@@ -34,30 +35,35 @@ const HeroSection = () => {
         alt=""
         aria-hidden="true"
         className="absolute top-[8%] left-[6%] md:top-[12%] md:left-[24%] w-20 md:w-32 lg:w-36 z-[3] animate-float-1 pointer-events-none select-none opacity-70 drop-shadow-md"
+        style={{ mixBlendMode: "multiply" }}
       />
       <img
         src={headguardImg}
         alt=""
         aria-hidden="true"
         className="hidden md:block absolute top-[8%] left-[42%] w-28 lg:w-32 z-[1] animate-float-2 pointer-events-none select-none opacity-40 drop-shadow-md"
+        style={{ mixBlendMode: "multiply" }}
       />
       <img
         src={uniformImg}
         alt=""
         aria-hidden="true"
         className="absolute top-[28%] md:top-[22%] left-[2%] md:left-[1%] w-20 md:w-36 lg:w-44 z-[3] animate-float-3 pointer-events-none select-none opacity-60 drop-shadow-md"
+        style={{ mixBlendMode: "multiply" }}
       />
       <img
         src={glovesImg}
         alt=""
         aria-hidden="true"
         className="hidden md:block absolute bottom-[2%] left-[26%] w-28 lg:w-32 z-[3] animate-float-4 pointer-events-none select-none opacity-60 drop-shadow-md"
+        style={{ mixBlendMode: "multiply" }}
       />
       <img
         src={shinGuardsImg}
         alt=""
         aria-hidden="true"
         className="absolute top-[50%] md:top-[38%] right-[4%] md:right-[6%] w-16 md:w-24 lg:w-28 z-[1] animate-float-5 pointer-events-none select-none opacity-30 drop-shadow-md"
+        style={{ mixBlendMode: "multiply" }}
       />
 
       {/* === "choice of champions" === */}
@@ -78,7 +84,7 @@ const HeroSection = () => {
               key={i}
               className="w-6 h-6 md:w-11 md:h-11 rounded-full bg-secondary overflow-hidden border-2 border-background shadow-sm"
             >
-              <img src={src} alt="" className="w-full h-full object-cover" />
+              <img src={src} alt="" className="w-full h-full object-cover" style={{ mixBlendMode: "multiply" }} />
             </div>
           ))}
         </div>

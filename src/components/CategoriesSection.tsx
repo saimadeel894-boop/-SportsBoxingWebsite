@@ -33,8 +33,8 @@ const CategoriesSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
           <div className="relative">
             <div className="grid grid-cols-2 gap-4">
-              <img src={glovesImg} alt="Boxing gloves" className="w-full object-contain bg-secondary rounded-lg p-6" />
-              <img src={headguardImg} alt="Headguard" className="w-full object-contain bg-secondary rounded-lg p-6" />
+              <img src={glovesImg} alt="Boxing gloves" className="w-full object-contain bg-secondary rounded-lg p-6" style={{ mixBlendMode: "multiply" }} />
+              <img src={headguardImg} alt="Headguard" className="w-full object-contain bg-secondary rounded-lg p-6" style={{ mixBlendMode: "multiply" }} />
             </div>
           </div>
           <div>
@@ -60,7 +60,7 @@ const CategoriesSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
           <div className="lg:order-2">
             <div className="grid grid-cols-2 gap-4">
-              <img src={mmaGlovesImg} alt="MMA gloves" className="w-full object-contain bg-secondary rounded-lg p-6" />
+              <img src={mmaGlovesImg} alt="MMA gloves" className="w-full object-contain bg-secondary rounded-lg p-6" style={{ mixBlendMode: "multiply" }} />
               <img src={categoryMartialArts} alt="Martial Arts" className="w-full object-cover bg-secondary rounded-lg" />
             </div>
           </div>
@@ -87,7 +87,7 @@ const CategoriesSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="relative">
             <div className="aspect-[4/3] rounded-lg overflow-hidden bg-secondary">
-              <img src={glovesImg} alt="Our Catalogue" className="w-full h-full object-contain p-8" />
+              <img src={glovesImg} alt="Our Catalogue" className="w-full h-full object-contain p-8" style={{ mixBlendMode: "multiply" }} />
             </div>
           </div>
           <div>

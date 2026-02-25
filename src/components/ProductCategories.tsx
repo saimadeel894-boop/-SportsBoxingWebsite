@@ -14,7 +14,7 @@ const products = [
 
 const ProductCategories = () => {
   return (
-    <section id="products" className="py-20 md:py-28 bg-secondary/30">
+    <section id="products" className="py-20 md:py-28 bg-background">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         {/* Section header */}
         <div className="text-center mb-14">
@@ -35,14 +35,14 @@ const ProductCategories = () => {
           <div className="flex flex-col gap-4">
             <a href="#" className="group bg-card border border-border p-4 md:p-5 text-center hover:shadow-lg hover:border-primary/30 transition-all duration-300">
               <div className="aspect-square flex items-center justify-center">
-                <img src={uniformImg} alt="Karate Uniform" className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105" />
+                <img src={uniformImg} alt="Karate Uniform" className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105" style={{ mixBlendMode: "multiply" }} />
               </div>
               <h3 className="font-heading font-bold text-xs md:text-sm text-foreground uppercase tracking-wider mt-3">Karate Uniform</h3>
               <p className="text-xs text-muted-foreground mt-1">EK-KU-101</p>
             </a>
             <a href="#" className="group bg-card border border-border p-4 md:p-5 text-center hover:shadow-lg hover:border-primary/30 transition-all duration-300">
               <div className="aspect-square flex items-center justify-center">
-                <img src={shinGuardsImg} alt="Shin Guards" className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105" />
+                <img src={shinGuardsImg} alt="Shin Guards" className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105" style={{ mixBlendMode: "multiply" }} />
               </div>
               <h3 className="font-heading font-bold text-xs md:text-sm text-foreground uppercase tracking-wider mt-3">Shin Guards</h3>
               <p className="text-xs text-muted-foreground mt-1">EK-SG-201</p>
@@ -56,6 +56,7 @@ const ProductCategories = () => {
                 src={glovesImg}
                 alt="Karate Gloves"
                 className="max-h-[250px] md:max-h-[400px] w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+                style={{ mixBlendMode: "multiply" }}
               />
             </div>
             <h3 className="font-heading font-bold text-lg md:text-2xl text-foreground uppercase tracking-wider mt-4">Karate Gloves</h3>
@@ -67,14 +68,14 @@ const ProductCategories = () => {
           <div className="flex flex-col gap-4">
             <a href="#" className="group bg-card border border-border p-4 md:p-5 text-center hover:shadow-lg hover:border-primary/30 transition-all duration-300">
               <div className="aspect-square flex items-center justify-center">
-                <img src={mmaGlovesImg} alt="MMA Gloves" className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105" />
+                <img src={mmaGlovesImg} alt="MMA Gloves" className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105" style={{ mixBlendMode: "multiply" }} />
               </div>
               <h3 className="font-heading font-bold text-xs md:text-sm text-foreground uppercase tracking-wider mt-3">MMA Gloves</h3>
               <p className="text-xs text-muted-foreground mt-1">EK-MG-301</p>
             </a>
             <a href="#" className="group bg-card border border-border p-4 md:p-5 text-center hover:shadow-lg hover:border-primary/30 transition-all duration-300">
               <div className="aspect-square flex items-center justify-center">
-                <img src={headguardImg} alt="Head Guard" className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105" />
+                <img src={headguardImg} alt="Head Guard" className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105" style={{ mixBlendMode: "multiply" }} />
               </div>
               <h3 className="font-heading font-bold text-xs md:text-sm text-foreground uppercase tracking-wider mt-3">Head Guard</h3>
               <p className="text-xs text-muted-foreground mt-1">EK-HG-401</p>
@@ -97,7 +98,7 @@ const ProductCategories = () => {
             </p>
           </div>
           <div className="flex justify-center">
-            <img src={headguardImg} alt="Protective headguard" className="w-48 md:w-64 object-contain opacity-80" />
+            <img src={headguardImg} alt="Protective headguard" className="w-48 md:w-64 object-contain opacity-80" style={{ mixBlendMode: "multiply" }} />
           </div>
         </div>
 

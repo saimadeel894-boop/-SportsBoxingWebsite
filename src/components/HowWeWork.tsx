@@ -35,7 +35,7 @@ const steps = [
 
 const HowWeWork = () => {
   return (
-    <section className="py-20 md:py-28 bg-secondary/50">
+    <section className="py-20 md:py-28 bg-background">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="text-center mb-14">
           <p className="font-heading text-sm font-semibold text-primary uppercase tracking-[0.2em] mb-2">
