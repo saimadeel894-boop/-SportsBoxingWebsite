@@ -14,7 +14,7 @@ const HeroSection = () => {
         <img
           src={boxerImg}
           alt="Professional fighter in fighting stance"
-          className="h-[60vh] md:h-[88vh] lg:h-[92vh] max-w-[300px] md:max-w-[560px] lg:max-w-[620px] object-contain object-bottom"
+          className="h-[55vh] md:h-[88vh] lg:h-[92vh] max-w-[260px] md:max-w-[560px] lg:max-w-[620px] object-contain object-bottom"
           style={{ mixBlendMode: "multiply" }}
         />
       </div>
@@ -23,61 +23,61 @@ const HeroSection = () => {
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-[2]">
         <h1
           className="font-heading font-black leading-[0.85] text-primary tracking-[-0.04em] whitespace-nowrap"
-          style={{ fontSize: "clamp(80px, 20vw, 380px)", opacity: 0.9, mixBlendMode: "multiply" }}
+          style={{ fontSize: "clamp(60px, 20vw, 380px)", opacity: 0.85, mixBlendMode: "multiply" }}
         >
           EIKYO
         </h1>
       </div>
 
-      {/* === Floating products === */}
+      {/* === Floating products — hidden on mobile to reduce clutter === */}
       <img
         src={glovesImg}
         alt=""
         aria-hidden="true"
-        className="absolute top-[12%] left-[10%] md:left-[24%] w-16 md:w-32 lg:w-36 z-[3] animate-float-1 pointer-events-none select-none opacity-70 drop-shadow-md"
+        className="hidden md:block absolute top-[12%] left-[24%] w-32 lg:w-36 z-[3] animate-float-1 pointer-events-none select-none opacity-70 drop-shadow-md"
       />
       <img
         src={headguardImg}
         alt=""
         aria-hidden="true"
-        className="absolute top-[8%] left-[55%] md:left-[42%] w-14 md:w-28 lg:w-32 z-[1] animate-float-2 pointer-events-none select-none opacity-40 drop-shadow-md"
+        className="hidden md:block absolute top-[8%] left-[42%] w-28 lg:w-32 z-[1] animate-float-2 pointer-events-none select-none opacity-40 drop-shadow-md"
       />
       <img
         src={uniformImg}
         alt=""
         aria-hidden="true"
-        className="hidden md:block absolute top-[22%] left-[-3%] md:left-[1%] w-28 md:w-36 lg:w-44 z-[3] animate-float-3 pointer-events-none select-none opacity-60 drop-shadow-md"
+        className="hidden md:block absolute top-[22%] left-[1%] w-36 lg:w-44 z-[3] animate-float-3 pointer-events-none select-none opacity-60 drop-shadow-md"
       />
       <img
         src={glovesImg}
         alt=""
         aria-hidden="true"
-        className="hidden md:block absolute bottom-[2%] left-[22%] md:left-[26%] w-20 md:w-28 lg:w-32 z-[3] animate-float-4 pointer-events-none select-none opacity-60 drop-shadow-md"
+        className="hidden md:block absolute bottom-[2%] left-[26%] w-28 lg:w-32 z-[3] animate-float-4 pointer-events-none select-none opacity-60 drop-shadow-md"
       />
       <img
         src={shinGuardsImg}
         alt=""
         aria-hidden="true"
-        className="hidden md:block absolute top-[38%] right-[3%] md:right-[6%] w-16 md:w-24 lg:w-28 z-[1] animate-float-5 pointer-events-none select-none opacity-30 drop-shadow-md"
+        className="hidden md:block absolute top-[38%] right-[6%] w-24 lg:w-28 z-[1] animate-float-5 pointer-events-none select-none opacity-30 drop-shadow-md"
       />
 
       {/* === "choice of champions" === */}
-      <div className="absolute top-[28%] md:top-[32%] left-1/2 -translate-x-1/2 z-[4] pointer-events-none select-none">
-        <p className="font-heading text-[9px] md:text-xs text-muted-foreground uppercase tracking-[0.35em]">
+      <div className="absolute top-[32%] md:top-[32%] left-1/2 -translate-x-1/2 z-[4] pointer-events-none select-none">
+        <p className="font-heading text-[8px] md:text-xs text-muted-foreground uppercase tracking-[0.35em]">
           choice of champions
         </p>
       </div>
 
       {/* === 5K+ Customers — top right === */}
-      <div className="absolute top-[80px] md:top-[140px] right-[16px] md:right-[100px] lg:right-[140px] z-[5]">
-        <p className="font-heading font-black text-lg md:text-3xl lg:text-4xl text-foreground leading-none tracking-wider uppercase">
-          5K+ <span className="text-sm md:text-xl lg:text-2xl font-bold">Customers</span>
+      <div className="absolute top-[70px] md:top-[140px] right-[12px] md:right-[100px] lg:right-[140px] z-[5]">
+        <p className="font-heading font-black text-base md:text-3xl lg:text-4xl text-foreground leading-none tracking-wider uppercase">
+          5K+ <span className="text-xs md:text-xl lg:text-2xl font-bold">Customers</span>
         </p>
-        <div className="flex gap-1 md:gap-1.5 mt-2 md:mt-4">
+        <div className="flex gap-1 md:gap-1.5 mt-1.5 md:mt-4">
           {[glovesImg, headguardImg, shinGuardsImg, mmaGlovesImg, uniformImg].map((src, i) => (
             <div
               key={i}
-              className="w-7 h-7 md:w-11 md:h-11 rounded-full bg-secondary overflow-hidden border-2 border-background shadow-sm"
+              className="w-6 h-6 md:w-11 md:h-11 rounded-full bg-secondary overflow-hidden border-2 border-background shadow-sm"
             >
               <img src={src} alt="" className="w-full h-full object-cover" />
             </div>
@@ -86,27 +86,27 @@ const HeroSection = () => {
       </div>
 
       {/* === 10 Years Experience — bottom left === */}
-      <div className="absolute bottom-[60px] md:bottom-[100px] left-[16px] md:left-[100px] lg:left-[140px] z-[5]">
-        <p className="font-heading font-black text-4xl md:text-7xl lg:text-8xl text-foreground leading-none">
+      <div className="absolute bottom-[80px] md:bottom-[100px] left-[12px] md:left-[100px] lg:left-[140px] z-[5]">
+        <p className="font-heading font-black text-3xl md:text-7xl lg:text-8xl text-foreground leading-none">
           10
         </p>
-        <p className="font-heading font-medium text-xs md:text-lg text-foreground tracking-wide mt-1">
+        <p className="font-heading font-medium text-[10px] md:text-lg text-foreground tracking-wide mt-0.5 md:mt-1">
           Years Of Experience
         </p>
-        <div className="flex items-center gap-2 md:gap-2.5 mt-3 md:mt-6">
-          <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#25D366] flex items-center justify-center shadow-md">
-            <svg viewBox="0 0 24 24" className="w-4 h-4 md:w-5 md:h-5 text-primary-foreground fill-current">
+        <div className="flex items-center gap-1.5 md:gap-2.5 mt-2 md:mt-6">
+          <div className="w-7 h-7 md:w-10 md:h-10 rounded-full bg-[#25D366] flex items-center justify-center shadow-md">
+            <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 md:w-5 md:h-5 text-primary-foreground fill-current">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
               <path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.612.638l4.702-1.236A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.32 0-4.47-.767-6.2-2.063l-.353-.283-3.66.963.978-3.572-.31-.493A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
             </svg>
           </div>
-          <span className="font-heading text-xs md:text-sm font-semibold text-foreground">WhatsApp</span>
+          <span className="font-heading text-[10px] md:text-sm font-semibold text-foreground">WhatsApp</span>
         </div>
       </div>
 
       {/* === Circular brand badge — bottom right === */}
-      <div className="absolute bottom-[40px] md:bottom-[70px] right-[16px] md:right-[100px] lg:right-[140px] z-[5]">
-        <div className="relative w-24 h-24 md:w-40 md:h-40 lg:w-[180px] lg:h-[180px]">
+      <div className="absolute bottom-[60px] md:bottom-[70px] right-[12px] md:right-[100px] lg:right-[140px] z-[5]">
+        <div className="relative w-20 h-20 md:w-40 md:h-40 lg:w-[180px] lg:h-[180px]">
           <svg viewBox="0 0 200 200" className="w-full h-full animate-spin-slow">
             <defs>
               <path
@@ -121,7 +121,7 @@ const HeroSection = () => {
             </text>
           </svg>
           <div className="absolute inset-0 flex items-center justify-center">
-            <img src={logoImg} alt="Eikyo" className="w-10 h-10 md:w-16 md:h-16 object-contain rounded-full" />
+            <img src={logoImg} alt="Eikyo" className="w-8 h-8 md:w-16 md:h-16 object-contain rounded-full" />
           </div>
         </div>
       </div>
