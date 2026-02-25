@@ -14,8 +14,7 @@ const HeroSection = () => {
         <img
           src={boxerImg}
           alt="Professional fighter in fighting stance"
-          className="h-[55vh] md:h-[88vh] lg:h-[92vh] max-w-[260px] md:max-w-[560px] lg:max-w-[620px] object-contain object-bottom"
-          style={{ mixBlendMode: "multiply" }}
+          className="h-[60vh] md:h-[88vh] lg:h-[92vh] max-w-[280px] md:max-w-[560px] lg:max-w-[620px] object-contain object-bottom"
         />
       </div>
 
@@ -23,18 +22,18 @@ const HeroSection = () => {
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-[2]">
         <h1
           className="font-heading font-black leading-[0.85] text-primary tracking-[-0.04em] whitespace-nowrap"
-          style={{ fontSize: "clamp(60px, 20vw, 380px)", opacity: 0.85, mixBlendMode: "multiply" }}
+          style={{ fontSize: "clamp(70px, 20vw, 380px)", opacity: 0.82 }}
         >
           EIKYO
         </h1>
       </div>
 
-      {/* === Floating products — hidden on mobile to reduce clutter === */}
+      {/* === Floating products === */}
       <img
         src={glovesImg}
         alt=""
         aria-hidden="true"
-        className="hidden md:block absolute top-[12%] left-[24%] w-32 lg:w-36 z-[3] animate-float-1 pointer-events-none select-none opacity-70 drop-shadow-md"
+        className="absolute top-[8%] left-[6%] md:top-[12%] md:left-[24%] w-20 md:w-32 lg:w-36 z-[3] animate-float-1 pointer-events-none select-none opacity-70 drop-shadow-md"
       />
       <img
         src={headguardImg}
@@ -46,7 +45,7 @@ const HeroSection = () => {
         src={uniformImg}
         alt=""
         aria-hidden="true"
-        className="hidden md:block absolute top-[22%] left-[1%] w-36 lg:w-44 z-[3] animate-float-3 pointer-events-none select-none opacity-60 drop-shadow-md"
+        className="absolute top-[28%] md:top-[22%] left-[2%] md:left-[1%] w-20 md:w-36 lg:w-44 z-[3] animate-float-3 pointer-events-none select-none opacity-60 drop-shadow-md"
       />
       <img
         src={glovesImg}
@@ -58,11 +57,11 @@ const HeroSection = () => {
         src={shinGuardsImg}
         alt=""
         aria-hidden="true"
-        className="hidden md:block absolute top-[38%] right-[6%] w-24 lg:w-28 z-[1] animate-float-5 pointer-events-none select-none opacity-30 drop-shadow-md"
+        className="absolute top-[50%] md:top-[38%] right-[4%] md:right-[6%] w-16 md:w-24 lg:w-28 z-[1] animate-float-5 pointer-events-none select-none opacity-30 drop-shadow-md"
       />
 
       {/* === "choice of champions" === */}
-      <div className="absolute top-[32%] md:top-[32%] left-1/2 -translate-x-1/2 z-[4] pointer-events-none select-none">
+      <div className="absolute top-[36%] md:top-[32%] left-1/2 -translate-x-1/2 z-[4] pointer-events-none select-none">
         <p className="font-heading text-[8px] md:text-xs text-muted-foreground uppercase tracking-[0.35em]">
           choice of champions
         </p>
