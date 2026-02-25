@@ -18,7 +18,7 @@ const Navbar = () => {
     { label: "PRODUCTS", href: "#products", dropdown: true },
     { label: "CATALOGUE", href: "#" },
     { label: "CONTACT US", href: "#contact" },
-    { label: "OUR UNIQUE WORK", href: "#", dropdown: true },
+    { label: "OUR WORK", href: "#", dropdown: true },
   ];
 
   return (
@@ -32,7 +32,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 lg:px-8">
         {/* Logo */}
         <a href="#" className="flex items-center">
-          <img src={logoImg} alt="Eikyo International" className="h-10 md:h-12 w-auto object-contain" />
+          <img src={logoImg} alt="Eikyo International" className="h-9 md:h-12 w-auto object-contain" />
         </a>
 
         {/* Desktop Nav */}
@@ -41,7 +41,7 @@ const Navbar = () => {
             <li key={link.label}>
               <a
                 href={link.href}
-                className="font-heading text-sm font-semibold tracking-wider text-foreground hover:text-primary transition-colors flex items-center gap-1"
+                className="font-heading text-xs md:text-sm font-semibold tracking-wider text-foreground hover:text-primary transition-colors flex items-center gap-1"
               >
                 {link.label}
                 {link.dropdown && <ChevronDown size={14} />}
