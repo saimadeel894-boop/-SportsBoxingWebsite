@@ -12,14 +12,13 @@ const OurWork = () => {
             Our Work
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto mt-4 leading-relaxed">
-            See our customers and how much they are happy with us
+            See our craftsmanship in action — trusted by athletes and teams around the world.
           </p>
         </div>
 
-        {/* Customer work gallery — 4 columns */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
           {[glovesImg, headguardImg, shinGuardsImg, mmaGlovesImg].map((img, i) => (
-            <div key={i} className="aspect-square rounded-lg overflow-hidden bg-background group">
+            <div key={i} className="aspect-square rounded-lg overflow-hidden bg-card border border-border group">
               <img
                 src={img}
                 alt={`Customer work ${i + 1}`}
