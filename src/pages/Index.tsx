@@ -9,21 +9,22 @@ import HowWeWork from "@/components/HowWeWork";
 import ContactForm from "@/components/ContactForm";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       <HeroSection />
-      <AboutSection />
-      <ProductCategories />
-      <CategoriesSection />
-      <OurWork />
-      <Partners />
-      <HowWeWork />
-      <ContactForm />
-      <WhyChooseUs />
-      <Footer />
+      <ScrollReveal><AboutSection /></ScrollReveal>
+      <ScrollReveal><ProductCategories /></ScrollReveal>
+      <ScrollReveal><CategoriesSection /></ScrollReveal>
+      <ScrollReveal><OurWork /></ScrollReveal>
+      <ScrollReveal><Partners /></ScrollReveal>
+      <ScrollReveal><HowWeWork /></ScrollReveal>
+      <ScrollReveal><ContactForm /></ScrollReveal>
+      <ScrollReveal><WhyChooseUs /></ScrollReveal>
+      <ScrollReveal><Footer /></ScrollReveal>
     </div>
   );
 };
