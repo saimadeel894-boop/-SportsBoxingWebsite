@@ -21,8 +21,8 @@ const HeroSection = () => {
       {/* === LAYER 2: Giant brand text — overlaps fighter === */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-[2]">
         <h1
-          className="font-heading font-black leading-[0.85] text-primary tracking-[-0.04em] whitespace-nowrap"
-          style={{ fontSize: "clamp(60px, 20vw, 380px)", opacity: 0.82 }}
+          className="font-black leading-[0.85] text-primary tracking-[-0.02em] whitespace-nowrap"
+          style={{ fontSize: "clamp(60px, 20vw, 380px)", opacity: 0.82, fontFamily: "'Anton', sans-serif" }}
         >
           EIKYO
         </h1>
