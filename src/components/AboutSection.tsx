@@ -33,7 +33,7 @@ const AboutSection = () => {
               alt=""
               aria-hidden="true"
                className="w-28 md:w-48 object-contain opacity-80"
-               style={{ mixBlendMode: "multiply" }}
+               
             />
           </div>
         </div>
