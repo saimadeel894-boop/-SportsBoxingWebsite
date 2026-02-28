@@ -32,7 +32,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 lg:px-8">
         {/* Logo */}
         <a href="#" className="flex items-center">
-          <img src={logoImg} alt="Eikyo International" className="h-9 md:h-12 w-auto object-contain" />
+          <img src={logoImg} alt="EIKYO International" className="h-9 md:h-12 w-auto object-contain" />
         </a>
 
         {/* Desktop Nav */}

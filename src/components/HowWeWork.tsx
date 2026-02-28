@@ -19,7 +19,7 @@ const steps = [
   {
     icon: Shield,
     title: "Quality Assurance",
-    description: "Each item undergoes strict quality checks to ensure it matches the approved design and our exacting standards.",
+    description: "Each item undergoes strict quality checks to ensure it matches the approved design.",
   },
   {
     icon: Truck,
@@ -41,7 +41,7 @@ const HowWeWork = () => {
             How<br />We Work
           </h2>
           <p className="text-foreground max-w-4xl mx-auto mt-6 md:mt-8 leading-relaxed text-sm md:text-base">
-            At Eikyo International, we craft premium custom fightwear for martial artists and boxers who value
+            At EIKYO International, we craft premium custom fightwear for martial artists and boxers who value
             performance, durability, and identity. From training apparel to competition gear, each design is tailored
             to reflect your discipline, strength, and unique style. From concept to delivery, we manage the entire
             process — making it seamless, reliable, and stress-free. Here's our approach.

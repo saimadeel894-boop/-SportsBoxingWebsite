@@ -34,14 +34,13 @@ const AboutSection = () => {
           {/* Right side: Brand description text */}
           <div className="flex flex-col justify-start pt-0 lg:pt-16">
             <p className="text-foreground text-base md:text-xl lg:text-2xl leading-relaxed font-medium mb-6 md:mb-8">
-              <span className="text-primary font-bold">Eikyo International®</span> is headquartered in Sialkot,
-              Pakistan, and powered by global expertise. We specialise in manufacturing premium boxing, martial arts,
+              <span className="text-primary font-bold">EIKYO International®</span> is based in Wiesbaden and powered by global expertise. It develops boxing, martial arts,
               MMA, and sports gear where enduring quality meets modern performance.
             </p>
             <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-8 md:mb-10">
-              Driven by passion and precision, every Eikyo International® product is designed to empower athletes
-              at every level — from beginners to elite professionals — ensuring maximum comfort, durability, and
-              confidence in every movement.
+              Driven by passion and precision, every EIKYO International® product is designed to empower athletes
+              at every level — from amateurs to professionals — ensuring maximum comfort, durability, and
+              confidence in every movement. Our commitment to superior craftsmanship and cutting-edge materials reflects our dedication to performance without compromise.
             </p>
             <a
               href="#"

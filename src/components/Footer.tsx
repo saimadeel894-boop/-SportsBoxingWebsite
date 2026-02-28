@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
           {/* Brand */}
           <div className="col-span-2 lg:col-span-1">
-            <img src={logoImg} alt="Eikyo International" className="h-10 md:h-12 w-auto mb-4" />
+            <img src={logoImg} alt="EIKYO International" className="h-10 md:h-12 w-auto mb-4" />
             <p className="text-xs md:text-sm leading-relaxed text-muted-foreground mb-4">
               Premium combat sports equipment manufacturer based in Sialkot, Pakistan.
               Empowering champions worldwide.
@@ -93,7 +93,7 @@ const Footer = () => {
       <div className="border-t border-border py-5 md:py-6">
         <div className="max-w-7xl mx-auto px-5 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-3">
           <p className="text-[10px] md:text-xs text-muted-foreground">
-            © 2026 Eikyo International. All rights reserved.
+            © 2026 EIKYO International. All rights reserved.
           </p>
           <div className="flex gap-5">
             <a href="#" className="text-[10px] md:text-xs text-muted-foreground hover:text-primary transition-colors">Privacy Policy</a>

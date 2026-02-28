@@ -1,9 +1,9 @@
 
 
-# Arbiter International — Hero Section Recreation
+# EIKYO International — Hero Section Recreation
 
 ## Overview
-Recreate the hero section of Arbiter International's website — a bold, sports-focused landing page for a combat sports equipment brand based in Sialkot, Pakistan.
+Recreate the hero section of EIKYO International's website — a bold, sports-focused landing page for a combat sports equipment brand based in Sialkot, Pakistan.
 
 ## Hero Section Features
 
@@ -16,12 +16,12 @@ Recreate the hero section of Arbiter International's website — a bold, sports-
 
 ### Hero Content Area
 - **Full-width hero** with a white/light background
-- **Large "ARBITER" text** in bold red outlined/stroke typography spanning the full width, layered behind a central boxer image
+- **Large "EIKYO" text** in bold red outlined/stroke typography spanning the full width, layered behind a central boxer image
 - **Boxer image** centered, overlapping the text (fighter in boxing stance with gloves)
 - **"CHOICE OF CHAMPIONS"** tagline in uppercase black text on the left side
 - **"5K+ CUSTOMERS"** stat in the upper right with small product thumbnail images
-- **"30+ Years Of Experience"** stat in the bottom left
-- **Rotating circular badge** (bottom right) — Arbiter International logo with text spinning around it
+- **"10 Years Of Experience"** stat in the bottom left
+- **Rotating circular badge** (bottom right) — EIKYO International logo with text spinning around it
 - **Floating product images** — boxing gloves and mouthguard scattered around the edges for visual flair
 
 ### Design Details
