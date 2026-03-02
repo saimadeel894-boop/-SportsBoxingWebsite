@@ -66,17 +66,11 @@ const HeroSection = () => {
         EIKYO
       </h1>
 
-      {/* === "choice of champions" with uniform image — left side === */}
       <div
         className="absolute pointer-events-none hidden md:flex items-center gap-4"
         style={{ left: "4%", top: "52%", zIndex: 6 }}
       >
-        <img
-          src={uniformImg}
-          alt=""
-          aria-hidden="true"
-          className="w-[100px] h-[120px] object-contain"
-        />
+        <img src={uniformImg} alt="" aria-hidden="true" className="w-[100px] h-[120px] object-contain" />
         <p className="font-heading text-[23px] font-bold text-foreground uppercase" style={{ letterSpacing: "3px" }}>
           choice of champions
         </p>
@@ -104,12 +98,7 @@ const HeroSection = () => {
         </div>
         <div className="flex items-center gap-3 mt-2">
           {[glovesImg, headguardImg, shinGuardsImg, mmaGlovesImg].map((img, i) => (
-            <img
-              key={i}
-              src={img}
-              alt=""
-              className="w-8 h-8 rounded-full object-contain bg-secondary"
-            />
+            <img key={i} src={img} alt="" className="w-8 h-8 rounded-full object-contain bg-secondary" />
           ))}
         </div>
       </div>
@@ -131,7 +120,11 @@ const HeroSection = () => {
           <img src={uniformImg} alt="" className="w-[60px] h-[80px] object-contain" />
           <div>
             <h3 className="font-heading text-[28px] font-extrabold text-foreground leading-none">10+</h3>
-            <p className="font-heading text-[13px] font-medium text-foreground/70 mt-1">Years Of<br />Experience</p>
+            <p className="font-heading text-[13px] font-medium text-foreground/70 mt-1">
+              Years Of
+              <br />
+              Experience
+            </p>
           </div>
         </div>
       </div>
@@ -161,32 +154,31 @@ const HeroSection = () => {
       />
 
       {/* === Circular brand badge — bottom right === */}
-      <div
-        className="absolute"
-        style={{ right: "6%", bottom: "10%", zIndex: 5 }}
-      >
+      <div className="absolute" style={{ right: "6%", bottom: "10%", zIndex: 5 }}>
         <div className="relative w-28 h-28 md:w-44 md:h-44">
           <svg viewBox="0 0 200 200" className="w-full h-full animate-spin-slow">
             <defs>
-              <path
-                id="circlePath"
-                d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0"
-              />
+              <path id="circlePath" d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0" />
             </defs>
             <text className="fill-foreground font-heading text-[15px] font-bold uppercase tracking-[0.3em]">
-              <textPath href="#circlePath">
-                • EIKYO INTERNATIONAL • EIKYO INTERNATIONAL •
-              </textPath>
+              <textPath href="#circlePath">• EIKYO INTERNATIONAL • EIKYO INTERNATIONAL •</textPath>
             </text>
           </svg>
           <div className="absolute inset-0 flex items-center justify-center">
-            <img src={logoImg} alt="EIKYO International" className="w-12 h-12 md:w-20 md:h-20 object-contain rounded-full" />
+            <img
+              src={logoImg}
+              alt="EIKYO International"
+              className="w-12 h-12 md:w-20 md:h-20 object-contain rounded-full"
+            />
           </div>
         </div>
       </div>
 
       {/* === Mobile: choice of champions at bottom center === */}
-      <div className="absolute bottom-[22%] left-0 right-0 pointer-events-none md:hidden text-center" style={{ zIndex: 4 }}>
+      <div
+        className="absolute bottom-[22%] left-0 right-0 pointer-events-none md:hidden text-center"
+        style={{ zIndex: 4 }}
+      >
         <p className="font-heading text-xs font-bold text-foreground uppercase tracking-[0.15em]">
           choice of champions
         </p>
