@@ -9,7 +9,7 @@ const Footer = () => {
           <div className="col-span-2 md:col-span-1 space-y-4">
             <img src={logoImg} alt="EIKYO International" className="h-12 w-auto object-contain" />
             <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
-              EIKYO International is a leading manufacturer of premium combat sports equipment, dedicated to empowering athletes worldwide.
+              EIKYO International is a leading manufacturer and exporter of boxing equipment, martial arts, MMA, and Muay Thai gear.
             </p>
             <div className="flex gap-3">
               {[
@@ -45,7 +45,7 @@ const Footer = () => {
           <div>
             <h4 className="font-heading font-black text-xs uppercase tracking-widest mb-6 text-foreground">Products</h4>
             <ul className="space-y-3">
-              {["Boxing", "Martial Arts", "MMA", "Training Gear", "Safety Equipment"].map((link) => (
+              {["Boxing Equipment", "Martial Arts", "MMA", "Muay Thai", "Training Gear"].map((link) => (
                 <li key={link}>
                   <a href="#" className="text-muted-foreground text-sm hover:text-primary transition-colors">{link}</a>
                 </li>

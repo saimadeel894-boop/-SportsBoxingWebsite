@@ -1,4 +1,4 @@
-import boxerImg from "@/assets/boxer-hero.png";
+import fighterImg from "@/assets/fighter-hero.webp";
 import glovesImg from "@/assets/boxing-gloves.png";
 import headguardImg from "@/assets/headguard.png";
 import uniformImg from "@/assets/martial-arts-uniform.png";
@@ -8,85 +8,141 @@ import logoImg from "@/assets/eikyo-logo.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative w-full h-[100svh] overflow-hidden bg-white">
-      {/* === LAYER 1: Giant brand text — solid red, behind fighter === */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-[1]">
-        <h1
-          className="font-accent leading-[0.85] text-primary tracking-[-0.02em] whitespace-nowrap"
-          style={{ fontSize: "clamp(80px, 28vw, 550px)", opacity: 0.85 }}
-        >
-          EIKYO
-        </h1>
-      </div>
+    <section className="relative w-full bg-white overflow-hidden" style={{ height: "min(100vh, 950px)" }}>
+      {/* === LAYER 1: Solid red brand text — BEHIND fighter === */}
+      <h1
+        className="absolute pointer-events-none select-none font-accent whitespace-nowrap"
+        style={{
+          fontSize: "clamp(220px, 22vw, 420px)",
+          lineHeight: "0.92",
+          letterSpacing: "0.08em",
+          color: "#FF3A2D",
+          WebkitTextStroke: "4px #FF0000",
+          left: "50%",
+          top: "50%",
+          transform: "translate(-50%, -35%)",
+          zIndex: 1,
+        }}
+      >
+        EIKYO
+      </h1>
 
-      {/* === LAYER 2: Center fighter — above text === */}
-      <div className="absolute inset-0 flex items-end justify-center z-[2] pointer-events-none">
+      {/* === LAYER 2: Fighter image — ABOVE solid text === */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          left: "50%",
+          transform: "translateX(-50%)",
+          bottom: 0,
+          zIndex: 2,
+          height: "95%",
+          display: "flex",
+          alignItems: "flex-end",
+          justifyContent: "center",
+        }}
+      >
         <img
-          src={boxerImg}
+          src={fighterImg}
           alt="Professional fighter in fighting stance"
-          className="h-[60vh] md:h-[85vh] lg:h-[92vh] w-auto object-contain object-bottom"
+          className="h-full w-auto object-contain object-bottom"
         />
       </div>
 
-      {/* === "choice of champions" — left side like reference === */}
-      <div className="absolute top-[35%] left-[5%] md:left-[8%] z-[3] pointer-events-none hidden md:block">
-        <p className="font-heading text-sm md:text-base font-bold text-foreground lowercase tracking-[0.15em]">
+      {/* === LAYER 3: Outline text — IN FRONT of fighter (3D depth effect) === */}
+      <h1
+        className="absolute pointer-events-none select-none font-accent whitespace-nowrap"
+        style={{
+          fontSize: "clamp(220px, 22vw, 420px)",
+          lineHeight: "0.92",
+          letterSpacing: "0.08em",
+          color: "transparent",
+          WebkitTextStroke: "4px #FF3A2D",
+          left: "50%",
+          top: "50%",
+          transform: "translate(-50%, -35%)",
+          zIndex: 3,
+        }}
+      >
+        EIKYO
+      </h1>
+
+      {/* === "choice of champions" — left side === */}
+      <div
+        className="absolute pointer-events-none hidden md:block"
+        style={{ left: "12%", top: "60%", zIndex: 4 }}
+      >
+        <p className="font-heading text-lg md:text-[23px] font-bold text-foreground uppercase" style={{ letterSpacing: "3px" }}>
           choice of champions
         </p>
       </div>
 
       {/* === 5K+ CUSTOMERS — top right === */}
-      <div className="absolute top-[12%] right-[5%] md:right-[8%] z-[4]">
-        <h3 className="font-heading font-black text-sm md:text-xl text-foreground uppercase tracking-wider">
-          5K+ Customers
+      <div
+        className="absolute"
+        style={{ right: "8%", top: "7%", zIndex: 4 }}
+      >
+        <h3
+          className="font-accent text-2xl md:text-[30px] text-foreground leading-tight"
+        >
+          5k+<br />Customers
         </h3>
-        <div className="flex -space-x-2 mt-2">
+        <div className="flex -space-x-2 mt-3">
           {[glovesImg, headguardImg, shinGuardsImg, mmaGlovesImg].map((img, i) => (
             <img
               key={i}
               src={img}
               alt=""
-              className="w-8 h-8 md:w-10 md:h-10 rounded-full object-contain bg-secondary border-2 border-white"
+              className="w-10 h-10 md:w-12 md:h-12 rounded-full object-contain bg-secondary border-2 border-white"
             />
           ))}
         </div>
       </div>
 
-      {/* === 10 Years Of Experience — bottom left === */}
-      <div className="absolute bottom-[8%] md:bottom-[12%] left-[5%] md:left-[8%] z-[4]">
-        <h3 className="font-accent text-4xl md:text-6xl text-foreground leading-none">10+</h3>
-        <p className="font-heading text-xs md:text-sm text-foreground/70 mt-1">Years Of Experience</p>
+      {/* === 10+ Years Of Experience — bottom left === */}
+      <div
+        className="absolute"
+        style={{ left: "12%", bottom: "15%", zIndex: 4 }}
+      >
+        <h3 className="font-accent text-5xl md:text-7xl text-foreground leading-none">10+</h3>
+        <p className="font-heading text-sm md:text-base text-foreground/70 mt-1">Years Of Experience</p>
       </div>
 
-      {/* === Floating products — full opacity, clean PNGs like reference === */}
+      {/* === Floating products — clean PNGs, no containers === */}
       <img
         src={glovesImg}
         alt=""
         aria-hidden="true"
-        className="absolute top-[12%] left-[3%] md:left-[6%] w-20 md:w-36 z-[1] animate-float-1"
+        className="absolute w-24 md:w-36 animate-float-1"
+        style={{ top: "10%", left: "5%", zIndex: 5 }}
       />
       <img
         src={headguardImg}
         alt=""
         aria-hidden="true"
-        className="absolute top-[8%] right-[15%] md:right-[20%] w-16 md:w-28 z-[1] animate-float-2 opacity-60"
+        className="absolute w-16 md:w-28 animate-float-2 opacity-60"
+        style={{ top: "8%", right: "22%", zIndex: 5 }}
       />
       <img
         src={uniformImg}
         alt=""
         aria-hidden="true"
-        className="absolute bottom-[15%] left-[3%] md:left-[5%] w-20 md:w-36 z-[1] animate-float-3 opacity-80"
+        className="absolute w-24 md:w-36 animate-float-3 opacity-80"
+        style={{ bottom: "12%", left: "4%", zIndex: 5 }}
       />
       <img
         src={shinGuardsImg}
         alt=""
         aria-hidden="true"
-        className="absolute bottom-[30%] right-[3%] md:right-[5%] w-14 md:w-24 z-[1] animate-float-4 opacity-50"
+        className="absolute w-16 md:w-24 animate-float-4 opacity-50"
+        style={{ bottom: "30%", right: "4%", zIndex: 5 }}
       />
 
       {/* === Circular brand badge — bottom right === */}
-      <div className="absolute bottom-[8%] md:bottom-[10%] right-[5%] md:right-[8%] z-[5]">
-        <div className="relative w-24 h-24 md:w-40 md:h-40">
+      <div
+        className="absolute"
+        style={{ right: "6%", bottom: "10%", zIndex: 5 }}
+      >
+        <div className="relative w-28 h-28 md:w-44 md:h-44">
           <svg viewBox="0 0 200 200" className="w-full h-full animate-spin-slow">
             <defs>
               <path
@@ -101,14 +157,14 @@ const HeroSection = () => {
             </text>
           </svg>
           <div className="absolute inset-0 flex items-center justify-center">
-            <img src={logoImg} alt="EIKYO International" className="w-10 h-10 md:w-16 md:h-16 object-contain rounded-full" />
+            <img src={logoImg} alt="EIKYO International" className="w-12 h-12 md:w-20 md:h-20 object-contain rounded-full" />
           </div>
         </div>
       </div>
 
       {/* === Mobile: choice of champions at bottom center === */}
-      <div className="absolute bottom-[25%] left-0 right-0 z-[3] pointer-events-none md:hidden text-center">
-        <p className="font-heading text-xs font-bold text-foreground lowercase tracking-[0.15em]">
+      <div className="absolute bottom-[22%] left-0 right-0 pointer-events-none md:hidden text-center" style={{ zIndex: 4 }}>
+        <p className="font-heading text-xs font-bold text-foreground uppercase tracking-[0.15em]">
           choice of champions
         </p>
       </div>
