@@ -76,35 +76,58 @@ const HeroSection = () => {
         </p>
       </div>
 
-      {/* === 5K+ CUSTOMERS — top right === */}
+      {/* === 5K+ CUSTOMERS — top right card === */}
       <div
-        className="absolute"
-        style={{ right: "8%", top: "7%", zIndex: 4 }}
+        className="absolute hidden md:block"
+        style={{
+          right: "4%",
+          top: "25%",
+          zIndex: 10,
+          background: "#FFFFFF",
+          borderRadius: "16px",
+          boxShadow: "0 8px 32px rgba(0,0,0,0.12)",
+          padding: "16px 20px",
+        }}
       >
-        <h3
-          className="font-accent text-2xl md:text-[30px] text-foreground leading-tight"
-        >
-          5k+<br />Customers
-        </h3>
-        <div className="flex -space-x-2 mt-3">
+        <div className="flex items-center gap-3 mb-2">
+          <img src={headguardImg} alt="" className="w-12 h-12 object-contain" />
+          <div>
+            <h3 className="font-heading text-[28px] font-extrabold text-foreground leading-none">5k+</h3>
+            <p className="font-heading text-[14px] font-semibold text-foreground">Customers</p>
+          </div>
+        </div>
+        <div className="flex items-center gap-3 mt-2">
           {[glovesImg, headguardImg, shinGuardsImg, mmaGlovesImg].map((img, i) => (
             <img
               key={i}
               src={img}
               alt=""
-              className="w-10 h-10 md:w-12 md:h-12 rounded-full object-contain bg-secondary border-2 border-white"
+              className="w-8 h-8 rounded-full object-contain bg-secondary"
             />
           ))}
         </div>
       </div>
 
-      {/* === 10+ Years Of Experience — bottom left === */}
+      {/* === 10+ Years Of Experience — bottom left card === */}
       <div
-        className="absolute"
-        style={{ left: "12%", bottom: "15%", zIndex: 4 }}
+        className="absolute hidden md:block"
+        style={{
+          left: "4%",
+          bottom: "12%",
+          zIndex: 10,
+          background: "#FFFFFF",
+          borderRadius: "16px",
+          boxShadow: "0 8px 32px rgba(0,0,0,0.12)",
+          padding: "16px 20px",
+        }}
       >
-        <h3 className="font-accent text-5xl md:text-7xl text-foreground leading-none">10+</h3>
-        <p className="font-heading text-sm md:text-base text-foreground/70 mt-1">Years Of Experience</p>
+        <div className="flex items-center gap-4">
+          <img src={uniformImg} alt="" className="w-[60px] h-[80px] object-contain" />
+          <div>
+            <h3 className="font-heading text-[28px] font-extrabold text-foreground leading-none">10+</h3>
+            <p className="font-heading text-[13px] font-medium text-foreground/70 mt-1">Years Of<br />Experience</p>
+          </div>
+        </div>
       </div>
 
       {/* === Floating products — clean PNGs, no containers === */}
