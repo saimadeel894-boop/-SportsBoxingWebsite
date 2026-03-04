@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import fighterImg from "@/assets/fighter-hero.webp";
-import pinkGloveImg from "@/assets/pink-boxing-glove.png";
+import glovesImg from "@/assets/boxing-gloves.png";
 import headguardImg from "@/assets/headguard.png";
 import uniformImg from "@/assets/martial-arts-uniform.png";
 import shinGuardsImg from "@/assets/shin-guards.png";
@@ -147,7 +147,7 @@ const HeroSection = () => {
           style={{ top: "-10px", left: "-30px", animationDelay: "1.0s" }}
         />
         <img
-          src={pinkGloveImg}
+          src={glovesImg}
           alt=""
           aria-hidden="true"
           className="w-20 md:w-32"
@@ -252,7 +252,7 @@ const HeroSection = () => {
       >
         <RedArrow direction="right" className="w-8 hero-fade-in" style={{ animationDelay: "1.0s" }} />
         <div className="flex items-center gap-1 hero-product-icons">
-          {[pinkGloveImg, headguardImg, shinGuardsImg, mmaGlovesImg, uniformImg].map((img, i) => (
+          {[glovesImg, headguardImg, shinGuardsImg, mmaGlovesImg, uniformImg].map((img, i) => (
             <img
               key={i}
               src={img}
