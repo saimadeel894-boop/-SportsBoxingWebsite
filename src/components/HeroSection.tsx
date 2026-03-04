@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import fighterImg from "@/assets/fighter-hero.webp";
-import glovesImg from "@/assets/boxing-gloves.png";
+import pinkGloveImg from "@/assets/pink-boxing-glove.png";
 import headguardImg from "@/assets/headguard.png";
 import uniformImg from "@/assets/martial-arts-uniform.png";
 import shinGuardsImg from "@/assets/shin-guards.png";
@@ -48,22 +48,34 @@ const HeroSection = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [handleScroll]);
 
+  useEffect(() => {
+    const handleParallax = () => {
+      const y = window.scrollY;
+      document.querySelectorAll<HTMLElement>(".hero-eikyo-parallax").forEach((el) => {
+        el.style.transform = `translate(-50%, -30%) translateY(${y * 0.2}px)`;
+      });
+    };
+
+    window.addEventListener("scroll", handleParallax, { passive: true });
+    handleParallax();
+    return () => window.removeEventListener("scroll", handleParallax);
+  }, []);
+
   // Fix 2: Boxer scale 0.75 → 1.0
   const boxerScale = 0.75 + scrollProgress * 0.25;
-  // Fix 3: Text opacity 0.35 → 1.0
-  const textOpacity = 0.35 + scrollProgress * 0.65;
+  const textOpacity = 1;
 
   return (
     <section
       ref={sectionRef}
       className="relative w-full bg-background overflow-hidden"
-      style={{ height: "min(100vh, 950px)" }}
+      style={{ height: "min(100vh, 950px)", backgroundColor: "#FFFFFF" }}
     >
       {/* === LAYER 1: Solid red brand text — BEHIND fighter === */}
       <h1
-        className="absolute pointer-events-none select-none font-accent whitespace-nowrap"
+        className="absolute pointer-events-none select-none font-accent whitespace-nowrap hero-eikyo-parallax"
         style={{
-          fontSize: "clamp(180px, 20vw, 380px)",
+          fontSize: "28vw",
           lineHeight: "0.92",
           letterSpacing: "0.04em",
           color: "#E8171A",
@@ -72,10 +84,9 @@ const HeroSection = () => {
           transform: "translate(-50%, -30%)",
           zIndex: 1,
           opacity: textOpacity,
-          transition: "opacity 0.1s ease-out",
         }}
       >
-        EIKYO
+        <span className="hero-eikyo-text">EIKYO</span>
       </h1>
 
       {/* === LAYER 2: Fighter image — ABOVE solid text === */}
@@ -97,15 +108,15 @@ const HeroSection = () => {
         <img
           src={fighterImg}
           alt="Professional fighter in fighting stance"
-          className="h-full w-auto object-contain object-bottom"
+          className="h-full w-auto object-contain object-bottom hero-boxer-image"
         />
       </div>
 
       {/* === LAYER 3: Outline text — IN FRONT of fighter (3D depth) === */}
       <h1
-        className="absolute pointer-events-none select-none font-accent whitespace-nowrap"
+        className="absolute pointer-events-none select-none font-accent whitespace-nowrap hero-eikyo-parallax"
         style={{
-          fontSize: "clamp(180px, 20vw, 380px)",
+          fontSize: "28vw",
           lineHeight: "0.92",
           letterSpacing: "0.04em",
           color: "transparent",
@@ -114,8 +125,7 @@ const HeroSection = () => {
           top: "50%",
           transform: "translate(-50%, -30%)",
           zIndex: 3,
-          opacity: textOpacity,
-          transition: "opacity 0.1s ease-out",
+          opacity: 1,
         }}
       >
         EIKYO
@@ -123,7 +133,7 @@ const HeroSection = () => {
 
       {/* === FLOATING BOXING GLOVE — top-left with arrow === */}
       <div
-        className="absolute hero-fade-in hero-float"
+        className="absolute hero-fade-in hero-float hero-glove"
         style={{
           top: "8%",
           left: "18%",
@@ -137,7 +147,7 @@ const HeroSection = () => {
           style={{ top: "-10px", left: "-30px", animationDelay: "1.0s" }}
         />
         <img
-          src={glovesImg}
+          src={pinkGloveImg}
           alt=""
           aria-hidden="true"
           className="w-20 md:w-32"
@@ -177,7 +187,7 @@ const HeroSection = () => {
       </div>
 
       {/* === ARROW + "30+ Years of Experience" — bottom-left === */}
-      <div className="absolute hero-fade-in" style={{ left: "3%", bottom: "4%", zIndex: 10, animationDelay: "0.5s" }}>
+      <div className="absolute hero-fade-in hero-stat-block" style={{ left: "3%", bottom: "4%", zIndex: 10, animationDelay: "0.5s" }}>
         <RedArrow direction="down" className="w-6 md:w-8 mb-1 hero-fade-in" style={{ animationDelay: "1.0s" }} />
         <h3
           className="font-heading text-foreground leading-none"
