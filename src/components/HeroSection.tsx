@@ -233,7 +233,7 @@ const HeroSection = () => {
 
       {/* === ARROW + "5K+ CUSTOMERS" — top-right === */}
       <div
-        className="absolute hidden md:flex items-center gap-3 hero-fade-in"
+        className="absolute hidden md:flex items-center gap-3 hero-fade-in hero-customers-block"
         style={{ top: "12%", right: "5%", zIndex: 10, animationDelay: "0.4s" }}
       >
         <RedArrow direction="right" className="w-8 md:w-10 hero-fade-in" style={{ animationDelay: "1.0s" }} />
@@ -251,8 +251,8 @@ const HeroSection = () => {
         style={{ top: "28%", right: "5%", zIndex: 10, animationDelay: "0.6s" }}
       >
         <RedArrow direction="right" className="w-8 hero-fade-in" style={{ animationDelay: "1.0s" }} />
-        <div className="flex items-center gap-1">
-          {[glovesImg, headguardImg, shinGuardsImg, mmaGlovesImg, uniformImg].map((img, i) => (
+        <div className="flex items-center gap-1 hero-product-icons">
+          {[pinkGloveImg, headguardImg, shinGuardsImg, mmaGlovesImg, uniformImg].map((img, i) => (
             <img
               key={i}
               src={img}
@@ -283,7 +283,7 @@ const HeroSection = () => {
         style={{ right: "4%", bottom: "6%", zIndex: 10, animationDelay: "0.8s" }}
       >
         <RedArrow direction="right" className="w-8 hidden md:block hero-fade-in" style={{ animationDelay: "1.0s" }} />
-        <div className="relative w-28 h-28 md:w-40 md:h-40 hero-float" style={{ animationDelay: "2s" }}>
+        <div className="relative w-28 h-28 md:w-40 md:h-40 hero-float hero-brand-seal" style={{ animationDelay: "2s" }}>
           <svg viewBox="0 0 200 200" className="w-full h-full animate-spin-slow">
             <defs>
               <path id="circlePath" d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0" />
