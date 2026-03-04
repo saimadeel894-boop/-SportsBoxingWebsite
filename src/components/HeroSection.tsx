@@ -67,8 +67,8 @@ const HeroSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full bg-background overflow-hidden"
-      style={{ height: "min(100vh, 950px)" }}
+      className="relative w-full overflow-hidden"
+      style={{ height: "min(100vh, 950px)", backgroundColor: "#FFFFFF" }}
     >
       {/* === LAYER 1: Solid red brand text — BEHIND fighter === */}
       <h1
