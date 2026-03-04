@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState, useCallback } from "react";
 import fighterImg from "@/assets/fighter-hero.webp";
 import glovesImg from "@/assets/boxing-gloves.png";
 import headguardImg from "@/assets/headguard.png";
@@ -39,8 +40,33 @@ const RedArrow = ({
 };
 
 const HeroSection = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  const handleScroll = useCallback(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+    const rect = section.getBoundingClientRect();
+    const heroHeight = section.offsetHeight;
+    // progress 0 at top, 1 when scrolled past hero
+    const progress = Math.min(1, Math.max(0, -rect.top / (heroHeight * 0.6)));
+    setScrollProgress(progress);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
+
+  // Fix 2: Boxer scale 0.75 → 1.0
+  const boxerScale = 0.75 + scrollProgress * 0.25;
+  // Fix 3: Text opacity 0.35 → 1.0
+  const textOpacity = 0.35 + scrollProgress * 0.65;
+
   return (
     <section
+      ref={sectionRef}
       className="relative w-full bg-background overflow-hidden"
       style={{ height: "min(100vh, 950px)" }}
     >
@@ -56,6 +82,8 @@ const HeroSection = () => {
           top: "50%",
           transform: "translate(-50%, -30%)",
           zIndex: 1,
+          opacity: textOpacity,
+          transition: "opacity 0.1s ease-out",
         }}
       >
         EIKYO
@@ -66,13 +94,15 @@ const HeroSection = () => {
         className="absolute pointer-events-none"
         style={{
           left: "50%",
-          transform: "translateX(-50%)",
+          transform: `translateX(-50%) scale(${boxerScale})`,
+          transformOrigin: "bottom center",
           bottom: 0,
           zIndex: 2,
           height: "95%",
           display: "flex",
           alignItems: "flex-end",
           justifyContent: "center",
+          transition: "transform 0.1s ease-out",
         }}
       >
         <img
@@ -95,23 +125,31 @@ const HeroSection = () => {
           top: "50%",
           transform: "translate(-50%, -30%)",
           zIndex: 3,
+          opacity: textOpacity,
+          transition: "opacity 0.1s ease-out",
         }}
       >
         EIKYO
       </h1>
 
       {/* === FLOATING BOXING GLOVE — top-left with arrow === */}
-      <div className="absolute" style={{ top: "8%", left: "18%", zIndex: 5 }}>
+      <div
+        className="absolute hero-fade-in hero-float"
+        style={{
+          top: "8%", left: "18%", zIndex: 5,
+          animationDelay: "0.2s, 0.2s",
+        }}
+      >
         <RedArrow
           direction="diagonal-sw"
-          className="absolute w-8 md:w-10"
-          style={{ top: "-10px", left: "-30px" }}
+          className="absolute w-8 md:w-10 hero-fade-in"
+          style={{ top: "-10px", left: "-30px", animationDelay: "1.0s" }}
         />
         <img
           src={glovesImg}
           alt=""
           aria-hidden="true"
-          className="w-20 md:w-32 animate-float-1"
+          className="w-20 md:w-32"
           style={{ transform: "rotate(-15deg)" }}
         />
       </div>
@@ -121,14 +159,17 @@ const HeroSection = () => {
         src={shinGuardsImg}
         alt=""
         aria-hidden="true"
-        className="absolute w-20 md:w-36 opacity-40"
-        style={{ bottom: "8%", left: "14%", zIndex: 4 }}
+        className="absolute w-20 md:w-36 opacity-40 hero-fade-in hero-float"
+        style={{
+          bottom: "8%", left: "14%", zIndex: 4,
+          animationDelay: "0.6s, 0.5s",
+        }}
       />
 
       {/* === "CHOICE OF CHAMPIONS" — lower-left below red text === */}
       <div
-        className="absolute pointer-events-none"
-        style={{ left: "5%", bottom: "38%", zIndex: 6 }}
+        className="absolute pointer-events-none hero-fade-in"
+        style={{ left: "5%", bottom: "38%", zIndex: 6, animationDelay: "0.4s" }}
       >
         <p
           className="font-heading text-foreground uppercase"
@@ -142,20 +183,21 @@ const HeroSection = () => {
         </p>
       </div>
 
-      {/* === ARROW + "10+ Years of Experience" — bottom-left === */}
+      {/* === ARROW + "30+ Years of Experience" — bottom-left === */}
       <div
-        className="absolute"
-        style={{ left: "3%", bottom: "4%", zIndex: 10 }}
+        className="absolute hero-fade-in"
+        style={{ left: "3%", bottom: "4%", zIndex: 10, animationDelay: "0.5s" }}
       >
         <RedArrow
           direction="down"
-          className="w-6 md:w-8 mb-1"
+          className="w-6 md:w-8 mb-1 hero-fade-in"
+          style={{ animationDelay: "1.0s" }}
         />
         <h3
           className="font-heading text-foreground leading-none"
           style={{ fontSize: "clamp(36px, 4vw, 64px)", fontWeight: 900 }}
         >
-          10+
+          30+
         </h3>
         <p
           className="font-heading text-foreground/70 mt-1"
@@ -167,13 +209,13 @@ const HeroSection = () => {
         </p>
       </div>
 
-      {/* === WHATSAPP BUTTON — next to 10+ stat === */}
+      {/* === WHATSAPP BUTTON — next to 30+ stat === */}
       <a
         href="https://wa.me/"
         target="_blank"
         rel="noopener noreferrer"
-        className="absolute flex items-center gap-2"
-        style={{ left: "12%", bottom: "4%", zIndex: 10 }}
+        className="absolute flex items-center gap-2 hero-fade-in"
+        style={{ left: "12%", bottom: "4%", zIndex: 10, animationDelay: "0.5s" }}
       >
         <div
           className="rounded-full flex items-center justify-center"
@@ -198,10 +240,14 @@ const HeroSection = () => {
 
       {/* === ARROW + "5K+ CUSTOMERS" — top-right === */}
       <div
-        className="absolute hidden md:flex items-center gap-3"
-        style={{ top: "12%", right: "5%", zIndex: 10 }}
+        className="absolute hidden md:flex items-center gap-3 hero-fade-in"
+        style={{ top: "12%", right: "5%", zIndex: 10, animationDelay: "0.4s" }}
       >
-        <RedArrow direction="right" className="w-8 md:w-10" />
+        <RedArrow
+          direction="right"
+          className="w-8 md:w-10 hero-fade-in"
+          style={{ animationDelay: "1.0s" }}
+        />
         <h3
           className="font-heading text-foreground uppercase"
           style={{ fontSize: "clamp(22px, 2.2vw, 32px)", fontWeight: 800, letterSpacing: "0.05em" }}
@@ -212,10 +258,14 @@ const HeroSection = () => {
 
       {/* === ARROW + PRODUCT IMAGES (jerseys equivalent) — right side === */}
       <div
-        className="absolute hidden md:flex items-center gap-3"
-        style={{ top: "28%", right: "5%", zIndex: 10 }}
+        className="absolute hidden md:flex items-center gap-3 hero-fade-in"
+        style={{ top: "28%", right: "5%", zIndex: 10, animationDelay: "0.6s" }}
       >
-        <RedArrow direction="right" className="w-8" />
+        <RedArrow
+          direction="right"
+          className="w-8 hero-fade-in"
+          style={{ animationDelay: "1.0s" }}
+        />
         <div className="flex items-center gap-1">
           {[glovesImg, headguardImg, shinGuardsImg, mmaGlovesImg, uniformImg].map((img, i) => (
             <img
@@ -228,19 +278,29 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* === ARROW + FLOATING UNIFORM — right side mid === */}
+      {/* === FLOATING HEADGUARD — right side mid === */}
       <img
         src={headguardImg}
         alt=""
         aria-hidden="true"
-        className="absolute w-16 md:w-28 animate-float-2 opacity-50 hidden md:block"
-        style={{ bottom: "32%", right: "6%", zIndex: 5 }}
+        className="absolute w-16 md:w-28 opacity-50 hidden md:block hero-fade-in hero-float"
+        style={{
+          bottom: "32%", right: "6%", zIndex: 5,
+          animationDelay: "0.6s, 1.5s",
+        }}
       />
 
       {/* === BRAND SEAL — bottom-right with arrow === */}
-      <div className="absolute flex items-center gap-2" style={{ right: "4%", bottom: "6%", zIndex: 10 }}>
-        <RedArrow direction="right" className="w-8 hidden md:block" />
-        <div className="relative w-28 h-28 md:w-40 md:h-40">
+      <div
+        className="absolute flex items-center gap-2 hero-fade-in"
+        style={{ right: "4%", bottom: "6%", zIndex: 10, animationDelay: "0.8s" }}
+      >
+        <RedArrow
+          direction="right"
+          className="w-8 hidden md:block hero-fade-in"
+          style={{ animationDelay: "1.0s" }}
+        />
+        <div className="relative w-28 h-28 md:w-40 md:h-40 hero-float" style={{ animationDelay: "2s" }}>
           <svg viewBox="0 0 200 200" className="w-full h-full animate-spin-slow">
             <defs>
               <path
