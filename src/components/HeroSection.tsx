@@ -1,4 +1,3 @@
-import { useEffect, useRef, useCallback } from "react";
 import fighterImg from "@/assets/boxer-hero.webp";
 import pinkGloveImg from "@/assets/pink-boxing-glove.png";
 import headguardImg from "@/assets/headguard.png";
@@ -7,6 +6,7 @@ import shinGuardsImg from "@/assets/shin-guards.png";
 import mmaGlovesImg from "@/assets/mma-gloves.png";
 import glovesImg from "@/assets/boxing-gloves.png";
 import logoImg from "@/assets/eikyo-logo.jpg";
+import { useHeroAnimations } from "@/hooks/use-hero-animations";
 
 const RedArrow = ({
   direction,
@@ -36,42 +36,16 @@ const RedArrow = ({
 };
 
 const HeroSection = () => {
-  const sectionRef = useRef<HTMLElement>(null);
-  const eikyoText1Ref = useRef<HTMLHeadingElement>(null);
-  const eikyoText2Ref = useRef<HTMLHeadingElement>(null);
-  const gloveWrapperRef = useRef<HTMLDivElement>(null);
-  const mouthguardWrapperRef = useRef<HTMLDivElement>(null);
-  const customersRef = useRef<HTMLDivElement>(null);
-  const sealWrapperRef = useRef<HTMLDivElement>(null);
-  const statRef = useRef<HTMLDivElement>(null);
-
-  const handleScroll = useCallback(() => {
-    const scrollY = window.scrollY;
-    // Animation 2: Scroll parallax via direct DOM manipulation
-    if (eikyoText1Ref.current) eikyoText1Ref.current.style.transform = `translate(-50%, -30%) translateY(${scrollY * 0.2}px)`;
-    if (eikyoText2Ref.current) eikyoText2Ref.current.style.transform = `translate(-50%, -30%) translateY(${scrollY * 0.2}px)`;
-    if (gloveWrapperRef.current) gloveWrapperRef.current.style.transform = `translateY(${scrollY * 0.5}px)`;
-    if (mouthguardWrapperRef.current) mouthguardWrapperRef.current.style.transform = `translateY(${scrollY * 0.4}px)`;
-    if (customersRef.current) customersRef.current.style.transform = `translateY(${scrollY * 0.7}px)`;
-    if (sealWrapperRef.current) sealWrapperRef.current.style.transform = `translateY(${scrollY * 0.6}px)`;
-    if (statRef.current) statRef.current.style.transform = `translateY(${scrollY * 0.8}px)`;
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [handleScroll]);
+  useHeroAnimations();
 
   return (
     <section
-      ref={sectionRef}
       className="relative w-full overflow-hidden"
       style={{ height: "min(100vh, 950px)", minHeight: "600px", backgroundColor: "#FFFFFF" }}
     >
       {/* === LAYER 1: Solid red brand text — BEHIND fighter === */}
       <h1
-        ref={eikyoText1Ref}
-        className="absolute pointer-events-none select-none font-accent whitespace-nowrap hero-entry-eikyo"
+        className="absolute pointer-events-none select-none font-accent whitespace-nowrap js-eikyo-text"
         style={{
           fontSize: "clamp(80px, 28vw, 500px)",
           lineHeight: "0.92",
@@ -89,7 +63,7 @@ const HeroSection = () => {
 
       {/* === LAYER 2: Fighter image — ABOVE solid text === */}
       <div
-        className="absolute pointer-events-none hero-entry-boxer"
+        className="absolute pointer-events-none"
         style={{
           left: "50%",
           transform: "translateX(-50%)",
@@ -105,14 +79,13 @@ const HeroSection = () => {
         <img
           src={fighterImg}
           alt="Professional fighter in fighting stance"
-          className="h-full w-auto object-contain object-bottom max-w-none"
+          className="h-full w-auto object-contain object-bottom max-w-none js-boxer-image"
         />
       </div>
 
       {/* === LAYER 3: Outline text — IN FRONT of fighter (3D depth) === */}
       <h1
-        ref={eikyoText2Ref}
-        className="absolute pointer-events-none select-none font-accent whitespace-nowrap hero-entry-eikyo"
+        className="absolute pointer-events-none select-none font-accent whitespace-nowrap js-eikyo-text"
         style={{
           fontSize: "clamp(80px, 28vw, 500px)",
           lineHeight: "0.92",
@@ -132,11 +105,10 @@ const HeroSection = () => {
       {/* === FLOATING BOXING GLOVE — top-left with arrow === */}
       {/* Outer: parallax scroll. Inner: float bob */}
       <div
-        ref={gloveWrapperRef}
-        className="absolute hidden md:block"
+        className="absolute hidden md:block js-glove-parallax"
         style={{ top: "8%", left: "18%", zIndex: 5, willChange: "transform" }}
       >
-        <div className="hero-entry-glove hero-bob-glove">
+        <div className="js-glove-float">
           <RedArrow
             direction="diagonal-sw"
             className="absolute w-8 md:w-10"
@@ -155,21 +127,20 @@ const HeroSection = () => {
       {/* === FLOATING MOUTH GUARD — bottom-left === */}
       {/* Outer: parallax scroll. Inner: float bob */}
       <div
-        ref={mouthguardWrapperRef}
-        className="absolute hidden md:block"
+        className="absolute hidden md:block js-mouthguard-parallax"
         style={{ bottom: "8%", left: "14%", zIndex: 4, willChange: "transform" }}
       >
         <img
           src={shinGuardsImg}
           alt=""
           aria-hidden="true"
-          className="w-20 md:w-36 opacity-40 hero-bob-mouthguard"
+          className="w-20 md:w-36 opacity-40 js-mouthguard-float"
         />
       </div>
 
       {/* === "CHOICE OF CHAMPIONS" — lower-left below red text === */}
       <div
-        className="absolute pointer-events-none hero-entry-tagline hidden md:block"
+        className="absolute pointer-events-none js-tagline hidden md:block"
         style={{ left: "5%", bottom: "38%", zIndex: 6 }}
       >
         <p
@@ -186,8 +157,7 @@ const HeroSection = () => {
 
       {/* === ARROW + "30+ Years of Experience" — bottom-left === */}
       <div
-        ref={statRef}
-        className="absolute hero-entry-stat"
+        className="absolute js-stat-block"
         style={{ left: "3%", bottom: "4%", zIndex: 10, willChange: "transform" }}
       >
         <RedArrow direction="down" className="w-6 md:w-8 mb-1" />
@@ -212,7 +182,7 @@ const HeroSection = () => {
         href="https://wa.me/"
         target="_blank"
         rel="noopener noreferrer"
-        className="absolute flex items-center gap-2 hero-entry-stat"
+        className="absolute flex items-center gap-2"
         style={{ left: "12%", bottom: "4%", zIndex: 10 }}
       >
         <div
@@ -234,8 +204,7 @@ const HeroSection = () => {
 
       {/* === ARROW + "5K+ CUSTOMERS" — top-right === */}
       <div
-        ref={customersRef}
-        className="absolute hidden md:flex items-center gap-3 hero-entry-customers"
+        className="absolute hidden md:flex items-center gap-3 js-customers-block"
         style={{ top: "12%", right: "5%", zIndex: 10, willChange: "transform" }}
       >
         <RedArrow direction="right" className="w-8 md:w-10" />
@@ -249,7 +218,7 @@ const HeroSection = () => {
 
       {/* === ARROW + PRODUCT IMAGES (jerseys equivalent) — right side === */}
       <div
-        className="absolute hidden md:flex items-center gap-3 hero-entry-customers"
+        className="absolute hidden md:flex items-center gap-3 js-product-icons"
         style={{ top: "28%", right: "5%", zIndex: 10 }}
       >
         <RedArrow direction="right" className="w-8" />
@@ -277,13 +246,12 @@ const HeroSection = () => {
       {/* === BRAND SEAL — bottom-right with arrow === */}
       {/* Outer: parallax scroll. Inner: continuous spin */}
       <div
-        ref={sealWrapperRef}
-        className="absolute flex items-center gap-2 hero-entry-seal"
+        className="absolute flex items-center gap-2 js-brand-seal-parallax"
         style={{ right: "4%", bottom: "6%", zIndex: 10, willChange: "transform" }}
       >
         <RedArrow direction="right" className="w-8 hidden md:block" />
-        <div className="relative w-28 h-28 md:w-40 md:h-40">
-          <svg viewBox="0 0 200 200" className="w-full h-full hero-seal-spin">
+        <div className="relative w-28 h-28 md:w-40 md:h-40 js-brand-seal-spin">
+          <svg viewBox="0 0 200 200" className="w-full h-full">
             <defs>
               <path
                 id="circlePath"
