@@ -41,7 +41,6 @@ const HeroSection = () => {
   return (
     <section
       className="relative w-full overflow-hidden"
-      className="relative w-full overflow-hidden"
       style={{ height: "min(100vh, 950px)", minHeight: "600px", backgroundColor: "#FFFFFF" }}
     >
       {/* === LAYER 1: Solid red brand text — BEHIND fighter === */}
@@ -109,7 +108,7 @@ const HeroSection = () => {
         className="absolute hidden md:block js-glove-parallax"
         style={{ top: "8%", left: "18%", zIndex: 5, willChange: "transform" }}
       >
-        <div className="js-glove-float"
+        <div className="js-glove-float">
           <RedArrow
             direction="diagonal-sw"
             className="absolute w-8 md:w-10"
