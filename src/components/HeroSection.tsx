@@ -143,7 +143,7 @@ const HeroSection = () => {
             style={{ top: "-10px", left: "-30px" }}
           />
           <img
-            src={glovesImg}
+            src={pinkGloveImg}
             alt=""
             aria-hidden="true"
             className="w-20 md:w-32"
