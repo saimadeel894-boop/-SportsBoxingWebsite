@@ -72,7 +72,7 @@ const HeroSection = () => {
         ref={eikyoText1Ref}
         className="absolute pointer-events-none select-none font-accent whitespace-nowrap hero-entry-eikyo"
         style={{
-          fontSize: "clamp(180px, 20vw, 380px)",
+          fontSize: "28vw",
           lineHeight: "0.92",
           letterSpacing: "0.04em",
           color: "#E8171A",
@@ -113,7 +113,7 @@ const HeroSection = () => {
         ref={eikyoText2Ref}
         className="absolute pointer-events-none select-none font-accent whitespace-nowrap hero-entry-eikyo"
         style={{
-          fontSize: "clamp(180px, 20vw, 380px)",
+          fontSize: "28vw",
           lineHeight: "0.92",
           letterSpacing: "0.04em",
           color: "transparent",
