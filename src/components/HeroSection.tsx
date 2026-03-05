@@ -36,7 +36,7 @@ const HeroSection = () => {
           bottom: "5%",
           left: "50%",
           transform: "translateX(-50%)",
-          fontSize: "28vw",
+          fontSize: "35vw",
           fontWeight: 900,
           color: "#E8171A",
           lineHeight: 1,
@@ -94,7 +94,7 @@ const HeroSection = () => {
           left: "10%",
           width: "130px",
           zIndex: 4,
-          opacity: 0.6,
+          opacity: 0.7,
         }}
       />
 
