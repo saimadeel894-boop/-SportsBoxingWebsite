@@ -67,10 +67,6 @@ const HeroSection = () => {
       >
         EIKYO
       </h1>
-          objectFit: "contain",
-          objectPosition: "bottom center",
-        }}
-      />
 
       {/* Layer 4 — FLOATING PINK GLOVE top-left */}
       <img
