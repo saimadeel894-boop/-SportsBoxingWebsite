@@ -222,11 +222,13 @@
     transform: translateX(-50%) !important;
   }
   .hero-boxer-image {
-    height: 100% !important;
-    max-height: 100svh !important;
+    height: auto !important;
+    width: 110% !important;
+    max-width: none !important;
     bottom: 0 !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
+    object-fit: cover !important;
   }
   .hero-glove,
   .hero-mouthguard,
