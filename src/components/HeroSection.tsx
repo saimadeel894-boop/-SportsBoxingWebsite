@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import fighterImg from "@/assets/fighter-hero.webp";
-import pinkGloveImg from "@/assets/pink-boxing-glove.png";
+import pinkGloveImg from "@/assets/pink-glove.png";
 import mouthGuardImg from "@/assets/mouth-guard.svg";
 import jerseyFanImg from "@/assets/jersey-fan.webp";
 import logoImg from "@/assets/eikyo-logo.jpg";
@@ -13,7 +13,7 @@ const HeroSection = () => {
     const handleScroll = () => {
       const y = window.scrollY;
       document.querySelectorAll<HTMLElement>(".hero-eikyo-parallax").forEach((el) => {
-        el.style.transform = `translate(-50%, -30%) translateY(${y * 0.2}px)`;
+        el.style.transform = `translate(-50%, -50%) translateY(${y * 0.2}px)`;
       });
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -24,12 +24,12 @@ const HeroSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full overflow-hidden min-h-[100svh] md:min-h-0"
-      style={{ height: "min(100vh, 950px)", backgroundColor: "#FFFFFF" }}
+      className="hero-section relative w-full overflow-hidden"
+      style={{ minHeight: "100vh", backgroundColor: "#FFFFFF" }}
     >
-      {/* === LAYER 1: Solid red brand text — BEHIND fighter === */}
+      {/* === EIKYO TEXT — centered, bleeds off edges === */}
       <h1
-        className="absolute pointer-events-none select-none font-accent whitespace-nowrap hero-eikyo-parallax hero-eikyo-text"
+        className="hero-eikyo-text hero-eikyo-parallax absolute pointer-events-none select-none font-accent whitespace-nowrap"
         style={{
           fontSize: "28vw",
           lineHeight: "0.92",
@@ -37,88 +37,66 @@ const HeroSection = () => {
           color: "#E8171A",
           left: "50%",
           top: "50%",
-          transform: "translate(-50%, -30%)",
+          transform: "translate(-50%, -50%)",
           zIndex: 1,
           opacity: 1,
+          fontWeight: 900,
+          textAlign: "center",
+          width: "auto",
         }}
       >
         EIKYO
       </h1>
 
-      {/* === LAYER 2: Fighter image — ABOVE solid text === */}
-      <div
-        className="absolute pointer-events-none hero-boxer-image"
+      {/* === BOXER IMAGE — centered, above text === */}
+      <img
+        src={fighterImg}
+        alt="Professional fighter in fighting stance"
+        className="hero-boxer-image absolute pointer-events-none"
         style={{
           left: "50%",
           transform: "translateX(-50%)",
-          transformOrigin: "bottom center",
           bottom: 0,
-          zIndex: 2,
           height: "95%",
-          display: "flex",
-          alignItems: "flex-end",
-          justifyContent: "center",
+          width: "auto",
+          zIndex: 2,
+          objectFit: "contain",
         }}
-      >
-        <img
-          src={fighterImg}
-          alt="Professional fighter in fighting stance"
-          className="h-full w-auto object-contain object-bottom"
-        />
-      </div>
+      />
 
-      {/* === LAYER 3: Solid red text — IN FRONT of fighter (3D depth) === */}
-      <h1
-        className="absolute pointer-events-none select-none font-accent whitespace-nowrap hero-eikyo-parallax"
-        style={{
-          fontSize: "28vw",
-          lineHeight: "0.92",
-          letterSpacing: "0.04em",
-          color: "#E8171A",
-          WebkitTextStroke: "0",
-          left: "50%",
-          top: "50%",
-          transform: "translate(-50%, -30%)",
-          zIndex: 3,
-          opacity: 1,
-        }}
-      >
-        EIKYO
-      </h1>
-
-      {/* === FLOATING SINGLE PINK GLOVE — top-left (NO arrow) === */}
+      {/* === FLOATING PINK GLOVE — top-left === */}
       <img
         src={pinkGloveImg}
         alt=""
         aria-hidden="true"
-        className="absolute hidden md:block hero-glove"
+        className="hero-glove absolute hidden md:block"
         style={{
-          top: "6%",
-          left: "14%",
-          zIndex: 5,
-          width: "clamp(80px, 8vw, 140px)",
+          top: "8%",
+          left: "15%",
+          width: "120px",
+          zIndex: 3,
           transform: "rotate(-15deg)",
         }}
       />
 
-      {/* === FLOATING HEADGUARD — bottom-left === */}
+      {/* === FLOATING MOUTH GUARD — bottom-left === */}
       <img
         src={mouthGuardImg}
         alt=""
         aria-hidden="true"
-        className="absolute hidden md:block hero-mouthguard"
+        className="hero-mouthguard absolute hidden md:block"
         style={{
-          bottom: "8%",
-          left: "14%",
-          zIndex: 4,
-          width: "clamp(100px, 12vw, 200px)",
+          bottom: "25%",
+          left: "12%",
+          width: "140px",
+          zIndex: 3,
           opacity: 0.7,
         }}
       />
 
-      {/* === "CHOICE OF CHAMPIONS" — lower-left (single instance, visible on all) === */}
+      {/* === "CHOICE OF CHAMPIONS" — lower-left === */}
       <div
-        className="absolute pointer-events-none hero-tagline"
+        className="hero-tagline absolute pointer-events-none"
         style={{ left: "5%", bottom: "38%", zIndex: 6 }}
       >
         <p
@@ -133,9 +111,9 @@ const HeroSection = () => {
         </p>
       </div>
 
-      {/* === "10+ Years of Experience" — bottom-left (NO arrow) === */}
+      {/* === "10+ Years of Experience" — bottom-left (ONLY stat block) === */}
       <div
-        className="absolute hero-stat-block"
+        className="hero-stat-block absolute"
         style={{ left: "3%", bottom: "4%", zIndex: 10 }}
       >
         <h3
@@ -176,9 +154,9 @@ const HeroSection = () => {
         </span>
       </a>
 
-      {/* === "5K+ CUSTOMERS" — top-right (NO arrow) === */}
+      {/* === "5K+ CUSTOMERS" — top-right === */}
       <div
-        className="absolute hidden md:flex items-center gap-3 hero-customers-block"
+        className="hero-customers-block absolute hidden md:flex items-center gap-3"
         style={{ top: "12%", right: "5%", zIndex: 10 }}
       >
         <h3
@@ -189,9 +167,9 @@ const HeroSection = () => {
         </h3>
       </div>
 
-      {/* === JERSEY FAN IMAGE — right side (NO arrow, replaces product icons) === */}
+      {/* === JERSEY FAN IMAGE — right side === */}
       <div
-        className="absolute hidden md:flex items-center hero-jersey-fan"
+        className="hero-jersey-fan absolute hidden md:flex items-center"
         style={{ top: "24%", right: "3%", zIndex: 10 }}
       >
         <img
@@ -202,9 +180,9 @@ const HeroSection = () => {
         />
       </div>
 
-      {/* === BRAND SEAL — bottom-right (NO arrow) === */}
+      {/* === BRAND SEAL — bottom-right === */}
       <div
-        className="absolute hidden md:flex items-center hero-brand-seal"
+        className="hero-brand-seal absolute hidden md:flex items-center"
         style={{ right: "4%", bottom: "6%", zIndex: 10 }}
       >
         <div className="relative w-28 h-28 md:w-40 md:h-40">
