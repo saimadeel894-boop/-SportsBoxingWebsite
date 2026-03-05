@@ -38,7 +38,7 @@ const HeroSection = () => {
           bottom: 0,
           left: "50%",
           transform: "translateX(-50%)",
-          height: "90%",
+          height: "92%",
           width: "auto",
           zIndex: 2,
           objectFit: "contain",
@@ -107,7 +107,7 @@ const HeroSection = () => {
       <div
         className="hero-customers-block absolute hidden md:flex items-center"
         style={{
-          top: "7%",
+          top: "10%",
           right: "4%",
           fontSize: "1.5rem",
           fontWeight: 800,
@@ -123,7 +123,7 @@ const HeroSection = () => {
       {/* Layer 4 — JERSEY FAN right side */}
       <div
         className="hero-jersey-fan absolute hidden md:block"
-        style={{ top: "14%", right: "3%", zIndex: 4 }}
+        style={{ top: "16%", right: "3%", zIndex: 4 }}
       >
         <img
           src={jerseyFanImg}
@@ -136,7 +136,7 @@ const HeroSection = () => {
       {/* Layer 4 — BRAND SEAL bottom-right */}
       <div
         className="hero-brand-seal absolute hidden md:flex items-center"
-        style={{ top: "70%", right: "3%", width: "130px", zIndex: 4 }}
+        style={{ top: "72%", right: "3%", width: "130px", zIndex: 4 }}
       >
         <div className="relative w-full" style={{ aspectRatio: "1" }}>
           <svg viewBox="0 0 200 200" className="hero-brand-seal-spinner w-full h-full">
