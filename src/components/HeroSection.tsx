@@ -55,7 +55,7 @@ const HeroSection = () => {
           left: "50%",
           transform: "translateX(-50%)",
           fontFamily: "'Bebas Neue', sans-serif",
-          fontSize: "22vw",
+          fontSize: "25vw",
           fontWeight: 400,
           color: "#E8171A",
           lineHeight: 1,
