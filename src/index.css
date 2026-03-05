@@ -207,11 +207,11 @@
 
 /* Mobile hero fixes */
 @media (max-width: 767px) {
-  section[style*="min(100vh"] {
-    height: 100svh !important;
-    min-height: 100svh;
-  }
   .hero-eikyo-text {
+    font-size: 45vw !important;
+    top: 35% !important;
+  }
+  .hero-eikyo-parallax {
     font-size: 45vw !important;
   }
 }
