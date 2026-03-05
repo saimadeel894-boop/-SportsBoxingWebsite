@@ -215,9 +215,9 @@
     background: #FFFFFF;
   }
   .hero-eikyo-text {
-    font-size: 60vw !important;
-    bottom: 18% !important;
-    top: auto !important;
+    font-size: 55vw !important;
+    top: 35% !important;
+    bottom: auto !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
   }

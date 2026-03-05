@@ -33,7 +33,7 @@ const HeroSection = () => {
       <h1
         className="hero-eikyo-text absolute pointer-events-none select-none font-accent whitespace-nowrap"
         style={{
-          bottom: "5%",
+          top: "42%",
           left: "50%",
           transform: "translateX(-50%)",
           fontSize: "40vw",
@@ -76,7 +76,7 @@ const HeroSection = () => {
         className="hero-glove absolute hidden md:block"
         style={{
           top: "10%",
-          left: "18%",
+          left: "26%",
           width: "110px",
           zIndex: 4,
           transform: "rotate(-15deg)",
@@ -90,11 +90,11 @@ const HeroSection = () => {
         aria-hidden="true"
         className="hero-mouthguard absolute hidden md:block"
         style={{
-          bottom: "18%",
-          left: "10%",
-          width: "130px",
+          top: "62%",
+          left: "12%",
+          width: "140px",
           zIndex: 4,
-          opacity: 0.7,
+          opacity: 0.5,
         }}
       />
 
@@ -102,7 +102,7 @@ const HeroSection = () => {
       <div
         className="hero-customers-block absolute hidden md:flex items-center"
         style={{
-          top: "14%",
+          top: "6%",
           right: "5%",
           fontSize: "1.4rem",
           fontWeight: 800,
@@ -118,20 +118,20 @@ const HeroSection = () => {
       {/* Layer 4 — JERSEY FAN right side */}
       <div
         className="hero-jersey-fan absolute hidden md:block"
-        style={{ top: "22%", right: "4%", zIndex: 4 }}
+        style={{ top: "13%", right: "4%", zIndex: 4 }}
       >
         <img
           src={jerseyFanImg}
           alt=""
           aria-hidden="true"
-          style={{ width: "160px", height: "auto" }}
+          style={{ width: "200px", height: "auto" }}
         />
       </div>
 
       {/* Layer 4 — BRAND SEAL bottom-right */}
       <div
         className="hero-brand-seal absolute hidden md:flex items-center"
-        style={{ bottom: "8%", right: "4%", width: "120px", zIndex: 4 }}
+        style={{ bottom: "8%", right: "4%", width: "130px", zIndex: 4 }}
       >
         <div className="relative w-full" style={{ aspectRatio: "1" }}>
           <svg viewBox="0 0 200 200" className="hero-brand-seal-spinner w-full h-full">
@@ -154,7 +154,7 @@ const HeroSection = () => {
 
       <div
         className="hero-tagline absolute pointer-events-none"
-        style={{ bottom: "32%", left: "3%", zIndex: 5, background: "none", border: "none", borderRadius: 0, boxShadow: "none", padding: 0 }}
+        style={{ top: "56%", left: "12%", zIndex: 5, background: "none", border: "none", borderRadius: 0, boxShadow: "none", padding: 0 }}
       >
         <p
           className="font-heading uppercase"
