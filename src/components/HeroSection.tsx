@@ -27,31 +27,9 @@ const HeroSection = () => {
   return (
     <section
       className="hero-section relative w-full overflow-hidden"
-      style={{ minHeight: "100vh", backgroundColor: "#FFFFFF" }}
+      style={{ height: "75vh", backgroundColor: "#FFFFFF" }}
     >
-      {/* Layer 2 — EIKYO TEXT */}
-      <h1
-        className="hero-eikyo-text absolute pointer-events-none select-none font-accent whitespace-nowrap"
-        style={{
-          top: "35%",
-          left: "50%",
-          transform: "translateX(-50%)",
-          fontSize: "40vw",
-          fontWeight: 900,
-          color: "#E8171A",
-          lineHeight: 1,
-          letterSpacing: "-2px",
-          textAlign: "center",
-          zIndex: 2,
-          opacity: 1,
-          WebkitTextStroke: "0",
-          WebkitTextFillColor: "#E8171A",
-        }}
-      >
-        EIKYO
-      </h1>
-
-      {/* Layer 3 — BOXER IMAGE */}
+      {/* Layer 1 — BOXER IMAGE (BEHIND text) */}
       <img
         src={fighterImg}
         alt="Professional fighter in fighting stance"
@@ -60,13 +38,35 @@ const HeroSection = () => {
           bottom: 0,
           left: "50%",
           transform: "translateX(-50%)",
-          height: "92%",
+          height: "85%",
           width: "auto",
-          zIndex: 3,
+          zIndex: 2,
           objectFit: "contain",
           objectPosition: "bottom center",
         }}
       />
+
+      {/* Layer 3 — EIKYO TEXT (IN FRONT of boxer) */}
+      <h1
+        className="hero-eikyo-text absolute pointer-events-none select-none font-accent whitespace-nowrap"
+        style={{
+          top: "50%",
+          left: "50%",
+          transform: "translateX(-50%)",
+          fontSize: "40vw",
+          fontWeight: 900,
+          color: "#E8171A",
+          lineHeight: 1,
+          letterSpacing: "-2px",
+          textAlign: "center",
+          zIndex: 3,
+          opacity: 1,
+          WebkitTextStroke: "0",
+          WebkitTextFillColor: "#E8171A",
+        }}
+      >
+        EIKYO
+      </h1>
 
       {/* Layer 4 — FLOATING PINK GLOVE top-left */}
       <img

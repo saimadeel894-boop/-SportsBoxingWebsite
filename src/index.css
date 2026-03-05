@@ -185,7 +185,7 @@
   to   { opacity: 1;   transform: translateX(-50%) scale(1); }
 }
 @keyframes fadeDownCenter {
-  from { opacity: 0; transform: translateX(-50%) translateY(-25px); }
+  from { opacity: 0; transform: translateX(-50%) translateY(-20px); }
   to   { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
 @keyframes fadeDownGlove {
@@ -208,7 +208,7 @@
 /* Mobile hero fixes */
 @media (max-width: 768px) {
   .hero-section {
-    min-height: 100svh !important;
+    height: 100svh !important;
     padding-top: 0 !important;
     margin-top: 0 !important;
     overflow: hidden;
@@ -216,19 +216,18 @@
   }
   .hero-eikyo-text {
     font-size: 55vw !important;
-    top: 35% !important;
-    bottom: auto !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
+    top: 45% !important;
+    z-index: 3 !important;
   }
   .hero-boxer-image {
-    height: 90% !important;
+    height: 80% !important;
     width: auto !important;
     min-width: 130% !important;
     max-width: none !important;
     bottom: 0 !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
+    z-index: 2 !important;
     object-fit: unset !important;
   }
   .hero-glove,
@@ -242,6 +241,7 @@
     bottom: 22% !important;
     left: 4% !important;
     top: auto !important;
+    z-index: 5 !important;
   }
   .hero-tagline p {
     font-size: 0.65rem !important;
@@ -250,6 +250,7 @@
   .hero-stat-block {
     bottom: 4% !important;
     left: 4% !important;
+    z-index: 5 !important;
   }
   .hero-stat-block h3 {
     font-size: 2.2rem !important;
