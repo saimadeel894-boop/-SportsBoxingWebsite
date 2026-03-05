@@ -214,7 +214,15 @@
     transform: translate(-50%, -50%) !important;
   }
   .hero-boxer-image {
-    height: 80% !important;
+    height: 55% !important;
+    width: 90vw !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+  .hero-boxer-image img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 100% !important;
   }
   .hero-tagline {
     top: 40% !important;
