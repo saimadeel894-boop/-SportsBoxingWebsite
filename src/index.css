@@ -145,11 +145,11 @@
   animation: fadeScale 0.6s ease-out forwards;
 }
 .hero-boxer-image {
-  animation: fadeDown 0.8s ease-out 0.1s forwards;
+  animation: fadeDownCenter 0.8s ease-out 0.1s forwards;
   opacity: 0;
 }
 .hero-glove {
-  animation: fadeDown 0.6s ease-out 0.2s forwards;
+  animation: fadeDownGlove 0.6s ease-out 0.2s forwards;
   opacity: 0;
 }
 .hero-mouthguard {
@@ -176,14 +176,21 @@
   animation: fadeIn 0.5s ease-out 0.7s forwards;
   opacity: 0;
 }
+.hero-brand-seal-spinner {
+  animation: sealSpin 8s linear infinite;
+}
 
 @keyframes fadeScale {
   from { opacity: 0.4; transform: translateX(-50%) scale(0.95); }
   to   { opacity: 1;   transform: translateX(-50%) scale(1); }
 }
-@keyframes fadeDown {
-  from { opacity: 0; transform: translateY(-25px); }
-  to   { opacity: 1; transform: translateY(0); }
+@keyframes fadeDownCenter {
+  from { opacity: 0; transform: translateX(-50%) translateY(-25px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+@keyframes fadeDownGlove {
+  from { opacity: 0; transform: rotate(-15deg) translateY(-25px); }
+  to   { opacity: 1; transform: rotate(-15deg) translateY(0); }
 }
 @keyframes fadeLeft {
   from { opacity: 0; transform: translateX(30px); }
@@ -208,13 +215,17 @@
     background: #FFFFFF;
   }
   .hero-eikyo-text {
-    font-size: 42vw !important;
+    font-size: 45vw !important;
     bottom: 30% !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
     top: auto !important;
   }
   .hero-boxer-image {
     height: 65% !important;
     bottom: 0 !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
   }
   .hero-glove,
   .hero-mouthguard,
@@ -226,8 +237,11 @@
   .hero-tagline {
     bottom: 28% !important;
     left: 4% !important;
-    font-size: 0.7rem !important;
     top: auto !important;
+  }
+  .hero-tagline p {
+    font-size: 0.7rem !important;
+    letter-spacing: 2px !important;
   }
   .hero-stat-block {
     bottom: 6% !important;

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import fighterImg from "@/assets/fighter-hero.webp";
-import pinkGloveImg from "@/assets/pink-glove.png";
+import pinkGloveImg from "@/assets/single-pink-glove.png";
 import mouthGuardImg from "@/assets/mouth-guard.svg";
 import jerseyFanImg from "@/assets/jersey-fan.webp";
 import logoImg from "@/assets/eikyo-logo.jpg";
@@ -41,9 +41,11 @@ const HeroSection = () => {
           color: "#E8171A",
           lineHeight: 1,
           letterSpacing: "-2px",
+          textAlign: "center",
           zIndex: 2,
           opacity: 1,
           WebkitTextStroke: "0",
+          WebkitTextFillColor: "#E8171A",
         }}
       >
         EIKYO
@@ -132,7 +134,7 @@ const HeroSection = () => {
         style={{ bottom: "8%", right: "4%", width: "120px", zIndex: 4 }}
       >
         <div className="relative w-full" style={{ aspectRatio: "1" }}>
-          <svg viewBox="0 0 200 200" className="w-full h-full animate-spin-slow">
+          <svg viewBox="0 0 200 200" className="hero-brand-seal-spinner w-full h-full">
             <defs>
               <path id="circlePath" d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0" />
             </defs>
