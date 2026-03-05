@@ -36,7 +36,7 @@ const HeroSection = () => {
           bottom: "5%",
           left: "50%",
           transform: "translateX(-50%)",
-          fontSize: "35vw",
+          fontSize: "40vw",
           fontWeight: 900,
           color: "#E8171A",
           lineHeight: 1,
@@ -90,7 +90,7 @@ const HeroSection = () => {
         aria-hidden="true"
         className="hero-mouthguard absolute hidden md:block"
         style={{
-          bottom: "28%",
+          bottom: "18%",
           left: "10%",
           width: "130px",
           zIndex: 4,
