@@ -33,7 +33,7 @@ const HeroSection = () => {
       <h1
         className="hero-eikyo-text absolute pointer-events-none select-none font-accent whitespace-nowrap"
         style={{
-          top: "42%",
+          top: "35%",
           left: "50%",
           transform: "translateX(-50%)",
           fontSize: "40vw",
@@ -154,7 +154,7 @@ const HeroSection = () => {
 
       <div
         className="hero-tagline absolute pointer-events-none"
-        style={{ top: "56%", left: "12%", zIndex: 5, background: "none", border: "none", borderRadius: 0, boxShadow: "none", padding: 0 }}
+        style={{ top: "58%", left: "12%", zIndex: 5, background: "none", border: "none", borderRadius: 0, boxShadow: "none", padding: 0 }}
       >
         <p
           className="font-heading uppercase"
