@@ -152,10 +152,9 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Layer 5 — CHOICE OF CHAMPIONS */}
       <div
         className="hero-tagline absolute pointer-events-none"
-        style={{ bottom: "32%", left: "3%", zIndex: 5 }}
+        style={{ bottom: "32%", left: "3%", zIndex: 5, background: "none", border: "none", borderRadius: 0, boxShadow: "none", padding: 0 }}
       >
         <p
           className="font-heading uppercase"
@@ -164,6 +163,10 @@ const HeroSection = () => {
             fontWeight: 700,
             letterSpacing: "3px",
             color: "#000000",
+            background: "none",
+            border: "none",
+            borderRadius: 0,
+            padding: 0,
           }}
         >
           choice of champions
