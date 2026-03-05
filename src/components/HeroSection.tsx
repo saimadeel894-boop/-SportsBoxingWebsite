@@ -49,16 +49,17 @@ const HeroSection = () => {
 
       {/* Layer 3 — EIKYO TEXT (IN FRONT of boxer) */}
       <h1
-        className="hero-eikyo-text absolute pointer-events-none select-none font-accent whitespace-nowrap"
+        className="hero-eikyo-text absolute pointer-events-none select-none whitespace-nowrap"
         style={{
           top: "42%",
           left: "50%",
           transform: "translateX(-50%)",
-          fontSize: "40vw",
+          fontFamily: "'Big Shoulders Display', sans-serif",
+          fontSize: "30vw",
           fontWeight: 900,
           color: "#E8171A",
-          lineHeight: 1,
-          letterSpacing: "-2px",
+          lineHeight: 0.9,
+          letterSpacing: "-3px",
           textAlign: "center",
           zIndex: 3,
           opacity: 1,
