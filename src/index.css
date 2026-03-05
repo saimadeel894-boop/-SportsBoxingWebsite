@@ -222,7 +222,8 @@
     transform: translateX(-50%) !important;
   }
   .hero-boxer-image {
-    height: 92% !important;
+    height: 100% !important;
+    max-height: 100svh !important;
     bottom: 0 !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
