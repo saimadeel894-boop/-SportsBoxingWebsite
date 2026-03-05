@@ -203,16 +203,18 @@
 }
 
 /* Mobile hero fixes */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 100svh !important;
+  }
   .hero-eikyo-text,
   .hero-eikyo-parallax {
-    font-size: 45vw !important;
-    top: 40% !important;
+    font-size: 42vw !important;
+    left: 50% !important;
     transform: translate(-50%, -50%) !important;
   }
   .hero-boxer-image {
-    height: 65% !important;
-    bottom: 0 !important;
+    height: 70% !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
   }
@@ -224,13 +226,15 @@
     display: none !important;
   }
   .hero-tagline {
+    font-size: 12px !important;
+    letter-spacing: 2px !important;
     bottom: 28% !important;
     top: auto !important;
     left: 5% !important;
   }
   .hero-stat-block {
-    bottom: 2% !important;
-    left: 3% !important;
+    bottom: 5% !important;
+    left: 5% !important;
   }
 }
 
