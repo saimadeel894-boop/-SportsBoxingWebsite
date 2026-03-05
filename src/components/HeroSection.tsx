@@ -4,6 +4,7 @@ import pinkGloveImg from "@/assets/pink-glove.png";
 import mouthGuardImg from "@/assets/mouth-guard.svg";
 import jerseyFanImg from "@/assets/jersey-fan.webp";
 import logoImg from "@/assets/eikyo-logo.jpg";
+import martialArtsUniformImg from "@/assets/martial-arts-uniform.png";
 
 const HeroSection = () => {
   useEffect(() => {
@@ -38,7 +39,7 @@ const HeroSection = () => {
           bottom: 0,
           left: "50%",
           transform: "translateX(-50%)",
-          height: "85%",
+          height: "90%",
           width: "auto",
           zIndex: 2,
           objectFit: "contain",
@@ -50,7 +51,7 @@ const HeroSection = () => {
       <h1
         className="hero-eikyo-text absolute pointer-events-none select-none font-accent whitespace-nowrap"
         style={{
-          top: "50%",
+          top: "42%",
           left: "50%",
           transform: "translateX(-50%)",
           fontSize: "40vw",
@@ -75,7 +76,7 @@ const HeroSection = () => {
         aria-hidden="true"
         className="hero-glove absolute hidden md:block"
         style={{
-          top: "13%",
+          top: "8%",
           left: "20%",
           width: "100px",
           zIndex: 4,
@@ -83,18 +84,33 @@ const HeroSection = () => {
         }}
       />
 
-      {/* Layer 4 — FLOATING MOUTH GUARD bottom-left */}
+      {/* Layer 4 — FLOATING MOUTH GUARD upper-left (ghost appearance) */}
       <img
         src={mouthGuardImg}
         alt=""
         aria-hidden="true"
         className="hero-mouthguard absolute hidden md:block"
         style={{
-          top: "22%",
-          left: "3%",
-          width: "100px",
+          top: "16%",
+          left: "2%",
+          width: "120px",
           zIndex: 4,
-          opacity: 0.6,
+          opacity: 0.4,
+        }}
+      />
+
+      {/* Layer 4 — MARTIAL ARTS UNIFORM above Choice of Champions */}
+      <img
+        src={martialArtsUniformImg}
+        alt=""
+        aria-hidden="true"
+        className="absolute hidden md:block"
+        style={{
+          top: "32%",
+          left: "10%",
+          width: "55px",
+          zIndex: 4,
+          opacity: 0.85,
         }}
       />
 
@@ -102,8 +118,8 @@ const HeroSection = () => {
       <div
         className="hero-customers-block absolute hidden md:flex items-center"
         style={{
-          top: "16%",
-          right: "5%",
+          top: "10%",
+          right: "3%",
           fontSize: "1.4rem",
           fontWeight: 800,
           color: "#000000",
@@ -118,7 +134,7 @@ const HeroSection = () => {
       {/* Layer 4 — JERSEY FAN right side */}
       <div
         className="hero-jersey-fan absolute hidden md:block"
-        style={{ top: "23%", right: "4%", zIndex: 4 }}
+        style={{ top: "17%", right: "2%", zIndex: 4 }}
       >
         <img
           src={jerseyFanImg}
@@ -131,7 +147,7 @@ const HeroSection = () => {
       {/* Layer 4 — BRAND SEAL bottom-right */}
       <div
         className="hero-brand-seal absolute hidden md:flex items-center"
-        style={{ bottom: "12%", right: "6%", width: "140px", zIndex: 4 }}
+        style={{ top: "62%", right: "3%", width: "130px", zIndex: 4 }}
       >
         <div className="relative w-full" style={{ aspectRatio: "1" }}>
           <svg viewBox="0 0 200 200" className="hero-brand-seal-spinner w-full h-full">
@@ -152,9 +168,10 @@ const HeroSection = () => {
         </div>
       </div>
 
+      {/* CHOICE OF CHAMPIONS — left side */}
       <div
         className="hero-tagline absolute pointer-events-none"
-        style={{ top: "58%", left: "12%", zIndex: 5, background: "none", border: "none", borderRadius: 0, boxShadow: "none", padding: 0 }}
+        style={{ top: "42%", left: "10%", zIndex: 5, background: "none", border: "none", borderRadius: 0, boxShadow: "none", padding: 0 }}
       >
         <p
           className="font-heading uppercase"
@@ -176,7 +193,7 @@ const HeroSection = () => {
       {/* Layer 5 — 10+ STAT BLOCK */}
       <div
         className="hero-stat-block absolute"
-        style={{ bottom: "12%", left: "12%", zIndex: 5 }}
+        style={{ top: "57%", left: "10%", zIndex: 5 }}
       >
         <h3
           className="font-heading leading-none"
