@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import fighterImg from "@/assets/fighter-hero.webp";
 import pinkGloveImg from "@/assets/single-pink-glove.png";
-import mouthGuardImg from "@/assets/mouth-guard.svg";
+import headguardImg from "@/assets/headguard.png";
 import jerseyFanImg from "@/assets/jersey-fan.webp";
 import logoImg from "@/assets/eikyo-logo.jpg";
 
@@ -101,9 +101,9 @@ const HeroSection = () => {
         }}
       />
 
-      {/* === FLOATING MOUTH GUARD — bottom-left (NO arrow) === */}
+      {/* === FLOATING HEADGUARD — bottom-left === */}
       <img
-        src={mouthGuardImg}
+        src={headguardImg}
         alt=""
         aria-hidden="true"
         className="absolute hidden md:block hero-mouthguard"
@@ -112,7 +112,7 @@ const HeroSection = () => {
           left: "14%",
           zIndex: 4,
           width: "clamp(100px, 12vw, 200px)",
-          opacity: 0.6,
+          opacity: 0.5,
         }}
       />
 
