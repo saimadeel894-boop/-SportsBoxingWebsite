@@ -4,7 +4,6 @@ import pinkGloveImg from "@/assets/pink-glove.png";
 import mouthGuardImg from "@/assets/mouth-guard.svg";
 import jerseyFanImg from "@/assets/jersey-fan.webp";
 import logoImg from "@/assets/eikyo-logo.jpg";
-import martialArtsUniformImg from "@/assets/martial-arts-uniform.png";
 
 const HeroSection = () => {
   useEffect(() => {
@@ -15,7 +14,7 @@ const HeroSection = () => {
       const mouth = document.querySelector<HTMLElement>(".hero-mouthguard");
       const seal = document.querySelector<HTMLElement>(".hero-brand-seal");
       const stat = document.querySelector<HTMLElement>(".hero-stat-block");
-      if (eikyo) eikyo.style.transform = `translateX(-50%) translateY(${y * 0.2}px)`;
+      if (eikyo) eikyo.style.transform = `translateX(-50%) scaleX(1.5) translateY(${y * 0.2}px)`;
       if (glove) glove.style.transform = `rotate(-15deg) translateY(${y * 0.5}px)`;
       if (mouth) mouth.style.transform = `translateY(${y * 0.4}px)`;
       if (seal) seal.style.transform = `translateY(${y * 0.6}px) rotate(${y * 0.5}deg)`;
@@ -39,7 +38,7 @@ const HeroSection = () => {
           bottom: 0,
           left: "50%",
           transform: "translateX(-50%)",
-          height: "90%",
+          height: "92%",
           width: "auto",
           zIndex: 2,
           objectFit: "contain",
@@ -79,9 +78,9 @@ const HeroSection = () => {
         aria-hidden="true"
         className="hero-glove absolute hidden md:block"
         style={{
-          top: "8%",
-          left: "20%",
-          width: "100px",
+          top: "10%",
+          left: "26%",
+          width: "110px",
           zIndex: 4,
           transform: "rotate(-15deg)",
         }}
@@ -109,35 +108,35 @@ const HeroSection = () => {
         className="hero-customers-block absolute hidden md:flex items-center"
         style={{
           top: "10%",
-          right: "3%",
-          fontSize: "1.4rem",
+          right: "4%",
+          fontSize: "1.5rem",
           fontWeight: 800,
           color: "#000000",
           zIndex: 4,
         }}
       >
         <h3 className="font-heading uppercase" style={{ letterSpacing: "0.05em" }}>
-          5k+ Customers
+          5K + CUSTOMERS
         </h3>
       </div>
 
       {/* Layer 4 — JERSEY FAN right side */}
       <div
         className="hero-jersey-fan absolute hidden md:block"
-        style={{ top: "17%", right: "2%", zIndex: 4 }}
+        style={{ top: "16%", right: "3%", zIndex: 4 }}
       >
         <img
           src={jerseyFanImg}
           alt=""
           aria-hidden="true"
-          style={{ width: "200px", height: "auto" }}
+          style={{ width: "210px", height: "auto" }}
         />
       </div>
 
       {/* Layer 4 — BRAND SEAL bottom-right */}
       <div
         className="hero-brand-seal absolute hidden md:flex items-center"
-        style={{ top: "62%", right: "3%", width: "130px", zIndex: 4 }}
+        style={{ top: "72%", right: "3%", width: "130px", zIndex: 4 }}
       >
         <div className="relative w-full" style={{ aspectRatio: "1" }}>
           <svg viewBox="0 0 200 200" className="hero-brand-seal-spinner w-full h-full">
@@ -161,7 +160,7 @@ const HeroSection = () => {
       {/* CHOICE OF CHAMPIONS — left side */}
       <div
         className="hero-tagline absolute pointer-events-none"
-        style={{ top: "42%", left: "10%", zIndex: 5, background: "none", border: "none", borderRadius: 0, boxShadow: "none", padding: 0 }}
+        style={{ top: "56%", left: "12%", zIndex: 5, background: "none", border: "none", borderRadius: 0, boxShadow: "none", padding: 0 }}
       >
         <p
           className="font-heading uppercase"
@@ -183,7 +182,7 @@ const HeroSection = () => {
       {/* Layer 5 — 10+ STAT BLOCK */}
       <div
         className="hero-stat-block absolute"
-        style={{ top: "57%", left: "10%", zIndex: 5 }}
+        style={{ top: "66%", left: "12%", zIndex: 5 }}
       >
         <h3
           className="font-heading leading-none"
