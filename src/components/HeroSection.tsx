@@ -6,34 +6,29 @@ import jerseyFanImg from "@/assets/jersey-fan.webp";
 import logoImg from "@/assets/eikyo-logo.jpg";
 import karateUniformImg from "@/assets/martial-arts-uniform.png";
 
-const EIKYO_LETTERS = ["E", "I", "K", "Y", "O"];
-
 const HeroSection = () => {
-  const lettersRef = useRef<(HTMLSpanElement | null)[]>([]);
-  const fillLettersRef = useRef<(HTMLSpanElement | null)[]>([]);
+  const textRef = useRef<HTMLHeadingElement>(null);
   const boxerRef = useRef<HTMLImageElement>(null);
   const gloveRef = useRef<HTMLImageElement>(null);
   const mouthguardRef = useRef<HTMLImageElement>(null);
   const customersRef = useRef<HTMLParagraphElement>(null);
   const jerseysRef = useRef<HTMLImageElement>(null);
-  const choiceRef = useRef<HTMLParagraphElement>(null);
   const statRef = useRef<HTMLDivElement>(null);
   const sealRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Per-character 3D flip-in
-    [...lettersRef.current, ...fillLettersRef.current].forEach((el, i) => {
-      if (!el) return;
-      const idx = i % EIKYO_LETTERS.length;
-      el.style.opacity = "0";
-      el.style.transform = "perspective(600px) rotateX(-90deg)";
-      el.style.transition = "none";
+    // Text scale-in
+    if (textRef.current) {
+      const t = textRef.current;
+      t.style.opacity = "0";
+      t.style.transform = "translateX(-50%) scaleX(1.55) scale(0.8)";
+      t.style.transition = "none";
       setTimeout(() => {
-        el.style.transition = "opacity 0.6s ease-out, transform 0.8s cubic-bezier(0.16,1,0.3,1)";
-        el.style.opacity = "1";
-        el.style.transform = "perspective(600px) rotateX(0deg)";
-      }, 200 + idx * 120);
-    });
+        t.style.transition = "opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16,1,0.3,1)";
+        t.style.opacity = "1";
+        t.style.transform = "translateX(-50%) scaleX(1.55) scale(1)";
+      }, 150);
+    }
 
     // Boxer slide-up
     if (boxerRef.current) {
@@ -74,19 +69,6 @@ const HeroSection = () => {
       }, 500 + i * 100);
     });
 
-    // Choice mask slide-in
-    if (choiceRef.current) {
-      const c = choiceRef.current;
-      c.style.opacity = "0";
-      c.style.transform = "translateX(-100%)";
-      c.style.transition = "none";
-      setTimeout(() => {
-        c.style.transition = "opacity 0.5s ease-out, transform 0.7s cubic-bezier(0.16,1,0.3,1)";
-        c.style.opacity = "1";
-        c.style.transform = "translateX(0)";
-      }, 700);
-    }
-
     // Stat & mouthguard
     [statRef.current, mouthguardRef.current].forEach((el, i) => {
       if (!el) return;
@@ -113,9 +95,7 @@ const HeroSection = () => {
     // Scroll parallax
     const handleScroll = () => {
       const y = window.scrollY;
-      [...lettersRef.current, ...fillLettersRef.current].forEach((el) => {
-        if (el) el.style.transform = `perspective(600px) rotateX(0deg) translateY(${y * 0.15}px)`;
-      });
+      if (textRef.current) textRef.current.style.transform = `translateX(-50%) scaleX(1.55) translateY(${y * 0.15}px)`;
       if (boxerRef.current) boxerRef.current.style.transform = `translateX(-50%) translateY(${y * 0.05}px)`;
       if (gloveRef.current) gloveRef.current.style.transform = `rotate(-8deg) translateY(${y * 0.4}px)`;
       if (mouthguardRef.current) mouthguardRef.current.style.transform = `translateY(${y * 0.3}px)`;
@@ -137,19 +117,30 @@ const HeroSection = () => {
         .hero-wrap { position: relative; width: 100%; height: 78vh; background: #FFFFFF; overflow: hidden; }
         .hero-boxer { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); height: 100%; width: auto; object-fit: contain; object-position: bottom center; z-index: 2; pointer-events: none; will-change: transform; }
 
-        .hero-eikyo-stroke { position: absolute; top: 22%; left: 50%; transform: translateX(-50%); z-index: 3; pointer-events: none; user-select: none; white-space: nowrap; display: flex; gap: 0; }
-        .hero-eikyo-stroke span { font-family: 'Bebas Neue', sans-serif; font-size: 20vw; font-weight: 400; line-height: 1; letter-spacing: 20px; display: inline-block; will-change: transform, opacity; transform-origin: center center; color: transparent; -webkit-text-stroke: 8px #FF3A2D; paint-order: stroke fill; }
+        .hero-eikyo-text {
+          position: absolute;
+          top: 28%;
+          left: 50%;
+          transform: translateX(-50%) scaleX(1.55);
+          z-index: 1;
+          pointer-events: none;
+          user-select: none;
+          white-space: nowrap;
+          font-family: 'Bebas Neue', sans-serif;
+          font-size: 40vw;
+          font-weight: 400;
+          line-height: 0.8;
+          letter-spacing: 0.02em;
+          color: #E8171A;
+          margin: 0;
+          will-change: transform;
+        }
 
-        .hero-eikyo-fill { position: absolute; top: 22%; left: 50%; transform: translateX(-50%); z-index: 1; pointer-events: none; user-select: none; white-space: nowrap; display: flex; gap: 0; margin: 0; padding: 0; border: 0; }
-        .hero-eikyo-fill span { font-family: 'Bebas Neue', sans-serif; font-size: 20vw; font-weight: 400; line-height: 1; letter-spacing: 20px; display: inline-block; will-change: transform, opacity; transform-origin: center center; color: #FF3A2D; -webkit-text-stroke: 8px #FF0000; }
-
-        .hero-glove { position: absolute; top: 14%; left: 24%; width: 95px; z-index: 5; transform: rotate(-8deg); will-change: transform; animation: floatBob 3s ease-in-out infinite; }
-        .hero-mouthguard { position: absolute; top: 50%; right: -2%; width: 120px; z-index: 5; opacity: 0.35; will-change: transform; }
+        .hero-glove { position: absolute; top: 14%; left: 24%; width: 95px; z-index: 3; transform: rotate(-8deg); will-change: transform; animation: floatBob 3s ease-in-out infinite; }
+        .hero-mouthguard { position: absolute; top: 50%; right: -1%; width: 110px; z-index: 3; opacity: 0.35; will-change: transform; }
         .hero-customers { position: absolute; top: 10%; right: 5%; z-index: 5; font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; font-weight: 900; color: #000; letter-spacing: 0.05em; margin: 0; will-change: transform; white-space: nowrap; }
         .hero-jerseys { position: absolute; top: 22%; right: 4%; width: 185px; z-index: 5; }
-        .hero-karate { position: absolute; bottom: 0; left: -2%; width: 160px; z-index: 5; pointer-events: none; }
-        .hero-choice-mask { position: absolute; bottom: 38%; left: 18%; z-index: 5; overflow: hidden; }
-        .hero-choice { font-family: 'Poppins', 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 3px; color: #000; text-transform: uppercase; margin: 0; will-change: transform, opacity; }
+        .hero-karate { position: absolute; bottom: 0; left: -2%; width: 160px; z-index: 3; pointer-events: none; }
         .hero-stat { position: absolute; bottom: 28%; left: 3%; z-index: 5; will-change: transform; }
         .hero-stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 3.4rem; font-weight: 900; color: #000; line-height: 1; margin: 0; }
         .hero-stat-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.82rem; color: #000; margin: 4px 0 0 0; }
@@ -161,30 +152,16 @@ const HeroSection = () => {
 
         @media (max-width: 768px) {
           .hero-wrap { height: 100svh; }
-          .hero-eikyo-stroke, .hero-eikyo-fill { top: 30%; }
-          .hero-eikyo-stroke span, .hero-eikyo-fill span { font-size: 32vw; -webkit-text-stroke-width: 4px; letter-spacing: 8px; }
+          .hero-eikyo-text { font-size: 50vw; top: 32%; }
           .hero-boxer { height: 85%; }
           .hero-glove, .hero-mouthguard, .hero-customers, .hero-jerseys, .hero-seal-wrap, .hero-karate { display: none; }
-          .hero-choice { font-size: 0.7rem; }
-          .hero-choice-mask { bottom: 28%; left: 8%; }
           .hero-stat { bottom: 16%; }
         }
       `}</style>
 
       <section className="hero-wrap">
-        {/* Outlined stroke layer */}
-        <div className="hero-eikyo-stroke" aria-hidden="true">
-          {EIKYO_LETTERS.map((letter, i) => (
-            <span key={`s-${i}`} ref={(el) => { lettersRef.current[i] = el; }}>{letter}</span>
-          ))}
-        </div>
-
-        {/* Solid fill layer */}
-        <h1 className="hero-eikyo-fill">
-          {EIKYO_LETTERS.map((letter, i) => (
-            <span key={`f-${i}`} ref={(el) => { fillLettersRef.current[i] = el; }}>{letter}</span>
-          ))}
-        </h1>
+        {/* Solid red text — behind boxer */}
+        <h1 className="hero-eikyo-text" ref={textRef}>EIKYO</h1>
 
         <img src={fighterImg} alt="Fighter" className="hero-boxer" ref={boxerRef} />
         <img src={pinkGloveImg} alt="" aria-hidden="true" className="hero-glove" ref={gloveRef} />
@@ -193,10 +170,6 @@ const HeroSection = () => {
         <p className="hero-customers" ref={customersRef}>5K+ CUSTOMERS</p>
         <img src={jerseyFanImg} alt="" aria-hidden="true" className="hero-jerseys" ref={jerseysRef} />
         <img src={karateUniformImg} alt="" aria-hidden="true" className="hero-karate" />
-
-        <div className="hero-choice-mask">
-          <p className="hero-choice" ref={choiceRef}>CHOICE OF CHAMPIONS</p>
-        </div>
 
         <div className="hero-stat" ref={statRef}>
           <p className="hero-stat-num">10+</p>
