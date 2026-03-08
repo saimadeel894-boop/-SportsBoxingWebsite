@@ -31,7 +31,7 @@ const HeroSection = () => {
       <h1
         className="absolute pointer-events-none select-none whitespace-nowrap"
         style={{
-          bottom: 0,
+          bottom: "-5%",
           left: "50%",
           transform: "translateX(-50%) scaleX(1.55)",
           transformOrigin: "bottom center",
@@ -85,7 +85,7 @@ const HeroSection = () => {
       <div
         className="absolute hidden md:flex items-center"
         style={{
-          top: "6%",
+          top: "8%",
           right: "5%",
           fontSize: "1.5rem",
           fontWeight: 900,
