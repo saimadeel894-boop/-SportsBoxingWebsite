@@ -99,16 +99,8 @@ const HeroSection = () => {
       </div>
 
       {/* z-index 4 — JERSEY FAN right side */}
-      <div
-        className="absolute hidden md:block"
-        style={{ top: "17%", right: "4%", zIndex: 4 }}
-      >
-        <img
-          src={jerseyFanImg}
-          alt=""
-          aria-hidden="true"
-          style={{ width: "185px", height: "auto" }}
-        />
+      <div className="absolute hidden md:block" style={{ top: "17%", right: "4%", zIndex: 4 }}>
+        <img src={jerseyFanImg} alt="" aria-hidden="true" style={{ width: "185px", height: "auto" }} />
       </div>
 
       {/* z-index 4 — BRAND SEAL bottom-right */}
@@ -126,20 +118,13 @@ const HeroSection = () => {
             </text>
           </svg>
           <div className="absolute inset-0 flex items-center justify-center">
-            <img
-              src={logoImg}
-              alt="EIKYO International"
-              className="w-12 h-12 object-contain rounded-full"
-            />
+            <img src={logoImg} alt="EIKYO International" className="w-12 h-12 object-contain rounded-full" />
           </div>
         </div>
       </div>
 
       {/* z-index 4 — CHOICE OF CHAMPIONS */}
-      <div
-        className="absolute pointer-events-none"
-        style={{ bottom: "33%", left: "3%", zIndex: 4 }}
-      >
+      <div className="absolute pointer-events-none" style={{ bottom: "33%", left: "3%", zIndex: 4 }}>
         <p
           className="font-heading uppercase"
           style={{
@@ -157,20 +142,11 @@ const HeroSection = () => {
       </div>
 
       {/* z-index 4 — 10+ STAT BLOCK */}
-      <div
-        className="absolute"
-        style={{ bottom: "11%", left: "3%", zIndex: 4 }}
-      >
-        <h3
-          className="font-heading leading-none"
-          style={{ fontSize: "3.2rem", fontWeight: 900, color: "#000000" }}
-        >
+      <div className="absolute" style={{ bottom: "11%", left: "3%", zIndex: 4 }}>
+        <h3 className="font-heading leading-none" style={{ fontSize: "3.2rem", fontWeight: 900, color: "#000000" }}>
           10+
         </h3>
-        <p
-          className="font-heading mt-1"
-          style={{ fontSize: "0.82rem", color: "#000000" }}
-        >
+        <p className="font-heading mt-1" style={{ fontSize: "0.82rem", color: "#000000" }}>
           Years Of
           <br />
           Experience
