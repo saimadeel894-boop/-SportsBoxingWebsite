@@ -30,44 +30,54 @@ const steps = [
 
 const HowWeWork = () => {
   return (
-    <section id="how-we-work" className="py-20 md:py-32 bg-white overflow-hidden">
+    <section id="how-we-work" className="py-20 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-5 lg:px-8">
-        <div className="mb-16 md:mb-24">
-          <h2 className="font-heading text-4xl md:text-6xl font-black text-black uppercase tracking-tight mb-6">
-            Our Process
+        <div className="mb-12 md:mb-16">
+          <h2 className="font-heading text-5xl md:text-7xl lg:text-8xl text-primary uppercase mb-6">
+            How We Work
           </h2>
-          <div className="w-20 h-1.5 bg-primary" />
+          <p className="font-body text-muted-foreground text-sm md:text-base max-w-3xl leading-relaxed">
+            At EIKYO International, we craft premium custom-fight gear for martial artists and boxers who value performance, durability, and identity. From training to competition gear, each design is tailored to reflect your discipline, strength, and unique style. From concept to delivery, we manage the entire process — making customization reliable, and stress-free.
+          </p>
         </div>
 
+        {/* Partner logos marquee */}
+        <div className="relative overflow-hidden mb-16 py-6 border-y border-border">
+          <div className="flex items-center gap-12 animate-marquee whitespace-nowrap">
+            {[...Array(6)].map((_, i) => (
+              <div key={i} className="flex-shrink-0 flex items-center justify-center w-32 h-16 md:w-44 md:h-20 bg-secondary rounded-md">
+                <span className="font-heading text-sm md:text-lg text-muted-foreground uppercase tracking-wider">
+                  {["PUNOK", "EIKYO", "Champion", "FightGear", "RingMasters", "CombatElite"][i]}
+                </span>
+              </div>
+            ))}
+            {[...Array(6)].map((_, i) => (
+              <div key={`dup-${i}`} className="flex-shrink-0 flex items-center justify-center w-32 h-16 md:w-44 md:h-20 bg-secondary rounded-md">
+                <span className="font-heading text-sm md:text-lg text-muted-foreground uppercase tracking-wider">
+                  {["PUNOK", "EIKYO", "Champion", "FightGear", "RingMasters", "CombatElite"][i]}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Steps */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
           {steps.map((step, index) => (
             <div key={step.title} className="relative group">
-              <div className="font-accent text-primary/10 text-8xl absolute -top-10 left-0 pointer-events-none select-none">
+              <div className="font-heading text-primary/10 text-8xl absolute -top-10 left-0 pointer-events-none select-none">
                 0{index + 1}
               </div>
-              <div className="relative z-10 pt-4 border-t border-black/10 mt-2">
-                <h3 className="font-heading font-black text-sm md:text-base text-black uppercase tracking-wider mb-4 group-hover:text-primary transition-colors">
+              <div className="relative z-10 pt-4 border-t border-border mt-2">
+                <h3 className="font-body font-bold text-sm md:text-base text-foreground uppercase tracking-wider mb-4 group-hover:text-primary transition-colors">
                   {step.title}
                 </h3>
-                <p className="text-black/60 text-xs md:text-sm leading-relaxed">
+                <p className="font-body text-muted-foreground text-xs md:text-sm leading-relaxed">
                   {step.description}
                 </p>
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="mt-24 md:mt-32 p-8 md:p-16 bg-[#121212] rounded-[40px] text-center text-white relative overflow-hidden group">
-          <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-          <h2 className="font-heading text-2xl md:text-4xl font-black uppercase tracking-tight mb-6 relative z-10">
-            Ready to gear up with EIKYO?
-          </h2>
-          <a
-            href="#contact"
-            className="inline-block font-heading font-bold text-sm uppercase tracking-wider bg-primary text-white px-10 py-4 hover:bg-white hover:text-primary transition-all duration-300 relative z-10"
-          >
-            Start Your Order
-          </a>
         </div>
       </div>
     </section>

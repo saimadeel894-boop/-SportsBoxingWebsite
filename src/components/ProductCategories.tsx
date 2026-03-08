@@ -1,51 +1,38 @@
-import glovesImg from "@/assets/boxing-gloves.png";
-import headguardImg from "@/assets/headguard.png";
-import shinGuardsImg from "@/assets/shin-guards.png";
-import mmaGlovesImg from "@/assets/mma-gloves.png";
 import uniformImg from "@/assets/martial-arts-uniform.png";
-import trainingRopeImg from "@/assets/training-rope.png";
+import glovesImg from "@/assets/boxing-gloves.png";
+import mmaGlovesImg from "@/assets/mma-gloves.png";
+import shinGuardsImg from "@/assets/shin-guards.png";
+
+const products = [
+  { name: "Karate Uniform", code: "AS-02-101", img: uniformImg },
+  { name: "Punching Bag", code: "AS-01-4401", img: shinGuardsImg },
+  { name: "Boxing Glove", code: "AB-858", img: glovesImg },
+  { name: "MMA Shorts", code: "AS-07-201", img: mmaGlovesImg },
+];
 
 const ProductCategories = () => {
   return (
-    <section id="products" className="py-20 md:py-32 bg-white">
+    <section id="products" className="py-20 md:py-32 bg-[#1A1A1A]">
       <div className="max-w-7xl mx-auto px-5 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-          {/* Boxing Card */}
-          <div className="relative group bg-primary aspect-[4/5] md:aspect-square flex flex-col items-center justify-between p-8 md:p-12 overflow-hidden shadow-2xl">
-            <h3 className="font-accent text-white text-5xl md:text-7xl lg:text-8xl uppercase tracking-tighter leading-none relative z-10 self-start">
-              BOXING
-            </h3>
+        <div className="mb-12">
+          <h2 className="font-heading text-5xl md:text-7xl lg:text-8xl text-primary uppercase">
+            Our Product
+          </h2>
+          <p className="font-body text-white/60 text-sm md:text-base mt-4 max-w-2xl">
+            Discover our most trusted and high-performance gear — handpicked to represent the best in quality and innovation.
+          </p>
+        </div>
 
-            {/* Pedestal & Product */}
-            <div className="relative flex-1 w-full flex items-center justify-center">
-              {/* Pedestal */}
-              <div className="absolute bottom-[10%] w-[80%] aspect-[4/1] bg-white/90 rounded-[50%] blur-[2px] shadow-inner" />
-              <img
-                src={glovesImg}
-                alt="Boxing Gear"
-                className="relative z-10 max-h-[70%] w-auto object-contain transition-transform duration-700 group-hover:scale-110 group-hover:-translate-y-4"
-              />
-            </div>
-          </div>
-
-          {/* Martial Arts Card */}
-          <div className="relative group bg-primary aspect-[4/5] md:aspect-square flex flex-col items-center justify-between p-8 md:p-12 overflow-hidden shadow-2xl">
-            <h3 className="font-accent text-black text-4xl md:text-5xl lg:text-6xl uppercase tracking-tighter leading-none relative z-10 self-start">
-              Martial Arts
-            </h3>
-
-            {/* Pedestal & Product */}
-            <div className="relative flex-1 w-full flex items-center justify-center">
-              {/* Product inside a dark background box for contrast */}
-              <div className="w-[85%] aspect-video bg-[#1A1A1A] rounded-2xl overflow-hidden flex items-center justify-center border border-black/20 relative z-10">
-                <img
-                  src={uniformImg}
-                  alt="Martial Arts Gear"
-                  className="max-h-[140%] w-auto object-contain transition-transform duration-700 group-hover:scale-110"
-                />
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          {products.map((p) => (
+            <div key={p.code} className="bg-white rounded-2xl p-4 md:p-6 flex flex-col items-center group hover:-translate-y-1 transition-transform duration-300">
+              <div className="aspect-square w-full flex items-center justify-center mb-4">
+                <img src={p.img} alt={p.name} className="max-h-[80%] w-auto object-contain transition-transform duration-500 group-hover:scale-110" />
               </div>
+              <h3 className="font-body font-bold text-foreground text-sm md:text-base text-center">{p.name}</h3>
+              <p className="font-body text-muted-foreground text-xs mt-1">{p.code}</p>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

@@ -1,41 +1,34 @@
-import { Palette, Shield, Users, Headphones } from "lucide-react";
+import { Shield, Truck, Palette, Layers } from "lucide-react";
 
 const features = [
   {
-    icon: Palette,
-    title: "Unlimited Customisation",
-    description:
-      "We offer endless possibilities for colours, logos, and designs — crafted to match your gym's identity and fighting style.",
-  },
-  {
     icon: Shield,
+    title: "Quality Assurance",
+    description: "Each item undergoes strict quality checks to ensure it matches the approved design.",
+  },
+  {
+    icon: Truck,
+    title: "Delivery",
+    description: "We ship on time, nationwide, with tracking to keep your team game-ready in style.",
+  },
+  {
+    icon: Palette,
+    title: "Unlimited Customization",
+    description: "We offer endless possibilities for colors, logos, and designs — crafted to match your gym's identity and fighting style.",
+  },
+  {
+    icon: Layers,
     title: "High-Quality Materials",
-    description:
-      "Our fightwear is crafted using premium fabrics engineered for performance, comfort, and long-lasting durability.",
-  },
-  {
-    icon: Users,
-    title: "Team Spirit",
-    description:
-      "We help showcase your gym or team's identity through bold, standout designs that unite fighters and coaches alike.",
-  },
-  {
-    icon: Headphones,
-    title: "Customer Support",
-    description:
-      "Our dedicated team supports you at every stage — from design consultation to final delivery and beyond.",
+    description: "Our fightwear is crafted using premium fabrics engineered for performance, comfort, and long-lasting durability.",
   },
 ];
 
 const WhyChooseUs = () => {
   return (
-    <section className="py-16 md:py-28 bg-background">
+    <section className="py-16 md:py-28 bg-secondary">
       <div className="max-w-7xl mx-auto px-5 lg:px-8">
         <div className="text-center mb-10 md:mb-14">
-          <h2
-            className="font-black text-3xl md:text-5xl lg:text-7xl text-primary uppercase"
-            style={{ fontFamily: "'Anton', sans-serif" }}
-          >
+          <h2 className="font-heading text-5xl md:text-7xl lg:text-8xl text-primary uppercase">
             Why Us
           </h2>
         </div>
@@ -43,15 +36,15 @@ const WhyChooseUs = () => {
           {features.map((f) => (
             <div
               key={f.title}
-              className="group bg-card border border-border rounded-lg p-5 md:p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-primary/30"
+              className="group bg-card rounded-2xl p-6 md:p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
-              <div className="w-12 h-12 md:w-14 md:h-14 mx-auto mb-4 md:mb-5 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
-                <f.icon className="w-5 h-5 md:w-6 md:h-6 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
+              <div className="w-14 h-14 mx-auto mb-5 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
+                <f.icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
               </div>
-              <h3 className="font-heading font-bold text-xs md:text-base text-foreground uppercase tracking-wider mb-2 md:mb-3">
+              <h3 className="font-body font-bold text-sm md:text-base text-foreground uppercase tracking-wider mb-3">
                 {f.title}
               </h3>
-              <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+              <p className="font-body text-xs md:text-sm text-muted-foreground leading-relaxed">
                 {f.description}
               </p>
             </div>

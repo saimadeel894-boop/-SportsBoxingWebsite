@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Anton&family=Roboto:wght@400;500;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,43 +6,32 @@
   :root {
     --background: 0 0% 100%;
     --foreground: 0 0% 0%;
-
     --card: 0 0% 100%;
     --card-foreground: 0 0% 0%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 0%;
-
-    /* Pure Red #FF0000 */
-    --primary: 0 100% 50%;
+    --primary: 356 85% 50%;
     --primary-foreground: 0 0% 100%;
-
     --secondary: 0 0% 96%;
     --secondary-foreground: 0 0% 0%;
-
     --muted: 0 0% 96%;
     --muted-foreground: 0 0% 40%;
-
-    --accent: 0 100% 50%;
+    --accent: 356 85% 50%;
     --accent-foreground: 0 0% 100%;
-
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-
     --border: 0 0% 90%;
     --input: 0 0% 90%;
-    --ring: 0 100% 50%;
-
-    --radius: 0rem;
-
+    --ring: 356 85% 50%;
+    --radius: 0.5rem;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 0 0% 15%;
-    --sidebar-primary: 0 100% 50%;
+    --sidebar-primary: 356 85% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 0 0% 94%;
     --sidebar-accent-foreground: 0 0% 15%;
     --sidebar-border: 0 0% 88%;
-    --sidebar-ring: 0 100% 50%;
+    --sidebar-ring: 356 85% 50%;
   }
 }
 
@@ -54,95 +41,35 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
   }
 }
 
 @layer utilities {
   .font-heading {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
   }
-  .font-accent {
-    font-family: 'Anton', sans-serif;
+  .font-body {
+    font-family: 'Barlow Condensed', sans-serif;
   }
 }
 
+/* Marquee animation */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+/* Seal spin */
 @keyframes spin-slow {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-
 .animate-spin-slow {
   animation: spin-slow 12s linear infinite;
-}
-
-/* text-stroke-red removed — EIKYO must be solid filled */
-
-/* Slight, subtle float to feel closer to reference hero */
-@keyframes float-drift-1 {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  25% { transform: translate(8px, -10px) rotate(3deg); }
-  50% { transform: translate(-6px, -16px) rotate(-2deg); }
-  75% { transform: translate(10px, -8px) rotate(2deg); }
-}
-
-@keyframes float-drift-2 {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  33% { transform: translate(-10px, 8px) rotate(-3deg); }
-  66% { transform: translate(8px, -12px) rotate(2deg); }
-}
-
-@keyframes float-drift-3 {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  20% { transform: translate(12px, 6px) rotate(4deg); }
-  40% { transform: translate(-9px, -10px) rotate(-3deg); }
-  60% { transform: translate(8px, -14px) rotate(3deg); }
-  80% { transform: translate(-10px, 4px) rotate(-2deg); }
-}
-
-@keyframes fade-float-in {
-  0% { opacity: 0; transform: translateY(30px) scale(0.9); }
-  100% { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-.animate-float-1 {
-  animation: fade-float-in 1s ease-out forwards, float-drift-1 8s ease-in-out infinite 1s;
-}
-.animate-float-2 {
-  animation: fade-float-in 1.2s ease-out forwards, float-drift-2 10s ease-in-out infinite 1.2s;
-}
-.animate-float-3 {
-  animation: fade-float-in 1.4s ease-out forwards, float-drift-3 12s ease-in-out infinite 1.4s;
-}
-.animate-float-4 {
-  animation: fade-float-in 1.6s ease-out forwards, float-drift-1 14s ease-in-out infinite 1.6s;
-}
-.animate-float-5 {
-  animation: fade-float-in 1s ease-out forwards, float-drift-2 9s ease-in-out infinite 1s;
-}
-.animate-float-6 {
-  animation: fade-float-in 1.3s ease-out forwards, float-drift-3 11s ease-in-out infinite 1.3s;
-}
-
-@media (max-width: 768px) {
-  .animate-float-1, .animate-float-2, .animate-float-3,
-  .animate-float-4, .animate-float-5, .animate-float-6 {
-    animation-duration: 16s, 20s;
-  }
-}
-
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-33.333%); }
-}
-
-.animate-marquee {
-  animation: marquee 20s linear infinite;
-}
-
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }
 
 /* Mobile hero */
@@ -150,13 +77,5 @@
   .hero-section {
     height: 100svh !important;
     overflow: hidden;
-    background: #FFFFFF;
-  }
-  .hero-section h1 {
-    font-size: 38vw !important;
-  }
-  .hero-section img[alt="Professional fighter in fighting stance"] {
-    height: 78% !important;
   }
 }
-
