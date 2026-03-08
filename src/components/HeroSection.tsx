@@ -4,6 +4,7 @@ import pinkGloveImg from "@/assets/pink-glove.png";
 import mouthGuardImg from "@/assets/mouth-guard.svg";
 import jerseyFanImg from "@/assets/jersey-fan.webp";
 import logoImg from "@/assets/eikyo-logo.jpg";
+import karateUniformImg from "@/assets/martial-arts-uniform.png";
 
 const EIKYO_LETTERS = ["E", "I", "K", "Y", "O"];
 
@@ -143,9 +144,10 @@ const HeroSection = () => {
         .hero-eikyo-fill span { font-family: 'Bebas Neue', sans-serif; font-size: 20vw; font-weight: 400; line-height: 1; letter-spacing: 20px; display: inline-block; will-change: transform, opacity; transform-origin: center center; color: #FF3A2D; -webkit-text-stroke: 8px #FF0000; }
 
         .hero-glove { position: absolute; top: 14%; left: 24%; width: 95px; z-index: 5; transform: rotate(-8deg); will-change: transform; animation: floatBob 3s ease-in-out infinite; }
-        .hero-mouthguard { position: absolute; bottom: 8%; right: 6%; width: 100px; z-index: 5; opacity: 0.42; will-change: transform; }
-        .hero-customers { position: absolute; top: 6%; right: 5%; z-index: 5; font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; font-weight: 900; color: #000; letter-spacing: 0.05em; margin: 0; will-change: transform; }
-        .hero-jerseys { position: absolute; top: 16%; right: 4%; width: 185px; z-index: 5; }
+        .hero-mouthguard { position: absolute; top: 50%; right: -2%; width: 120px; z-index: 5; opacity: 0.35; will-change: transform; }
+        .hero-customers { position: absolute; top: 10%; right: 5%; z-index: 5; font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; font-weight: 900; color: #000; letter-spacing: 0.05em; margin: 0; will-change: transform; white-space: nowrap; }
+        .hero-jerseys { position: absolute; top: 22%; right: 4%; width: 185px; z-index: 5; }
+        .hero-karate { position: absolute; bottom: 0; left: -2%; width: 160px; z-index: 5; pointer-events: none; }
         .hero-choice-mask { position: absolute; bottom: 38%; left: 18%; z-index: 5; overflow: hidden; }
         .hero-choice { font-family: 'Poppins', 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 3px; color: #000; text-transform: uppercase; margin: 0; will-change: transform, opacity; }
         .hero-stat { position: absolute; bottom: 28%; left: 3%; z-index: 5; will-change: transform; }
@@ -162,7 +164,7 @@ const HeroSection = () => {
           .hero-eikyo-stroke, .hero-eikyo-fill { top: 30%; }
           .hero-eikyo-stroke span, .hero-eikyo-fill span { font-size: 32vw; -webkit-text-stroke-width: 4px; letter-spacing: 8px; }
           .hero-boxer { height: 85%; }
-          .hero-glove, .hero-mouthguard, .hero-customers, .hero-jerseys, .hero-seal-wrap { display: none; }
+          .hero-glove, .hero-mouthguard, .hero-customers, .hero-jerseys, .hero-seal-wrap, .hero-karate { display: none; }
           .hero-choice { font-size: 0.7rem; }
           .hero-choice-mask { bottom: 28%; left: 8%; }
           .hero-stat { bottom: 16%; }
@@ -190,6 +192,7 @@ const HeroSection = () => {
 
         <p className="hero-customers" ref={customersRef}>5K+ CUSTOMERS</p>
         <img src={jerseyFanImg} alt="" aria-hidden="true" className="hero-jerseys" ref={jerseysRef} />
+        <img src={karateUniformImg} alt="" aria-hidden="true" className="hero-karate" />
 
         <div className="hero-choice-mask">
           <p className="hero-choice" ref={choiceRef}>CHOICE OF CHAMPIONS</p>
