@@ -1,16 +1,140 @@
+import { useEffect, useRef } from "react";
 import fighterImg from "@/assets/fighter-hero.webp";
 import pinkGloveImg from "@/assets/pink-glove.png";
 import mouthGuardImg from "@/assets/mouth-guard.svg";
 import jerseyFanImg from "@/assets/jersey-fan.webp";
 import logoImg from "@/assets/eikyo-logo.jpg";
 
+const EIKYO_LETTERS = ["E", "I", "K", "Y", "O"];
+
 const HeroSection = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const lettersRef = useRef<(HTMLSpanElement | null)[]>([]);
+  const boxerRef = useRef<HTMLImageElement>(null);
+  const gloveRef = useRef<HTMLImageElement>(null);
+  const mouthguardRef = useRef<HTMLImageElement>(null);
+  const customersRef = useRef<HTMLParagraphElement>(null);
+  const jerseysRef = useRef<HTMLImageElement>(null);
+  const choiceRef = useRef<HTMLParagraphElement>(null);
+  const statRef = useRef<HTMLDivElement>(null);
+  const sealRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Entry animation: per-character 3D rotateX flip-in
+    lettersRef.current.forEach((el, i) => {
+      if (!el) return;
+      el.style.opacity = "0";
+      el.style.transform = "perspective(600px) rotateX(-90deg)";
+      el.style.transition = "none";
+
+      setTimeout(() => {
+        el.style.transition = `opacity 0.6s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)`;
+        el.style.opacity = "1";
+        el.style.transform = "perspective(600px) rotateX(0deg)";
+      }, 200 + i * 120);
+    });
+
+    // Boxer fade-in
+    if (boxerRef.current) {
+      const b = boxerRef.current;
+      b.style.opacity = "0";
+      b.style.transform = "translateX(-50%) translateY(20px)";
+      b.style.transition = "none";
+      setTimeout(() => {
+        b.style.transition = "opacity 0.8s ease-out, transform 0.8s ease-out";
+        b.style.opacity = "1";
+        b.style.transform = "translateX(-50%) translateY(0)";
+      }, 100);
+    }
+
+    // Glove float-in
+    if (gloveRef.current) {
+      const g = gloveRef.current;
+      g.style.opacity = "0";
+      g.style.transform = "rotate(-8deg) translateY(-30px)";
+      g.style.transition = "none";
+      setTimeout(() => {
+        g.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out";
+        g.style.opacity = "1";
+        g.style.transform = "rotate(-8deg) translateY(0)";
+      }, 400);
+    }
+
+    // Right-side elements fade-in
+    [customersRef.current, jerseysRef.current].forEach((el, i) => {
+      if (!el) return;
+      el.style.opacity = "0";
+      el.style.transform = "translateX(30px)";
+      el.style.transition = "none";
+      setTimeout(() => {
+        el.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out";
+        el.style.opacity = "1";
+        el.style.transform = "translateX(0)";
+      }, 500 + i * 100);
+    });
+
+    // Choice of champions slide-in (mask reveal)
+    if (choiceRef.current) {
+      const c = choiceRef.current;
+      c.style.opacity = "0";
+      c.style.transform = "translateX(-100%)";
+      c.style.transition = "none";
+      setTimeout(() => {
+        c.style.transition = "opacity 0.5s ease-out, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)";
+        c.style.opacity = "1";
+        c.style.transform = "translateX(0)";
+      }, 700);
+    }
+
+    // Stat & mouthguard fade-in
+    [statRef.current, mouthguardRef.current].forEach((el, i) => {
+      if (!el) return;
+      el.style.opacity = "0";
+      el.style.transition = "none";
+      setTimeout(() => {
+        el.style.transition = "opacity 0.5s ease-out";
+        el.style.opacity = "1";
+      }, 800 + i * 100);
+    });
+
+    // Seal fade-in
+    if (sealRef.current) {
+      sealRef.current.style.opacity = "0";
+      sealRef.current.style.transition = "none";
+      setTimeout(() => {
+        sealRef.current!.style.transition = "opacity 0.5s ease-out";
+        sealRef.current!.style.opacity = "1";
+      }, 900);
+    }
+
+    // Scroll parallax
+    const handleScroll = () => {
+      const y = window.scrollY;
+      lettersRef.current.forEach((el) => {
+        if (el) el.style.transform = `perspective(600px) rotateX(0deg) translateY(${y * 0.15}px)`;
+      });
+      if (boxerRef.current) boxerRef.current.style.transform = `translateX(-50%) translateY(${y * 0.05}px)`;
+      if (gloveRef.current) gloveRef.current.style.transform = `rotate(-8deg) translateY(${y * 0.4}px)`;
+      if (mouthguardRef.current) mouthguardRef.current.style.transform = `translateY(${y * 0.3}px)`;
+      if (customersRef.current) customersRef.current.style.transform = `translateY(${y * 0.6}px)`;
+      if (sealRef.current) sealRef.current.style.transform = `translateY(${y * 0.5}px)`;
+      if (statRef.current) statRef.current.style.transform = `translateY(${y * 0.7}px)`;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
       <style>{`
         @keyframes heroSpin {
           from { transform: rotate(0deg); }
           to { transform: rotate(360deg); }
+        }
+        @keyframes floatBob {
+          0%, 100% { transform: translateY(0px) rotate(-8deg); }
+          50% { transform: translateY(-10px) rotate(-8deg); }
         }
 
         .hero-wrap {
@@ -30,29 +154,65 @@ const HeroSection = () => {
           width: auto;
           object-fit: contain;
           object-position: bottom center;
-          z-index: 1;
+          z-index: 3;
           pointer-events: none;
+          will-change: transform;
         }
 
-        .hero-eikyo {
+        /* Outlined text layer (behind) */
+        .hero-eikyo-wrap {
           position: absolute;
           bottom: -4%;
           left: 50%;
-          transform: translateX(-50%) scaleX(1.6);
-          transform-origin: bottom center;
+          transform: translateX(-50%);
+          z-index: 2;
+          pointer-events: none;
+          user-select: none;
+          white-space: nowrap;
+          display: flex;
+          gap: 0;
+        }
+
+        .hero-eikyo-letter {
           font-family: 'Bebas Neue', sans-serif;
           font-size: 26vw;
           font-weight: 400;
-          color: #E8171A;
           line-height: 1;
           letter-spacing: 4px;
-          white-space: nowrap;
+          display: inline-block;
+          will-change: transform, opacity;
+          transform-origin: bottom center;
+          /* Outlined stroke style matching reference */
+          color: transparent;
+          -webkit-text-stroke: 6px #E8171A;
+          paint-order: stroke fill;
+        }
+
+        /* Solid fill text layer (in front, same position) */
+        .hero-eikyo-wrap-fill {
+          position: absolute;
+          bottom: -4%;
+          left: 50%;
+          transform: translateX(-50%);
           z-index: 2;
-          opacity: 1;
-          -webkit-text-stroke: 0px transparent;
           pointer-events: none;
           user-select: none;
-          display: block;
+          white-space: nowrap;
+          display: flex;
+          gap: 0;
+        }
+
+        .hero-eikyo-letter-fill {
+          font-family: 'Bebas Neue', sans-serif;
+          font-size: 26vw;
+          font-weight: 400;
+          line-height: 1;
+          letter-spacing: 4px;
+          display: inline-block;
+          will-change: transform, opacity;
+          transform-origin: bottom center;
+          color: #E8171A;
+          -webkit-text-stroke: 0px transparent;
         }
 
         .hero-glove {
@@ -62,6 +222,8 @@ const HeroSection = () => {
           width: 95px;
           z-index: 4;
           transform: rotate(-8deg);
+          will-change: transform;
+          animation: floatBob 3s ease-in-out infinite;
         }
 
         .hero-mouthguard {
@@ -71,6 +233,7 @@ const HeroSection = () => {
           width: 150px;
           z-index: 4;
           opacity: 0.42;
+          will-change: transform;
         }
 
         .hero-customers {
@@ -84,6 +247,7 @@ const HeroSection = () => {
           color: #000000;
           letter-spacing: 0.05em;
           margin: 0;
+          will-change: transform;
         }
 
         .hero-jerseys {
@@ -94,11 +258,15 @@ const HeroSection = () => {
           z-index: 4;
         }
 
-        .hero-choice {
+        .hero-choice-mask {
           position: absolute;
           bottom: 32%;
           left: 3%;
           z-index: 4;
+          overflow: hidden;
+        }
+
+        .hero-choice {
           font-family: 'Bebas Neue', sans-serif;
           font-size: 0.85rem;
           font-weight: 700;
@@ -106,9 +274,7 @@ const HeroSection = () => {
           color: #000000;
           text-transform: uppercase;
           margin: 0;
-          background: none;
-          border: none;
-          padding: 0;
+          will-change: transform, opacity;
         }
 
         .hero-stat {
@@ -116,6 +282,7 @@ const HeroSection = () => {
           bottom: 13%;
           left: 3%;
           z-index: 4;
+          will-change: transform;
         }
 
         .hero-stat-num {
@@ -161,12 +328,13 @@ const HeroSection = () => {
           right: 2%;
           width: 115px;
           z-index: 4;
+          will-change: transform;
         }
 
         .hero-seal-svg {
           width: 100%;
           height: 100%;
-          animation: heroSpin 12s linear infinite;
+          animation: heroSpin 8s linear infinite;
         }
 
         .hero-seal-logo {
@@ -179,34 +347,64 @@ const HeroSection = () => {
 
         @media (max-width: 768px) {
           .hero-wrap { height: 100svh; }
-          .hero-eikyo { font-size: 40vw; bottom: -2%; }
+          .hero-eikyo-wrap,
+          .hero-eikyo-wrap-fill { bottom: -2%; }
+          .hero-eikyo-letter,
+          .hero-eikyo-letter-fill { font-size: 40vw; -webkit-text-stroke-width: 3px; }
           .hero-boxer { height: 80%; }
           .hero-glove,
           .hero-mouthguard,
           .hero-customers,
           .hero-jerseys,
           .hero-seal-wrap { display: none; }
-          .hero-choice { bottom: 28%; font-size: 0.7rem; }
+          .hero-choice { font-size: 0.7rem; }
+          .hero-choice-mask { bottom: 28%; }
           .hero-stat { bottom: 10%; }
         }
       `}</style>
 
-      <section className="hero-wrap">
-        <img src={fighterImg} alt="Fighter" className="hero-boxer" />
+      <section className="hero-wrap" ref={sectionRef}>
+        {/* Outlined text layer */}
+        <div className="hero-eikyo-wrap" aria-hidden="true">
+          {EIKYO_LETTERS.map((letter, i) => (
+            <span
+              key={`stroke-${i}`}
+              className="hero-eikyo-letter"
+              ref={(el) => { lettersRef.current[i] = el; }}
+            >
+              {letter}
+            </span>
+          ))}
+        </div>
 
-        <h1 className="hero-eikyo">EIKYO</h1>
+        {/* Solid fill text layer */}
+        <h1 className="hero-eikyo-wrap-fill">
+          {EIKYO_LETTERS.map((letter, i) => (
+            <span
+              key={`fill-${i}`}
+              className="hero-eikyo-letter-fill"
+              ref={(el) => { lettersRef.current[EIKYO_LETTERS.length + i] = el; }}
+            >
+              {letter}
+            </span>
+          ))}
+        </h1>
 
-        <img src={pinkGloveImg} alt="" aria-hidden="true" className="hero-glove" />
+        <img src={fighterImg} alt="Fighter" className="hero-boxer" ref={boxerRef} />
 
-        <img src={mouthGuardImg} alt="" aria-hidden="true" className="hero-mouthguard" />
+        <img src={pinkGloveImg} alt="" aria-hidden="true" className="hero-glove" ref={gloveRef} />
 
-        <p className="hero-customers">5K+ CUSTOMERS</p>
+        <img src={mouthGuardImg} alt="" aria-hidden="true" className="hero-mouthguard" ref={mouthguardRef} />
 
-        <img src={jerseyFanImg} alt="" aria-hidden="true" className="hero-jerseys" />
+        <p className="hero-customers" ref={customersRef}>5K+ CUSTOMERS</p>
 
-        <p className="hero-choice">CHOICE OF CHAMPIONS</p>
+        <img src={jerseyFanImg} alt="" aria-hidden="true" className="hero-jerseys" ref={jerseysRef} />
 
-        <div className="hero-stat">
+        <div className="hero-choice-mask">
+          <p className="hero-choice" ref={choiceRef}>CHOICE OF CHAMPIONS</p>
+        </div>
+
+        <div className="hero-stat" ref={statRef}>
           <p className="hero-stat-num">10+</p>
           <p className="hero-stat-label">Years Of Experience</p>
         </div>
@@ -226,7 +424,7 @@ const HeroSection = () => {
           <span style={{ fontSize: 14, fontWeight: 600, color: "#000" }}>WhatsApp</span>
         </a>
 
-        <div className="hero-seal-wrap">
+        <div className="hero-seal-wrap" ref={sealRef}>
           <div style={{ position: "relative", width: "100%", aspectRatio: "1" }}>
             <svg viewBox="0 0 200 200" className="hero-seal-svg">
               <defs>
