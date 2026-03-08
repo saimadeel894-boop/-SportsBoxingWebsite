@@ -134,38 +134,38 @@ const HeroSection = () => {
         @keyframes floatBob { 0%,100% { transform: translateY(0) rotate(-8deg); } 50% { transform: translateY(-10px) rotate(-8deg); } }
 
         .hero-wrap { position: relative; width: 100%; height: 78vh; background: #FFFFFF; overflow: hidden; }
-        .hero-boxer { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); height: 100%; width: auto; object-fit: contain; object-position: bottom center; z-index: 1; pointer-events: none; will-change: transform; }
+        .hero-boxer { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); height: 100%; width: auto; object-fit: contain; object-position: bottom center; z-index: 2; pointer-events: none; will-change: transform; }
 
-        .hero-eikyo-stroke { position: absolute; bottom: -4%; left: 50%; transform: translateX(-50%); z-index: 2; pointer-events: none; user-select: none; white-space: nowrap; display: flex; gap: 0; }
-        .hero-eikyo-stroke span { font-family: 'Bebas Neue', sans-serif; font-size: 26vw; font-weight: 400; line-height: 1; letter-spacing: 4px; display: inline-block; will-change: transform, opacity; transform-origin: bottom center; color: transparent; -webkit-text-stroke: 6px #E8171A; paint-order: stroke fill; }
+        .hero-eikyo-stroke { position: absolute; top: 22%; left: 50%; transform: translateX(-50%); z-index: 3; pointer-events: none; user-select: none; white-space: nowrap; display: flex; gap: 0; }
+        .hero-eikyo-stroke span { font-family: 'Bebas Neue', sans-serif; font-size: 20vw; font-weight: 400; line-height: 1; letter-spacing: 20px; display: inline-block; will-change: transform, opacity; transform-origin: center center; color: transparent; -webkit-text-stroke: 8px #FF3A2D; paint-order: stroke fill; }
 
-        .hero-eikyo-fill { position: absolute; bottom: -4%; left: 50%; transform: translateX(-50%); z-index: 2; pointer-events: none; user-select: none; white-space: nowrap; display: flex; gap: 0; margin: 0; padding: 0; border: 0; }
-        .hero-eikyo-fill span { font-family: 'Bebas Neue', sans-serif; font-size: 26vw; font-weight: 400; line-height: 1; letter-spacing: 4px; display: inline-block; will-change: transform, opacity; transform-origin: bottom center; color: #E8171A; }
+        .hero-eikyo-fill { position: absolute; top: 22%; left: 50%; transform: translateX(-50%); z-index: 1; pointer-events: none; user-select: none; white-space: nowrap; display: flex; gap: 0; margin: 0; padding: 0; border: 0; }
+        .hero-eikyo-fill span { font-family: 'Bebas Neue', sans-serif; font-size: 20vw; font-weight: 400; line-height: 1; letter-spacing: 20px; display: inline-block; will-change: transform, opacity; transform-origin: center center; color: #FF3A2D; -webkit-text-stroke: 8px #FF0000; }
 
-        .hero-glove { position: absolute; top: 8%; left: 22%; width: 95px; z-index: 4; transform: rotate(-8deg); will-change: transform; animation: floatBob 3s ease-in-out infinite; }
-        .hero-mouthguard { position: absolute; bottom: 24%; left: 6%; width: 150px; z-index: 4; opacity: 0.42; will-change: transform; }
-        .hero-customers { position: absolute; top: 7%; right: 5%; z-index: 4; font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; font-weight: 900; color: #000; letter-spacing: 0.05em; margin: 0; will-change: transform; }
-        .hero-jerseys { position: absolute; top: 18%; right: 4%; width: 185px; z-index: 4; }
-        .hero-choice-mask { position: absolute; bottom: 32%; left: 3%; z-index: 4; overflow: hidden; }
-        .hero-choice { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 5px; color: #000; text-transform: uppercase; margin: 0; will-change: transform, opacity; }
-        .hero-stat { position: absolute; bottom: 13%; left: 3%; z-index: 4; will-change: transform; }
+        .hero-glove { position: absolute; top: 14%; left: 24%; width: 95px; z-index: 5; transform: rotate(-8deg); will-change: transform; animation: floatBob 3s ease-in-out infinite; }
+        .hero-mouthguard { position: absolute; bottom: 8%; right: 6%; width: 100px; z-index: 5; opacity: 0.42; will-change: transform; }
+        .hero-customers { position: absolute; top: 6%; right: 5%; z-index: 5; font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; font-weight: 900; color: #000; letter-spacing: 0.05em; margin: 0; will-change: transform; }
+        .hero-jerseys { position: absolute; top: 16%; right: 4%; width: 185px; z-index: 5; }
+        .hero-choice-mask { position: absolute; bottom: 38%; left: 18%; z-index: 5; overflow: hidden; }
+        .hero-choice { font-family: 'Poppins', 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 3px; color: #000; text-transform: uppercase; margin: 0; will-change: transform, opacity; }
+        .hero-stat { position: absolute; bottom: 28%; left: 3%; z-index: 5; will-change: transform; }
         .hero-stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 3.4rem; font-weight: 900; color: #000; line-height: 1; margin: 0; }
         .hero-stat-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.82rem; color: #000; margin: 4px 0 0 0; }
-        .hero-whatsapp { position: absolute; bottom: 3%; left: 3%; z-index: 4; display: flex; align-items: center; gap: 8px; text-decoration: none; }
+        .hero-whatsapp { position: absolute; bottom: 3%; left: 3%; z-index: 5; display: flex; align-items: center; gap: 8px; text-decoration: none; }
         .hero-wa-icon { width: 44px; height: 44px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .hero-seal-wrap { position: absolute; bottom: 4%; right: 2%; width: 115px; z-index: 4; will-change: transform; }
+        .hero-seal-wrap { position: absolute; bottom: 12%; right: 8%; width: 130px; z-index: 5; will-change: transform; }
         .hero-seal-svg { width: 100%; height: 100%; animation: heroSpin 8s linear infinite; }
         .hero-seal-logo { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
 
         @media (max-width: 768px) {
           .hero-wrap { height: 100svh; }
-          .hero-eikyo-stroke, .hero-eikyo-fill { bottom: -2%; }
-          .hero-eikyo-stroke span, .hero-eikyo-fill span { font-size: 40vw; -webkit-text-stroke-width: 3px; }
-          .hero-boxer { height: 80%; }
+          .hero-eikyo-stroke, .hero-eikyo-fill { top: 30%; }
+          .hero-eikyo-stroke span, .hero-eikyo-fill span { font-size: 32vw; -webkit-text-stroke-width: 4px; letter-spacing: 8px; }
+          .hero-boxer { height: 85%; }
           .hero-glove, .hero-mouthguard, .hero-customers, .hero-jerseys, .hero-seal-wrap { display: none; }
           .hero-choice { font-size: 0.7rem; }
-          .hero-choice-mask { bottom: 28%; }
-          .hero-stat { bottom: 10%; }
+          .hero-choice-mask { bottom: 28%; left: 8%; }
+          .hero-stat { bottom: 16%; }
         }
       `}</style>
 
