@@ -143,10 +143,10 @@ const HeroSection = () => {
         .hero-eikyo-stroke { position: absolute; top: 22%; left: 50%; transform: translateX(-50%); z-index: 3; pointer-events: none; user-select: none; white-space: nowrap; display: flex; gap: 0; }
         .hero-eikyo-stroke span {
           font-family: 'Bebas Neue', sans-serif;
-          font-size: 22vw;
+          font-size: 28vw;
           font-weight: 400;
           line-height: 1;
-          letter-spacing: 0.06em;
+          letter-spacing: 0.04em;
           display: inline-block;
           will-change: transform, opacity;
           transform-origin: center center;
@@ -159,10 +159,10 @@ const HeroSection = () => {
         .hero-eikyo-fill { position: absolute; top: 22%; left: 50%; transform: translateX(-50%); z-index: 1; pointer-events: none; user-select: none; white-space: nowrap; display: flex; gap: 0; margin: 0; padding: 0; border: 0; }
         .hero-eikyo-fill span {
           font-family: 'Bebas Neue', sans-serif;
-          font-size: 22vw;
+          font-size: 28vw;
           font-weight: 400;
           line-height: 1;
-          letter-spacing: 0.06em;
+          letter-spacing: 0.04em;
           display: inline-block;
           will-change: transform, opacity;
           transform-origin: center center;
