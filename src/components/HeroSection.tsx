@@ -181,7 +181,7 @@ const HeroSection = () => {
         </div>
 
         {/* LAYER 3 — WHATSAPP bottom-left */}
-        
+        <a
           href="https://wa.me/"
           target="_blank"
           rel="noopener noreferrer"
