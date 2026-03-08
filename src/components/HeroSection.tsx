@@ -192,6 +192,7 @@ const HeroSection = () => {
 
         <p className="hero-customers" ref={customersRef}>5K+ CUSTOMERS</p>
         <img src={jerseyFanImg} alt="" aria-hidden="true" className="hero-jerseys" ref={jerseysRef} />
+        <img src={karateUniformImg} alt="" aria-hidden="true" className="hero-karate" />
 
         <div className="hero-choice-mask">
           <p className="hero-choice" ref={choiceRef}>CHOICE OF CHAMPIONS</p>
