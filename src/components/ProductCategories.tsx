@@ -1,13 +1,13 @@
-import uniformImg from "@/assets/martial-arts-uniform.png";
-import glovesImg from "@/assets/boxing-gloves.png";
-import mmaGlovesImg from "@/assets/mma-gloves.png";
-import shinGuardsImg from "@/assets/shin-guards.png";
+import karateImg from "@/assets/product-karate-uniform.png";
+import punchingBagImg from "@/assets/product-punching-bag.png";
+import boxingGloveImg from "@/assets/product-boxing-glove.png";
+import mmaImg from "@/assets/product-mma-shorts.png";
 
 const products = [
-  { name: "Karate Uniform", code: "AS-02-101", img: uniformImg },
-  { name: "Punching Bag", code: "AS-01-4401", img: shinGuardsImg },
-  { name: "Boxing Glove", code: "AB-858", img: glovesImg },
-  { name: "MMA Shorts", code: "AS-07-201", img: mmaGlovesImg },
+  { name: "Karate Uniform", code: "AS-02-101", img: karateImg },
+  { name: "Punching Bag", code: "AS-01-4401", img: punchingBagImg },
+  { name: "Boxing Glove", code: "AB-858", img: boxingGloveImg },
+  { name: "MMA Shorts", code: "AS-07-201", img: mmaImg },
 ];
 
 const ProductCategories = () => {
