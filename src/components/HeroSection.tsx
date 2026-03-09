@@ -134,68 +134,68 @@ const HeroSection = () => {
         @keyframes heroSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         @keyframes floatBob { 0%,100% { transform: translateY(0) rotate(-8deg); } 50% { transform: translateY(-10px) rotate(-8deg); } }
 
-        .hero-wrap { position: relative; width: 100%; height: 78vh; background: #FFFFFF; overflow: hidden; }
+        .hero-wrap { position: relative; width: 100%; height: 82vh; background: #FFFFFF; overflow: hidden; }
 
         /* Boxer — middle layer */
-        .hero-boxer { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); height: 100%; width: auto; object-fit: contain; object-position: bottom center; z-index: 2; pointer-events: none; will-change: transform; }
+        .hero-boxer { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); height: 95%; width: auto; object-fit: contain; object-position: bottom center; z-index: 2; pointer-events: none; will-change: transform; }
 
         /* Stroke outline layer — IN FRONT of boxer */
-        .hero-eikyo-stroke { position: absolute; top: 22%; left: 50%; transform: translateX(-50%); z-index: 3; pointer-events: none; user-select: none; white-space: nowrap; display: flex; gap: 0; }
+        .hero-eikyo-stroke { position: absolute; top: 28%; left: 50%; transform: translateX(-50%) scaleX(1.55); z-index: 3; pointer-events: none; user-select: none; white-space: nowrap; display: flex; gap: 0; }
         .hero-eikyo-stroke span {
           font-family: 'Bebas Neue', sans-serif;
-          font-size: 28vw;
+          font-size: 22vw;
           font-weight: 400;
-          line-height: 1;
-          letter-spacing: 0.04em;
+          line-height: 0.85;
+          letter-spacing: 0.02em;
           display: inline-block;
           will-change: transform, opacity;
           transform-origin: center center;
           color: transparent;
-          -webkit-text-stroke: 6px #FF3A2D;
+          -webkit-text-stroke: 5px #FF3A2D;
           paint-order: stroke fill;
         }
 
         /* Solid fill layer — BEHIND boxer */
-        .hero-eikyo-fill { position: absolute; top: 22%; left: 50%; transform: translateX(-50%); z-index: 1; pointer-events: none; user-select: none; white-space: nowrap; display: flex; gap: 0; margin: 0; padding: 0; border: 0; }
+        .hero-eikyo-fill { position: absolute; top: 28%; left: 50%; transform: translateX(-50%) scaleX(1.55); z-index: 1; pointer-events: none; user-select: none; white-space: nowrap; display: flex; gap: 0; margin: 0; padding: 0; border: 0; }
         .hero-eikyo-fill span {
           font-family: 'Bebas Neue', sans-serif;
-          font-size: 28vw;
+          font-size: 22vw;
           font-weight: 400;
-          line-height: 1;
-          letter-spacing: 0.04em;
+          line-height: 0.85;
+          letter-spacing: 0.02em;
           display: inline-block;
           will-change: transform, opacity;
           transform-origin: center center;
           color: #FF3A2D;
-          -webkit-text-stroke: 6px #FF0000;
+          -webkit-text-stroke: 5px #FF0000;
         }
 
-        .hero-glove { position: absolute; top: 14%; left: 24%; width: 95px; z-index: 4; transform: rotate(-8deg); will-change: transform; animation: floatBob 3s ease-in-out infinite; }
-        .hero-mouthguard { position: absolute; top: 45%; right: 2%; width: 130px; z-index: 4; opacity: 0.4; will-change: transform; }
-        .hero-customers { position: absolute; top: 12%; right: 5%; z-index: 5; font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; font-weight: 900; color: #000; letter-spacing: 0.05em; margin: 0; will-change: transform; white-space: nowrap; }
-        .hero-jerseys { position: absolute; top: 22%; right: 4%; width: 185px; z-index: 5; }
-        .hero-karate { position: absolute; bottom: 0; left: -2%; width: 160px; z-index: 4; pointer-events: none; }
+        .hero-glove { position: absolute; top: 18%; left: 28%; width: 85px; z-index: 4; transform: rotate(-8deg); will-change: transform; animation: floatBob 3s ease-in-out infinite; }
+        .hero-mouthguard { position: absolute; top: 55%; right: -1%; width: 120px; z-index: 4; opacity: 0.35; will-change: transform; }
+        .hero-customers { position: absolute; top: 14%; right: 4%; z-index: 5; font-family: 'Bebas Neue', sans-serif; font-size: 2rem; font-weight: 900; color: #000; letter-spacing: 0.05em; margin: 0; will-change: transform; white-space: nowrap; }
+        .hero-jerseys { position: absolute; top: 22%; right: 3%; width: 170px; z-index: 5; }
+        .hero-karate { position: absolute; bottom: 0; left: -1%; width: 140px; z-index: 4; pointer-events: none; }
 
-        .hero-choice-mask { position: absolute; bottom: 34%; left: 18%; z-index: 5; overflow: hidden; }
-        .hero-choice { font-family: 'Poppins', 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 700; letter-spacing: 3px; color: #000; text-transform: uppercase; margin: 0; will-change: transform, opacity; }
+        .hero-choice-mask { position: absolute; bottom: 42%; left: 4%; z-index: 5; overflow: hidden; }
+        .hero-choice { font-family: 'Poppins', 'Barlow Condensed', sans-serif; font-size: 0.95rem; font-weight: 700; letter-spacing: 3px; color: #000; text-transform: uppercase; margin: 0; will-change: transform, opacity; }
 
-        .hero-stat { position: absolute; bottom: 28%; left: 10%; z-index: 5; will-change: transform; }
-        .hero-stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 3.4rem; font-weight: 900; color: #000; line-height: 1; margin: 0; }
-        .hero-stat-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.82rem; color: #000; margin: 4px 0 0 0; }
-        .hero-whatsapp { position: absolute; bottom: 3%; left: 3%; z-index: 5; display: flex; align-items: center; gap: 8px; text-decoration: none; }
+        .hero-stat { position: absolute; bottom: 20%; left: 4%; z-index: 5; will-change: transform; }
+        .hero-stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 3.8rem; font-weight: 900; color: #000; line-height: 1; margin: 0; }
+        .hero-stat-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.9rem; color: #000; margin: 4px 0 0 0; }
+        .hero-whatsapp { position: absolute; bottom: 3%; left: 2%; z-index: 5; display: flex; align-items: center; gap: 8px; text-decoration: none; }
         .hero-wa-icon { width: 44px; height: 44px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .hero-seal-wrap { position: absolute; bottom: 12%; right: 8%; width: 130px; z-index: 5; will-change: transform; }
-        .hero-seal-svg { width: 100%; height: 100%; animation: heroSpin 8s linear infinite; }
+        .hero-seal-wrap { position: absolute; bottom: 6%; right: 5%; width: 140px; z-index: 5; will-change: transform; }
+        .hero-seal-svg { width: 100%; height: 100%; animation: heroSpin 12s linear infinite; }
         .hero-seal-logo { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
 
         @media (max-width: 768px) {
           .hero-wrap { height: 100svh; }
           .hero-eikyo-stroke, .hero-eikyo-fill { top: 30%; }
-          .hero-eikyo-stroke span, .hero-eikyo-fill span { font-size: 38vw; -webkit-text-stroke-width: 4px; letter-spacing: 4px; }
+          .hero-eikyo-stroke span, .hero-eikyo-fill span { font-size: 32vw; -webkit-text-stroke-width: 3px; letter-spacing: 2px; }
           .hero-boxer { height: 85%; }
           .hero-glove, .hero-mouthguard, .hero-customers, .hero-jerseys, .hero-seal-wrap, .hero-karate { display: none; }
-          .hero-choice { font-size: 0.7rem; }
-          .hero-choice-mask { bottom: 28%; left: 8%; }
+          .hero-choice { font-size: 0.65rem; }
+          .hero-choice-mask { bottom: 28%; left: 6%; }
           .hero-stat { bottom: 16%; left: 5%; }
         }
       `}</style>
