@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import fighterImg from "@/assets/fighter-hero.webp";
 import pinkGloveImg from "@/assets/pink-glove.png";
 import mouthGuardImg from "@/assets/mouth-guard.svg";
@@ -9,123 +9,24 @@ import karateUniformImg from "@/assets/martial-arts-uniform.png";
 const EIKYO_LETTERS = ["E", "I", "K", "Y", "O"];
 
 const HeroSection = () => {
-  const strokeLettersRef = useRef<(HTMLSpanElement | null)[]>([]);
-  const fillLettersRef = useRef<(HTMLSpanElement | null)[]>([]);
-  const boxerRef = useRef<HTMLImageElement>(null);
-  const gloveRef = useRef<HTMLImageElement>(null);
-  const mouthguardRef = useRef<HTMLImageElement>(null);
-  const customersRef = useRef<HTMLParagraphElement>(null);
-  const jerseysRef = useRef<HTMLImageElement>(null);
-  const choiceRef = useRef<HTMLParagraphElement>(null);
-  const statRef = useRef<HTMLDivElement>(null);
-  const sealRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
-    // Per-character 3D flip-in for both layers
-    [...strokeLettersRef.current, ...fillLettersRef.current].forEach((el, i) => {
-      if (!el) return;
-      const idx = i % EIKYO_LETTERS.length;
-      el.style.opacity = "0";
-      el.style.transform = "perspective(600px) rotateX(-90deg)";
-      el.style.transition = "none";
-      setTimeout(() => {
-        el.style.transition = "opacity 0.6s ease-out, transform 0.8s cubic-bezier(0.16,1,0.3,1)";
-        el.style.opacity = "1";
-        el.style.transform = "perspective(600px) rotateX(0deg)";
-      }, 200 + idx * 120);
-    });
-
-    // Boxer slide-up
-    if (boxerRef.current) {
-      const b = boxerRef.current;
-      b.style.opacity = "0";
-      b.style.transform = "translateX(-50%) translateY(30px)";
-      b.style.transition = "none";
-      setTimeout(() => {
-        b.style.transition = "opacity 0.8s ease-out, transform 0.8s ease-out";
-        b.style.opacity = "1";
-        b.style.transform = "translateX(-50%) translateY(0)";
-      }, 100);
-    }
-
-    // Glove float-in
-    if (gloveRef.current) {
-      const g = gloveRef.current;
-      g.style.opacity = "0";
-      g.style.transform = "rotate(-8deg) translateY(-30px)";
-      g.style.transition = "none";
-      setTimeout(() => {
-        g.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out";
-        g.style.opacity = "1";
-        g.style.transform = "rotate(-8deg) translateY(0)";
-      }, 400);
-    }
-
-    // Right-side fade-in
-    [customersRef.current, jerseysRef.current].forEach((el, i) => {
-      if (!el) return;
-      el.style.opacity = "0";
-      el.style.transform = "translateX(30px)";
-      el.style.transition = "none";
-      setTimeout(() => {
-        el.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out";
-        el.style.opacity = "1";
-        el.style.transform = "translateX(0)";
-      }, 500 + i * 100);
-    });
-
-    // Choice mask slide-in
-    if (choiceRef.current) {
-      const c = choiceRef.current;
-      c.style.opacity = "0";
-      c.style.transform = "translateX(-100%)";
-      c.style.transition = "none";
-      setTimeout(() => {
-        c.style.transition = "opacity 0.5s ease-out, transform 0.7s cubic-bezier(0.16,1,0.3,1)";
-        c.style.opacity = "1";
-        c.style.transform = "translateX(0)";
-      }, 700);
-    }
-
-    // Stat & mouthguard
-    [statRef.current, mouthguardRef.current].forEach((el, i) => {
-      if (!el) return;
-      el.style.opacity = "0";
-      el.style.transition = "none";
-      setTimeout(() => {
-        el.style.transition = "opacity 0.5s ease-out";
-        el.style.opacity = "1";
-      }, 800 + i * 100);
-    });
-
-    // Seal
-    if (sealRef.current) {
-      sealRef.current.style.opacity = "0";
-      sealRef.current.style.transition = "none";
-      setTimeout(() => {
-        if (sealRef.current) {
-          sealRef.current.style.transition = "opacity 0.5s ease-out";
-          sealRef.current.style.opacity = "1";
-        }
-      }, 900);
-    }
-
-    // Scroll parallax
-    const handleScroll = () => {
+    const onScroll = () => {
       const y = window.scrollY;
-      [...strokeLettersRef.current, ...fillLettersRef.current].forEach((el) => {
-        if (el) el.style.transform = `perspective(600px) rotateX(0deg) translateY(${y * 0.15}px)`;
-      });
-      if (boxerRef.current) boxerRef.current.style.transform = `translateX(-50%) translateY(${y * 0.05}px)`;
-      if (gloveRef.current) gloveRef.current.style.transform = `rotate(-8deg) translateY(${y * 0.4}px)`;
-      if (mouthguardRef.current) mouthguardRef.current.style.transform = `translateY(${y * 0.3}px)`;
-      if (customersRef.current) customersRef.current.style.transform = `translateY(${y * 0.6}px)`;
-      if (sealRef.current) sealRef.current.style.transform = `translateY(${y * 0.5}px)`;
-      if (statRef.current) statRef.current.style.transform = `translateY(${y * 0.7}px)`;
+      const eikyo = document.querySelector('.he') as HTMLElement;
+      const glove = document.querySelector('.hg') as HTMLElement;
+      const mouth = document.querySelector('.hm') as HTMLElement;
+      const seal  = document.querySelector('.hsw') as HTMLElement;
+      const stat  = document.querySelector('.hs') as HTMLElement;
+      const choice = document.querySelector('.hch') as HTMLElement;
+      if (eikyo)  eikyo.style.transform  = `translateX(-50%) scaleX(1.55) translateY(${y * 0.15}px)`;
+      if (glove)  glove.style.transform  = `rotate(-8deg) translateY(${y * 0.4}px)`;
+      if (mouth)  mouth.style.transform  = `translateY(${y * 0.35}px)`;
+      if (seal)   seal.style.transform   = `translateY(${y * 0.5}px)`;
+      if (stat)   stat.style.transform   = `translateY(${y * 0.6}px)`;
+      if (choice) choice.style.transform = `translateY(${y * 0.55}px)`;
     };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   return (
@@ -170,7 +71,7 @@ const HeroSection = () => {
           -webkit-text-stroke: 5px #FF0000;
         }
 
-        .hero-glove { position: absolute; top: 18%; left: 28%; width: 85px; z-index: 4; transform: rotate(-8deg); will-change: transform; animation: floatBob 3s ease-in-out infinite; }
+        .hero-glove { position: absolute; top: 6%; left: 20%; width: 85px; z-index: 4; transform: rotate(-8deg); will-change: transform; animation: floatBob 3s ease-in-out infinite; }
         .hero-mouthguard { position: absolute; top: 55%; right: -1%; width: 120px; z-index: 4; opacity: 0.35; will-change: transform; }
         .hero-customers { position: absolute; top: 14%; right: 4%; z-index: 5; font-family: 'Bebas Neue', sans-serif; font-size: 2rem; font-weight: 900; color: #000; letter-spacing: 0.05em; margin: 0; will-change: transform; white-space: nowrap; }
         .hero-jerseys { position: absolute; top: 22%; right: 3%; width: 170px; z-index: 5; }
@@ -188,6 +89,67 @@ const HeroSection = () => {
         .hero-seal-svg { width: 100%; height: 100%; animation: heroSpin 12s linear infinite; }
         .hero-seal-logo { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
 
+        /* PAGE LOAD — elements fade and slide in one by one */
+        .he {
+          animation: eikyoFadeIn 0.8s ease-out forwards;
+        }
+        .hb {
+          animation: boxerSlideUp 0.9s ease-out 0.1s both;
+        }
+        .hg {
+          animation: gloveDropIn 0.6s ease-out 0.2s both;
+          opacity: 0;
+        }
+        .hm {
+          animation: fadeInUp 0.6s ease-out 0.3s both;
+          opacity: 0;
+        }
+        .hc {
+          animation: fadeInRight 0.6s ease-out 0.3s both;
+          opacity: 0;
+        }
+        .hj {
+          animation: fadeInRight 0.6s ease-out 0.4s both;
+          opacity: 0;
+        }
+        .hch {
+          animation: fadeInUp 0.5s ease-out 0.4s both;
+          opacity: 0;
+        }
+        .hs {
+          animation: fadeInUp 0.5s ease-out 0.5s both;
+          opacity: 0;
+        }
+        .hwa {
+          animation: fadeInUp 0.5s ease-out 0.6s both;
+          opacity: 0;
+        }
+        .hsw {
+          animation: fadeInUp 0.5s ease-out 0.7s both;
+          opacity: 0;
+        }
+
+        @keyframes eikyoFadeIn {
+          from { opacity: 0.3; transform: translateX(-50%) scaleX(1.55) scaleY(0.92); }
+          to   { opacity: 1;   transform: translateX(-50%) scaleX(1.55) scaleY(1); }
+        }
+        @keyframes boxerSlideUp {
+          from { opacity: 0; transform: translateX(-50%) translateY(40px); }
+          to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+        }
+        @keyframes gloveDropIn {
+          from { opacity: 0; transform: rotate(-8deg) translateY(-30px); }
+          to   { opacity: 1; transform: rotate(-8deg) translateY(0); }
+        }
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(20px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInRight {
+          from { opacity: 0; transform: translateX(25px); }
+          to   { opacity: 1; transform: translateX(0); }
+        }
+
         @media (max-width: 768px) {
           .hero-wrap { height: 100svh; }
           .hero-eikyo-stroke, .hero-eikyo-fill { top: 30%; }
@@ -202,46 +164,46 @@ const HeroSection = () => {
 
       <section className="hero-wrap">
         {/* Stroke outline — IN FRONT of boxer (z:3) */}
-        <div className="hero-eikyo-stroke" aria-hidden="true">
+        <div className="hero-eikyo-stroke he" aria-hidden="true">
           {EIKYO_LETTERS.map((letter, i) => (
-            <span key={`s-${i}`} ref={(el) => { strokeLettersRef.current[i] = el; }}>{letter}</span>
+            <span key={`s-${i}`}>{letter}</span>
           ))}
         </div>
 
         {/* Solid fill — BEHIND boxer (z:1) */}
-        <h1 className="hero-eikyo-fill">
+        <h1 className="hero-eikyo-fill he">
           {EIKYO_LETTERS.map((letter, i) => (
-            <span key={`f-${i}`} ref={(el) => { fillLettersRef.current[i] = el; }}>{letter}</span>
+            <span key={`f-${i}`}>{letter}</span>
           ))}
         </h1>
 
         {/* Boxer — MIDDLE layer (z:2) */}
-        <img src={fighterImg} alt="Fighter" className="hero-boxer" ref={boxerRef} />
+        <img src={fighterImg} alt="Fighter" className="hero-boxer hb" />
 
         {/* Floating assets */}
-        <img src={pinkGloveImg} alt="" aria-hidden="true" className="hero-glove" ref={gloveRef} />
-        <img src={mouthGuardImg} alt="" aria-hidden="true" className="hero-mouthguard" ref={mouthguardRef} />
+        <img src={pinkGloveImg} alt="" aria-hidden="true" className="hero-glove hg" />
+        <img src={mouthGuardImg} alt="" aria-hidden="true" className="hero-mouthguard hm" />
 
         {/* Right side elements */}
-        <p className="hero-customers" ref={customersRef}>5K+ CUSTOMERS</p>
-        <img src={jerseyFanImg} alt="" aria-hidden="true" className="hero-jerseys" ref={jerseysRef} />
+        <p className="hero-customers hc">5K+ CUSTOMERS</p>
+        <img src={jerseyFanImg} alt="" aria-hidden="true" className="hero-jerseys hj" />
 
         {/* Bottom-left karate uniform */}
         <img src={karateUniformImg} alt="" aria-hidden="true" className="hero-karate" />
 
         {/* Choice of Champions */}
-        <div className="hero-choice-mask">
-          <p className="hero-choice" ref={choiceRef}>CHOICE OF CHAMPIONS</p>
+        <div className="hero-choice-mask hch">
+          <p className="hero-choice">CHOICE OF CHAMPIONS</p>
         </div>
 
         {/* Stats */}
-        <div className="hero-stat" ref={statRef}>
+        <div className="hero-stat hs">
           <p className="hero-stat-num">10+</p>
           <p className="hero-stat-label">Years Of Experience</p>
         </div>
 
         {/* WhatsApp */}
-        <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="hero-whatsapp">
+        <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="hero-whatsapp hwa">
           <div className="hero-wa-icon">
             <svg viewBox="0 0 24 24" style={{ width: 24, height: 24, fill: "white" }}>
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
@@ -252,7 +214,7 @@ const HeroSection = () => {
         </a>
 
         {/* Spinning seal */}
-        <div className="hero-seal-wrap" ref={sealRef}>
+        <div className="hero-seal-wrap hsw">
           <div style={{ position: "relative", width: "100%", aspectRatio: "1" }}>
             <svg viewBox="0 0 200 200" className="hero-seal-svg">
               <defs>
