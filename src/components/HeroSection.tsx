@@ -34,6 +34,8 @@ const HeroSection = () => {
       <style>{`
         @keyframes heroSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         @keyframes floatBob { 0%,100% { transform: translateY(0) rotate(-8deg); } 50% { transform: translateY(-10px) rotate(-8deg); } }
+        @keyframes floatUpDown { 0% { transform: translateY(0px); } 50% { transform: translateY(-12px); } 100% { transform: translateY(0px); } }
+        .hj { animation: floatUpDown 3s ease-in-out infinite !important; }
 
         .hero-wrap { position: relative; width: 100%; height: 82vh; background: #FFFFFF; overflow: hidden; }
 
