@@ -25,58 +25,69 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-background/95 backdrop-blur-sm shadow-md border-b border-border"
+          ? "bg-white shadow-md"
           : "bg-white"
       }`}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 lg:px-8">
-        <a href="#" className="flex items-center">
-          <img src={logoImg} alt="EIKYO International" className="h-9 md:h-12 w-auto object-contain" />
+      <div className="max-w-[1400px] mx-auto flex items-center justify-between px-6 py-3 lg:px-10">
+        {/* Logo */}
+        <a href="#" className="flex items-center flex-shrink-0">
+          <img src={logoImg} alt="EIKYO International" className="h-10 md:h-12 w-10 md:w-12 object-contain rounded-full" />
         </a>
 
-        <ul className="hidden lg:flex items-center gap-6">
+        {/* Center nav links */}
+        <ul className="hidden lg:flex items-center gap-7">
           {navLinks.map((link) => (
             <li key={link.label}>
               <a
                 href={link.href}
-                className="font-body text-xs md:text-sm font-semibold tracking-wider text-foreground hover:text-primary transition-colors flex items-center gap-1 uppercase"
+                className="text-[13px] font-semibold tracking-[0.08em] text-foreground hover:text-primary transition-colors flex items-center gap-1 uppercase"
+                style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 600 }}
               >
                 {link.label}
-                {link.dropdown && <ChevronDown size={14} />}
+                {link.dropdown && <ChevronDown size={13} strokeWidth={2.5} />}
               </a>
             </li>
           ))}
         </ul>
 
-        <div className="hidden lg:flex items-center gap-4">
+        {/* Right side */}
+        <div className="hidden lg:flex items-center gap-5">
           <button className="text-foreground hover:text-primary transition-colors">
             <Search size={18} />
           </button>
-          <span className="font-body text-sm font-semibold tracking-wider text-foreground cursor-pointer hover:text-primary transition-colors uppercase">
+          <span
+            className="text-sm font-semibold tracking-wider text-foreground cursor-pointer hover:text-primary transition-colors uppercase"
+            style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
+          >
             EN
           </span>
           <a
             href="#contact"
-            className="font-heading text-base uppercase tracking-wider bg-primary text-primary-foreground px-5 py-2.5 hover:bg-primary/90 transition-colors"
+            className="text-sm uppercase tracking-wider bg-primary text-white px-6 py-2.5 rounded-md hover:bg-primary/90 transition-colors font-semibold"
+            style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
           >
-            Get Quote
+            GET QUOTE
           </a>
         </div>
 
+        {/* Mobile toggle */}
         <button className="lg:hidden text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
+      {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-background border-t border-border px-4 pb-4">
+        <div className="lg:hidden bg-white border-t border-border px-6 pb-4">
           <ul className="flex flex-col gap-3 pt-3">
             {navLinks.map((link) => (
               <li key={link.label}>
                 <a
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="font-body text-sm font-semibold tracking-wider text-foreground hover:text-primary transition-colors flex items-center gap-1 uppercase"
+                  className="text-sm font-semibold tracking-wider text-foreground hover:text-primary transition-colors flex items-center gap-1 uppercase"
+                  style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
                 >
                   {link.label}
                   {link.dropdown && <ChevronDown size={14} />}
@@ -86,12 +97,13 @@ const Navbar = () => {
           </ul>
           <div className="flex items-center gap-4 mt-4 pt-3 border-t border-border">
             <Search size={18} className="text-foreground" />
-            <span className="font-body text-sm font-semibold tracking-wider text-foreground uppercase">EN</span>
+            <span className="text-sm font-semibold tracking-wider text-foreground uppercase" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>EN</span>
             <a
               href="#contact"
-              className="font-heading text-base uppercase tracking-wider bg-primary text-primary-foreground px-5 py-2.5 hover:bg-primary/90 transition-colors ml-auto"
+              className="text-sm uppercase tracking-wider bg-primary text-white px-5 py-2.5 rounded-md hover:bg-primary/90 transition-colors ml-auto font-semibold"
+              style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
             >
-              Get Quote
+              GET QUOTE
             </a>
           </div>
         </div>
