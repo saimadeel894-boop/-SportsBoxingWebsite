@@ -191,7 +191,18 @@ const HeroSection = () => {
 
         {/* Right side elements */}
         <p className="hero-customers hc">5K+ CUSTOMERS</p>
-        <img src={jerseyFanImg} alt="" aria-hidden="true" className="hero-jerseys hj" />
+        <img
+          src={jerseyFanImg}
+          alt=""
+          style={{
+            position: "absolute",
+            top: "18%",
+            right: "4%",
+            width: "185px",
+            zIndex: 4,
+            animation: "floatShirt 3s ease-in-out infinite",
+          }}
+        />
 
         {/* Bottom-left karate uniform */}
         <img src={karateUniformImg} alt="" aria-hidden="true" className="hero-karate" />
